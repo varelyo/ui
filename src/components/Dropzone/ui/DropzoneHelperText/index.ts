@@ -1,0 +1,1 @@
+export { DropzoneHelperText } from './DropzoneHelperText';

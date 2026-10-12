@@ -1,0 +1,1 @@
+export { resolveScopeMode } from './resolveScopeMode';

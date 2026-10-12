@@ -1,0 +1,1 @@
+export { DividerLabel } from './DividerLabel';

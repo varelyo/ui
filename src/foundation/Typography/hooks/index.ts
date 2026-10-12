@@ -1,0 +1,1 @@
+export { useTypography } from './useTypography';

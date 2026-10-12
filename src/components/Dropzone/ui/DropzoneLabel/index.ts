@@ -1,0 +1,1 @@
+export { DropzoneLabel } from './DropzoneLabel';

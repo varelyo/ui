@@ -1,0 +1,1 @@
+export { IconButtonIcon } from './IconButtonIcon';

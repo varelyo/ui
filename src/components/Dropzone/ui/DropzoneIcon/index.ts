@@ -1,0 +1,1 @@
+export { DropzoneIcon } from './DropzoneIcon';

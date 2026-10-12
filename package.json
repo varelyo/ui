@@ -1,0 +1,56 @@
+{
+  "name": "@varelyo/foundation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": ">=24.11.1 <25"
+  },
+  "scripts": {
+    "icons:check": "node scripts/icons/check.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && node scripts/utilities.mjs && node scripts/architecture.mjs",
+    "test": "pnpm test:unit && pnpm test:browser",
+    "build": "vite build --config playground/vite.config.ts",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "playground": "vite --config playground/vite.config.ts",
+    "test:unit": "node --test test/*.test.mjs",
+    "test:browser": "playwright test --project=behavior",
+    "visual:verify": "playwright test --project=visual",
+    "visual:update": "playwright test --project=visual --update-snapshots"
+  },
+  "dependencies": {
+    "@floating-ui/react": "0.27.20",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "3.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/vite": "4.3.2",
+    "@types/node": "26.1.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "eslint": "10.11.0",
+    "fast-xml-parser": "5.11.1",
+    "prettier": "3.9.4",
+    "tailwindcss": "4.3.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.1",
+    "vite": "8.3.1"
+  },
+  "description": "Open-source React UI components for developers and AI agents. Typed APIs, design tokens, and source code you can customize.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/varelyo/ui.git"
+  },
+  "homepage": "https://varelyo.com/foundation",
+  "bugs": {
+    "url": "https://github.com/varelyo/ui/issues"
+  }
+}

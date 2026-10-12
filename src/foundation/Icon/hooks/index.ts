@@ -1,0 +1,1 @@
+export { useIcon } from './useIcon';

@@ -1,0 +1,1 @@
+export { useTableSortLabel } from './useTableSortLabel';

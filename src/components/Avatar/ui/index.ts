@@ -1,0 +1,1 @@
+export { AvatarFallbackIcon } from './AvatarFallbackIcon';

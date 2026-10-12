@@ -1,0 +1,1 @@
+export { useInputLabel } from './useInputLabel';

@@ -1,0 +1,1 @@
+export { collectOptions } from './collectOptions';

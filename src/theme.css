@@ -1,0 +1,10 @@
+@import 'tailwindcss' source(none);
+@import './generated/theme.css';
+@source "./components";
+@source "./foundation";
+@source "./generated/maps.ts";
+@source not "./**/*.stories.tsx";
+@source not inline("container");
+@source not inline("invisible");
+@source not inline("collapse");
+@source not inline("table");

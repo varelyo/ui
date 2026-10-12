@@ -1,0 +1,1 @@
+export { useTableCell } from './useTableCell';

@@ -1,0 +1,1 @@
+export { IconSizeContext } from './IconSizeContext';

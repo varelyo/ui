@@ -1,0 +1,1 @@
+export { useInputAdornment } from './useInputAdornment';

@@ -1,0 +1,302 @@
+[
+  {
+    "name": "chevron-left",
+    "group": "navigation",
+    "metaphor": "open angle pointing left",
+    "use": "Back, previous page, collapse a side panel, tab scroll"
+  },
+  {
+    "name": "chevron-right",
+    "group": "navigation",
+    "metaphor": "open angle pointing right",
+    "use": "Forward, breadcrumb separator, submenu, row drill-in"
+  },
+  {
+    "name": "chevron-up",
+    "group": "navigation",
+    "metaphor": "open angle pointing up",
+    "use": "Collapse a section, scroll to top"
+  },
+  {
+    "name": "chevron-down",
+    "group": "navigation",
+    "metaphor": "open angle pointing down",
+    "use": "Expand a section, select trigger, dropdown"
+  },
+  {
+    "name": "chevrons-up-down",
+    "group": "navigation",
+    "metaphor": "two small angles pointing apart vertically",
+    "use": "Switcher trigger, unsorted column"
+  },
+  {
+    "name": "arrow-left",
+    "group": "navigation",
+    "metaphor": "straight arrow pointing left",
+    "use": "Go back, previous step"
+  },
+  {
+    "name": "arrow-right",
+    "group": "navigation",
+    "metaphor": "straight arrow pointing right",
+    "use": "Continue, next step, call to action"
+  },
+  {
+    "name": "arrow-up",
+    "group": "navigation",
+    "metaphor": "straight arrow pointing up",
+    "use": "Ascending sort, increase"
+  },
+  {
+    "name": "arrow-down",
+    "group": "navigation",
+    "metaphor": "straight arrow pointing down",
+    "use": "Descending sort, decrease"
+  },
+  {
+    "name": "external-link",
+    "group": "navigation",
+    "metaphor": "arrow leaving an open frame through its corner",
+    "use": "Open in a new tab or another product"
+  },
+  {
+    "name": "menu",
+    "group": "structure",
+    "metaphor": "three stacked horizontal lines",
+    "use": "Open navigation on narrow screens"
+  },
+  {
+    "name": "home",
+    "group": "structure",
+    "metaphor": "house with a door",
+    "use": "Home or overview destination"
+  },
+  {
+    "name": "dashboard",
+    "group": "structure",
+    "metaphor": "four tiles of unequal height",
+    "use": "Dashboard or overview layout"
+  },
+  {
+    "name": "sidebar",
+    "group": "structure",
+    "metaphor": "frame with a docked left panel",
+    "use": "Show or hide the sidebar"
+  },
+  {
+    "name": "add",
+    "group": "action",
+    "metaphor": "plus sign",
+    "use": "Create, add an item"
+  },
+  {
+    "name": "minus",
+    "group": "action",
+    "metaphor": "horizontal line",
+    "use": "Remove one, decrement, indeterminate checkbox"
+  },
+  {
+    "name": "close",
+    "group": "action",
+    "metaphor": "diagonal cross",
+    "use": "Close a dialog, drawer or snackbar, dismiss a chip"
+  },
+  {
+    "name": "check",
+    "group": "action",
+    "metaphor": "check mark",
+    "use": "Confirm, selected option, checked checkbox"
+  },
+  {
+    "name": "more-horizontal",
+    "group": "action",
+    "metaphor": "three dots in a row",
+    "use": "More actions, collapsed breadcrumbs"
+  },
+  {
+    "name": "search",
+    "group": "action",
+    "metaphor": "magnifying glass",
+    "use": "Search field, search command"
+  },
+  {
+    "name": "filter",
+    "group": "action",
+    "metaphor": "funnel",
+    "use": "Filter a list or table"
+  },
+  {
+    "name": "settings",
+    "group": "action",
+    "metaphor": "eight-tooth gear with a hub",
+    "use": "Settings or preferences"
+  },
+  {
+    "name": "edit",
+    "group": "action",
+    "metaphor": "pencil with a ferrule band",
+    "use": "Edit or rename"
+  },
+  {
+    "name": "trash",
+    "group": "action",
+    "metaphor": "bin with lid and handle",
+    "use": "Delete"
+  },
+  {
+    "name": "copy",
+    "group": "action",
+    "metaphor": "two overlapping rounded sheets",
+    "use": "Copy to clipboard, duplicate"
+  },
+  {
+    "name": "download",
+    "group": "action",
+    "metaphor": "arrow descending into a tray",
+    "use": "Download or export"
+  },
+  {
+    "name": "upload",
+    "group": "action",
+    "metaphor": "arrow rising out of a tray",
+    "use": "Upload or import"
+  },
+  {
+    "name": "link",
+    "group": "action",
+    "metaphor": "two chain links joined by a bar",
+    "use": "Copy or insert a link"
+  },
+  {
+    "name": "refresh",
+    "group": "action",
+    "metaphor": "circular arrow ending in a chevron",
+    "use": "Reload or retry"
+  },
+  {
+    "name": "sign-out",
+    "group": "action",
+    "metaphor": "arrow leaving an open door frame",
+    "use": "Sign out"
+  },
+  {
+    "name": "eye",
+    "group": "visibility",
+    "metaphor": "almond eye with a round pupil",
+    "use": "Show content, reveal a password"
+  },
+  {
+    "name": "eye-off",
+    "group": "visibility",
+    "metaphor": "eye crossed by a diagonal stroke",
+    "use": "Hide content, conceal a password"
+  },
+  {
+    "name": "information",
+    "group": "status",
+    "metaphor": "letter i inside a ring",
+    "use": "Informational message"
+  },
+  {
+    "name": "warning",
+    "group": "status",
+    "metaphor": "exclamation mark inside a rounded triangle",
+    "use": "Warning message"
+  },
+  {
+    "name": "error",
+    "group": "status",
+    "metaphor": "exclamation mark inside a ring",
+    "use": "Error message"
+  },
+  {
+    "name": "check-circle",
+    "group": "status",
+    "metaphor": "check mark inside a ring",
+    "use": "Success or completed state"
+  },
+  {
+    "name": "help",
+    "group": "status",
+    "metaphor": "question mark inside a ring",
+    "use": "Help or explanation"
+  },
+  {
+    "name": "notification",
+    "group": "communication",
+    "metaphor": "bell with a clapper",
+    "use": "Notifications"
+  },
+  {
+    "name": "mail",
+    "group": "communication",
+    "metaphor": "envelope with a folded flap",
+    "use": "Email"
+  },
+  {
+    "name": "message",
+    "group": "communication",
+    "metaphor": "round speech bubble with a tail",
+    "use": "Chat, comments, messages"
+  },
+  {
+    "name": "user",
+    "group": "people",
+    "metaphor": "head over shoulders",
+    "use": "Account, profile, avatar fallback"
+  },
+  {
+    "name": "users",
+    "group": "people",
+    "metaphor": "two people, one behind the other",
+    "use": "Team, members, groups"
+  },
+  {
+    "name": "calendar",
+    "group": "object",
+    "metaphor": "calendar page with binding rings and a header line",
+    "use": "Dates, scheduling, date fields"
+  },
+  {
+    "name": "clock",
+    "group": "object",
+    "metaphor": "clock face with two hands",
+    "use": "Time, history, recent items"
+  },
+  {
+    "name": "folder",
+    "group": "object",
+    "metaphor": "folder with a tab",
+    "use": "Folders, projects, collections"
+  },
+  {
+    "name": "file",
+    "group": "object",
+    "metaphor": "sheet with a folded corner",
+    "use": "Documents and files"
+  },
+  {
+    "name": "image",
+    "group": "object",
+    "metaphor": "framed landscape with a sun",
+    "use": "Images and media"
+  },
+  {
+    "name": "lock",
+    "group": "object",
+    "metaphor": "padlock with a keyhole",
+    "use": "Security, private or locked content"
+  },
+  {
+    "name": "star",
+    "group": "object",
+    "metaphor": "five-pointed star with rounded points",
+    "use": "Favorites and ratings"
+  },
+  {
+    "name": "payment-card",
+    "group": "object",
+    "metaphor": "card with a stripe and a number line",
+    "use": "Billing and payment methods"
+  }
+]

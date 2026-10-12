@@ -1,0 +1,1 @@
+export { useAvatar } from './useAvatar';
