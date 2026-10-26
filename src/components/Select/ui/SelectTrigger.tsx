@@ -1,3 +1,5 @@
+import { hasAddon } from '../../../utils';
+import { InputAdornment } from '../../InputAdornment';
 import { INPUT_BASE_SLOT } from '../../InputBase';
 import { useSelectTrigger } from '../hooks';
 import {
@@ -21,6 +23,8 @@ export function SelectTrigger({
   required,
   disabled,
   autofill,
+  startAddon,
+  endAddon,
 }: SelectTriggerProps) {
   const { slots } = useSelectTrigger();
   return (
@@ -30,7 +34,9 @@ export function SelectTrigger({
       data-slot={INPUT_BASE_SLOT}
       className={selectTriggerClassName(slots)}
     >
+      {hasAddon(startAddon) ? <InputAdornment position="start" addon={startAddon} /> : null}
       <SelectValue labels={labels} options={optionLabels} className={selectValueClassName(slots)} />
+      {hasAddon(endAddon) ? <InputAdornment position="end" addon={endAddon} /> : null}
       <SelectIndicator open={open} size={indicatorSize} />
       <input
         aria-hidden="true"

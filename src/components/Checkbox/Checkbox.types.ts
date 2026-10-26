@@ -1,9 +1,10 @@
 import type { ChangeEvent, ComponentPropsWithRef, ReactNode, Ref } from 'react';
 import type { ComponentTokens } from '../../generated/maps';
-import type { ColorOf, Responsive, SizeOf } from '../../types';
+import type { ColorOf, Responsive, SizeOf, VariantOf } from '../../types';
 import type { CHECKBOX_COMPONENT_NAME_KEY } from './Checkbox.constants';
 
 export type CheckboxTokens = ComponentTokens[typeof CHECKBOX_COMPONENT_NAME_KEY];
+export type CheckboxVariant = VariantOf<CheckboxTokens>;
 export type CheckboxColor = ColorOf<CheckboxTokens>;
 export type CheckboxSize = SizeOf<CheckboxTokens>;
 
@@ -18,6 +19,7 @@ type CheckboxOwnProps = {
   value?: string;
   size?: Responsive<CheckboxSize>;
   color?: CheckboxColor;
+  variant?: CheckboxVariant;
   label?: ReactNode;
   inputRef?: Ref<HTMLInputElement>;
 };
@@ -26,6 +28,7 @@ export type CheckboxProps = CheckboxOwnProps &
   Omit<ComponentPropsWithRef<'label'>, keyof CheckboxOwnProps | 'style' | 'children'>;
 
 export interface CheckboxStyleProps {
+  variant: CheckboxVariant;
   color: CheckboxColor;
   size: Responsive<CheckboxSize>;
 }

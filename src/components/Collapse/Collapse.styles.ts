@@ -23,6 +23,6 @@ export const collapseRootClassName = (
 export const collapseContentClassName = ({ orientation, collapsedSize }: CollapseStyleProps) =>
   cx(
     collapse.slots.content,
-    responsiveClasses(collapsedSize, collapse.sizes[orientation].primary, 'none'),
+    responsiveClasses(collapsedSize, collapse.styleSizes[orientation], 'none'),
     'overflow-hidden',
   );

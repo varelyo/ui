@@ -6,5 +6,5 @@ const table = componentTokens[TABLE_SORT_LABEL_COMPONENT_NAME_KEY];
 
 export const tableSortLabelIconClassName = cx(
   table.slots.sortIcon,
-  'transition-colors duration-xs ease-standard motion-reduce:transition-none',
+  'transition-colors duration-sm ease-standard motion-reduce:transition-none',
 );

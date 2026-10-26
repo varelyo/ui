@@ -79,3 +79,40 @@ test('below md the sidebar opens as a drawer with the full navigation', async ({
   await page.keyboard.press('Escape');
   await expect(drawer).toHaveCount(0);
 });
+
+test('sidebar items are list rows 2rem high, 0.5rem from the panel edge, with a count, a group label and a nested level', async ({
+  page,
+}) => {
+  await page.goto('/?story=sidebar');
+  const nav = page.getByRole('navigation', { name: 'Workspace' });
+  const list = nav.getByRole('list').first();
+  expect(await list.evaluate((element) => element.tagName)).toBe('UL');
+  const overview = page.getByTestId('sidebar-item-Overview');
+  expect(await overview.evaluate((element) => element.parentElement?.tagName)).toBe('LI');
+  const navBox = (await nav.boundingBox())!;
+  const item = (await overview.boundingBox())!;
+  expect(Math.round(item.x - navBox.x)).toBe(Number.parseFloat(rem(0.5)));
+  expect(Math.round(item.height)).toBe(Number.parseFloat(rem(2)));
+  expect(await css(overview, 'padding-inline-start')).toBe(rem(0.5));
+  expect(await css(overview, 'column-gap')).toBe(rem(0.5));
+  const icon = (await overview.locator('svg').boundingBox())!;
+  expect(Math.round(icon.x - navBox.x)).toBe(Number.parseFloat(rem(1)));
+  const members = page.getByTestId('sidebar-item-Members');
+  const count = members.locator('xpath=..').locator(':scope > [data-list-item-end]');
+  await expect(count).toHaveText('8');
+  const label = page.getByTestId('sidebar-group-label');
+  expect(Math.round((await label.boundingBox())!.height)).toBe(Number.parseFloat(rem(2)));
+  expect(await css(label, 'padding-inline-start')).toBe(rem(0.5));
+  const toggle = page.getByTestId('sidebar-team-toggle');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  const issues = page.getByTestId('sidebar-item-Issues');
+  expect(Math.round((await issues.boundingBox())!.x - (await toggle.boundingBox())!.x)).toBe(
+    Number.parseFloat(rem(1.5)),
+  );
+  await issues.click();
+  await expect(issues).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByTestId('sidebar-current')).toHaveText('Issues');
+  await page.getByTestId('sidebar-collapse').click();
+  await expect(count).toHaveCount(0);
+  await expect(page.getByTestId('sidebar-group-label')).toHaveCount(0);
+});

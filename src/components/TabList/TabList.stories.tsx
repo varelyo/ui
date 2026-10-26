@@ -1,6 +1,6 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Typography } from '../../foundation/Typography';
+import { Typography } from '../Typography';
 import { Tab } from '../Tab';
 import { TabPanel } from '../TabPanel';
 import { Tabs } from '../Tabs';

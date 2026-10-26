@@ -3,13 +3,8 @@ import { mapResponsive } from '../../../utils';
 import { ICON_BUTTON_COMPONENT_NAME_KEY } from '../IconButton.constants';
 import type { UseIconButtonParams, UseIconButtonResult } from '../IconButton.types';
 
-export function useIconButton({
-  variant,
-  color,
-  size,
-  loading,
-}: UseIconButtonParams): UseIconButtonResult {
-  const childProps = componentTokens[ICON_BUTTON_COMPONENT_NAME_KEY].childProps[variant][color];
+export function useIconButton({ size, loading }: UseIconButtonParams): UseIconButtonResult {
+  const childProps = componentTokens[ICON_BUTTON_COMPONENT_NAME_KEY].childProps;
   return {
     showLoader: loading,
     iconSize: mapResponsive(size, (step) => childProps[step].icon.size),

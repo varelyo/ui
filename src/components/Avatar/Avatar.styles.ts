@@ -12,7 +12,7 @@ export const avatarClassName = (
   cx(
     avatar.slots.root,
     avatar.variants[variant][color],
-    responsiveClasses(size, avatar.sizes[variant][color], 'md'),
+    responsiveClasses(size, avatar.sizes, 'md'),
     'inline-flex shrink-0 select-none items-center justify-center overflow-hidden',
     className,
   );

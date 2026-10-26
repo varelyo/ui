@@ -5,6 +5,7 @@ import type { DrawerTemporaryProps } from '../Drawer.types';
 import { useDrawerTemporary } from '../hooks';
 
 export function DrawerTemporary({
+  appearance,
   open,
   onClose,
   anchor,
@@ -19,13 +20,13 @@ export function DrawerTemporary({
       onClose={onClose}
       keepMounted={keepMounted}
       {...drawer.labelProps}
-      className={drawerContainerClassName}
+      className={drawerContainerClassName(appearance)}
     >
       <Paper
         square
         elevation="xl"
         {...drawer.panelProps}
-        className={drawerTemporaryPaperClassName({ anchor }, className)}
+        className={drawerTemporaryPaperClassName({ appearance, anchor }, className)}
       >
         {children}
       </Paper>

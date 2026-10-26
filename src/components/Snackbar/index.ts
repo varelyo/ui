@@ -5,4 +5,5 @@ export type {
   SnackbarCloseReason,
   SnackbarProps,
   SnackbarRole,
+  SnackbarVariant,
 } from './Snackbar.types';

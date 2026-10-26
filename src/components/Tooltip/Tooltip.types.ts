@@ -1,6 +1,11 @@
 import type { ComponentPropsWithRef, HTMLAttributes, ReactElement, ReactNode, Ref } from 'react';
-import type { MotionStep } from '../../generated/maps';
+import type { ComponentTokens, MotionStep } from '../../generated/maps';
+import type { VariantOf } from '../../types';
 import type { PopperPlacement, PopperState } from '../Popper';
+import type { TOOLTIP_COMPONENT_NAME_KEY } from './Tooltip.constants';
+
+export type TooltipTokens = ComponentTokens[typeof TOOLTIP_COMPONENT_NAME_KEY];
+export type TooltipVariant = VariantOf<TooltipTokens>;
 
 export type TooltipTriggerProps = HTMLAttributes<HTMLElement> & { ref?: Ref<HTMLElement> };
 
@@ -16,6 +21,7 @@ type TooltipOwnProps = {
   leaveDelay?: MotionStep;
   disableHoverListener?: boolean;
   disableFocusListener?: boolean;
+  variant?: TooltipVariant;
 };
 
 export type TooltipProps = TooltipOwnProps &
@@ -38,6 +44,7 @@ export interface TooltipOverlayProps {
   leaveDelay: MotionStep;
   disableHoverListener: boolean;
   disableFocusListener: boolean;
+  variant: TooltipVariant;
   surfaceProps: TooltipSurfaceAttributes;
 }
 

@@ -5,11 +5,14 @@ import type { CheckboxStyleProps } from './Checkbox.types';
 
 const checkbox = componentTokens[CHECKBOX_COMPONENT_NAME_KEY];
 
-export const checkboxClassName = ({ color, size }: CheckboxStyleProps, className?: ClassValue) =>
+export const checkboxClassName = (
+  { variant, color, size }: CheckboxStyleProps,
+  className?: ClassValue,
+) =>
   cx(
     checkbox.slots.root,
-    checkbox.variants.standard[color],
-    responsiveClasses(size, checkbox.sizes.standard[color], 'md'),
+    checkbox.variants[variant][color],
+    responsiveClasses(size, checkbox.sizes, 'md'),
     'inline-flex cursor-pointer items-center has-disabled:cursor-not-allowed',
     className,
   );
@@ -22,7 +25,7 @@ export const checkboxInputClassName = cx(
 
 export const checkboxIndicatorClassName = cx(
   checkbox.slots.indicator,
-  'vy-focus-ring-peer pointer-events-none inline-flex items-center justify-center transition-colors duration-xs ease-standard motion-reduce:transition-none',
+  'vy-focus-ring-peer pointer-events-none inline-flex items-center justify-center transition-colors duration-sm ease-standard motion-reduce:transition-none',
 );
 
 export const checkboxMarkClassName = cx('size-full');

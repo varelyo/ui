@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { usePopper } from './hooks';
 import { Popper } from './Popper';

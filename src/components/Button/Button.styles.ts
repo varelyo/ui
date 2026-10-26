@@ -11,8 +11,12 @@ export const buttonRootClassName = (
 ) =>
   cx(
     button.slots.root,
+    button.slots.addonStart,
+    button.slots.addonEnd,
+    button.slots.addonInsetStart,
+    button.slots.addonInsetEnd,
     button.variants[variant][color],
-    responsiveClasses(size, button.sizes[variant][color], 'md'),
+    responsiveClasses(size, button.sizes, 'md'),
     fullWidth && 'w-full',
     className,
   );

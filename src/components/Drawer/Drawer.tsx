@@ -7,6 +7,7 @@ export function Drawer({
   onClose,
   anchor = 'left',
   variant = 'temporary',
+  appearance = 'standard',
   children,
   keepMounted = false,
   ...panelProps
@@ -14,6 +15,7 @@ export function Drawer({
   const drawer = useDrawer(variant);
   return drawer.temporary ? (
     <DrawerTemporary
+      appearance={appearance}
       open={open}
       onClose={onClose}
       anchor={anchor}
@@ -24,6 +26,7 @@ export function Drawer({
     </DrawerTemporary>
   ) : (
     <DrawerDocked
+      appearance={appearance}
       open={open}
       anchor={anchor}
       animated={drawer.animated}

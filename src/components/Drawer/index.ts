@@ -1,2 +1,2 @@
 export { Drawer } from './Drawer';
-export type { DrawerAnchor, DrawerProps, DrawerVariant } from './Drawer.types';
+export type { DrawerAnchor, DrawerAppearance, DrawerProps, DrawerVariant } from './Drawer.types';

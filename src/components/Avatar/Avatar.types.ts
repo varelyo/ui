@@ -37,8 +37,6 @@ export interface AvatarStyleProps {
 export interface UseAvatarParams {
   src: string | undefined;
   srcSet: string | undefined;
-  variant: AvatarVariant;
-  color: AvatarColor;
   size: Responsive<AvatarSize>;
   children: ReactNode;
 }

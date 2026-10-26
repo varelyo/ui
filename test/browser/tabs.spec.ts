@@ -112,9 +112,9 @@ test('vertical tabs move with the up and down arrows and draw the indicator at t
 test('tab, indicator, list and panel dimensions come from the tabs tokens', async ({ page }) => {
   await page.goto('/?story=tabs');
   const overview = tab(page, 'Overview');
-  expect(await css(overview, 'min-height')).toBe(rem(2.5));
+  expect(await css(overview, 'min-height')).toBe(rem(2.25));
   expect(await css(overview, 'padding-left')).toBe(rem(0.75));
-  expect(await css(overview, 'column-gap')).toBe(rem(0.5));
+  expect(await css(overview, 'column-gap')).toBe(rem(0.25));
   expect(await css(page.getByRole('tablist', { name: 'Project sections' }), 'column-gap')).toBe(
     rem(0.25),
   );
@@ -130,4 +130,70 @@ test('tab, indicator, list and panel dimensions come from the tabs tokens', asyn
   expect(await css(panel, 'padding-top')).toBe(rem(1));
   expect(await css(panel, 'padding-left')).toBe(rem(1));
   expect((await tab(page, 'Overview').locator('svg').boundingBox())!.width).toBe(16);
+});
+
+test('segmented tabs draw a filled track with a raised selected option, no indicator and no panel inset', async ({
+  page,
+}) => {
+  await page.goto('/?story=tabs-segmented');
+  const tabs = page.getByTestId('tabs-segmented');
+  const list = tabs.getByRole('tablist', { name: 'View' });
+  const board = tabs.getByRole('tab', { name: 'Board', exact: true });
+  const calendar = tabs.getByRole('tab', { name: 'Calendar', exact: true });
+  expect(await css(list, 'padding-top')).toBe(rem(0.125));
+  expect(await css(list, 'padding-left')).toBe(rem(0.125));
+  expect(await css(list, 'column-gap')).toBe(rem(0.125));
+  expect(await css(list, 'border-top-left-radius')).not.toBe('0px');
+  expect(await css(list, 'background-color')).not.toBe('rgba(0, 0, 0, 0)');
+  expect(await css(board, 'min-height')).toBe(rem(2));
+  expect(await css(board, 'box-shadow')).not.toBe('none');
+  expect(await css(calendar, 'box-shadow')).not.toBe(await css(board, 'box-shadow'));
+  expect(await css(board, 'background-color')).not.toBe(await css(calendar, 'background-color'));
+  const indicator = board.locator('[data-slot="indicator"]');
+  expect(await css(indicator, 'border-bottom-color')).toBe('rgba(0, 0, 0, 0)');
+  const panel = page.getByTestId('tabs-segmented-panel');
+  expect(await css(panel, 'padding-top')).toBe('0px');
+  expect(await css(panel, 'padding-left')).toBe('0px');
+  expect((await board.locator('svg').boundingBox())!.width).toBe(16);
+  const compact = page.getByTestId('tabs-segmented-compact').getByRole('tablist');
+  const options = await compact
+    .getByRole('tab')
+    .evaluateAll((nodes) =>
+      nodes.reduce((width, node) => width + node.getBoundingClientRect().width, 0),
+    );
+  expect((await compact.boundingBox())!.width).toBeLessThan(options + 16);
+});
+
+test('segmented tabs keep the tab pattern: arrows move focus, Enter selects, disabled is skipped', async ({
+  page,
+}) => {
+  await page.goto('/?story=tabs-segmented');
+  const tabs = page.getByTestId('tabs-segmented');
+  const board = tabs.getByRole('tab', { name: 'Board', exact: true });
+  await expect(board).toHaveAttribute('aria-selected', 'true');
+  await board.focus();
+  await page.keyboard.press('ArrowRight');
+  const list = tabs.getByRole('tab', { name: 'List', exact: true });
+  await expect(list).toBeFocused();
+  await expect(list).toHaveCSS('outline-style', 'solid');
+  await page.keyboard.press('Enter');
+  await expect(list).toHaveAttribute('aria-selected', 'true');
+  await expect(tabs.getByRole('tabpanel')).toHaveText('Every card in one list.');
+  await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('ArrowRight');
+  await expect(board).toBeFocused();
+  await tabs.getByRole('tab', { name: 'Archive', exact: true }).click({ force: true });
+  await expect(list).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByTestId('tabs-segmented')).not.toHaveAttribute('variant');
+});
+
+test('standard tabs keep a transparent track, a zero shadow and the panel inset', async ({
+  page,
+}) => {
+  await page.goto('/?story=tabs');
+  const list = page.getByRole('tablist', { name: 'Project sections' });
+  expect(await css(list, 'background-color')).toBe('rgba(0, 0, 0, 0)');
+  expect(await css(list, 'padding-top')).toBe('0px');
+  expect(await css(tab(page, 'Overview'), 'box-shadow')).toBe('rgba(0, 0, 0, 0) 0px 0px 0px 0px');
+  expect(await css(page.getByRole('tabpanel', { name: 'Overview' }), 'padding-top')).toBe(rem(1));
 });

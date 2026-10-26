@@ -1,8 +1,8 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Paper } from './Paper';
 import type { PaperElevation } from './Paper.types';
 
@@ -52,8 +52,44 @@ export function PaperStory() {
   );
 }
 
+export function PaperSelectedStory() {
+  return (
+    <Stack spacing="xl">
+      <Example title="Selected outlined and elevated paper beside their resting look">
+        <Grid container columns={{ xs: 2, md: 4 }} spacing="lg">
+          {(['outlined', 'elevation'] as const).flatMap((variant) =>
+            [false, true].map((selected) => (
+              <Grid key={`${variant}-${String(selected)}`} size={1}>
+                <Paper
+                  variant={variant}
+                  elevation="sm"
+                  selected={selected}
+                  data-testid={`paper-${variant}${selected ? '-selected' : ''}`}
+                >
+                  <Stack p="lg" spacing="xs">
+                    <Typography variant="label-md">{selected ? 'Selected' : 'Rest'}</Typography>
+                    <Typography variant="body-sm" color="on-surface-variant-default">
+                      {variant}
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+            )),
+          )}
+        </Grid>
+      </Example>
+    </Stack>
+  );
+}
+
 export const paperStory: Story = {
   id: 'paper',
   title: 'Paper',
   render: () => <PaperStory />,
+};
+
+export const paperSelectedStory: Story = {
+  id: 'paper-selected',
+  title: 'Paper selected',
+  render: () => <PaperSelectedStory />,
 };

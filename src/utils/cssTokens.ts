@@ -1,46 +1,11 @@
-import type { DwellStep, GapStep, MotionStep, PaddingStep } from '../generated/maps';
+import { cssVariables, type DwellStep, type MotionStep, type SpaceStep } from '../generated/maps';
 
-export const GAP_VARIABLES: Readonly<Record<GapStep, string>> = {
-  none: '--vy-gap-none',
-  '2xs': '--vy-gap-2xs',
-  xs: '--vy-gap-xs',
-  sm: '--vy-gap-sm',
-  md: '--vy-gap-md',
-  lg: '--vy-gap-lg',
-  xl: '--vy-gap-xl',
-  '2xl': '--vy-gap-2xl',
-  '3xl': '--vy-gap-3xl',
-};
+export const SPACE_VARIABLES: Readonly<Record<SpaceStep, string>> = cssVariables.space;
 
-export const PADDING_VARIABLES: Readonly<Record<PaddingStep, string>> = {
-  none: '--vy-padding-none',
-  '2xs': '--vy-padding-2xs',
-  xs: '--vy-padding-xs',
-  sm: '--vy-padding-sm',
-  md: '--vy-padding-md',
-  lg: '--vy-padding-lg',
-  xl: '--vy-padding-xl',
-  '2xl': '--vy-padding-2xl',
-  '3xl': '--vy-padding-3xl',
-};
+export const MOTION_DURATION_VARIABLES: Readonly<Record<MotionStep, string>> =
+  cssVariables.motionDuration;
 
-export const MOTION_DURATION_VARIABLES: Readonly<Record<MotionStep, string>> = {
-  none: '--vy-motion-duration-none',
-  '2xs': '--vy-motion-duration-2xs',
-  xs: '--vy-motion-duration-xs',
-  sm: '--vy-motion-duration-sm',
-  md: '--vy-motion-duration-md',
-  lg: '--vy-motion-duration-lg',
-  xl: '--vy-motion-duration-xl',
-  '2xl': '--vy-motion-duration-2xl',
-  '3xl': '--vy-motion-duration-3xl',
-};
-
-export const DWELL_VARIABLES: Readonly<Record<DwellStep, string>> = {
-  short: '--vy-dwell-short',
-  medium: '--vy-dwell-medium',
-  long: '--vy-dwell-long',
-};
+export const DWELL_VARIABLES: Readonly<Record<DwellStep, string>> = cssVariables.dwell;
 
 const rootFontSize = (element: Element) =>
   Number.parseFloat(getComputedStyle(element.ownerDocument.documentElement).fontSize);

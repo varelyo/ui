@@ -132,7 +132,7 @@ test('the space before the file names is the selector end padding alone', async 
       expect(await selectorButton(field, 'margin-inline-start')).toBe('0px');
       expect(await selectorButton(field, 'margin-inline-end')).toBe('0px');
       expect(await selectorButton(field, 'padding-inline-end')).toBe(
-        dimension(`component.textField.${variant}.primary.${size}.fileSelectorButton.paddingEnd`),
+        dimension(`component.textField.size.${size}.fileSelectorButton.paddingEnd`),
       );
     }
 });

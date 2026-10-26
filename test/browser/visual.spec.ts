@@ -7,10 +7,13 @@ const stories = [
   'box',
   'box-min-height',
   'theme-scope',
+  'control-sizes',
+  'control-addons',
   'button',
   'icon-button',
   'text-field',
   'circular-progress',
+  'linear-progress',
   'divider',
   'tooltip',
   'popover',
@@ -20,15 +23,25 @@ const stories = [
   'select-option',
   'tabs',
   'tabs-color',
+  'tabs-segmented',
   'snackbar',
   'paper',
+  'paper-selected',
   'dialog',
   'drawer',
+  'list',
+  'list-states',
+  'list-compositions',
+  'list-markers',
   'sidebar',
   'sidebar-color',
   'breadcrumbs',
+  'link',
+  'link-states',
+  'link-compositions',
   'skeleton',
   'card',
+  'card-selected',
   'avatar',
   'avatar-color',
   'chip',
@@ -55,7 +68,36 @@ const drag = async (page: Page, testId: string, name: string, type: string) => {
     type === 'image/png' ? 'data-drag-accept' : 'data-drag-reject',
   );
 };
+const forcedStates: ReadonlyArray<readonly [string, readonly string[]]> = [
+  ['hover', ['hover']],
+  ['pressed', ['hover', 'active']],
+  ['focus', ['focus', 'focus-visible']],
+  ['selected-hover', ['hover']],
+  ['selected-pressed', ['hover', 'active']],
+  ['selected-focus', ['focus', 'focus-visible']],
+];
+const holdStates = async (page: Page) => {
+  const client = await page.context().newCDPSession(page);
+  await client.send('DOM.enable');
+  await client.send('CSS.enable');
+  const { root } = await client.send('DOM.getDocument', { depth: -1 });
+  for (const [state, pseudoClasses] of forcedStates) {
+    const { nodeIds } = await client.send('DOM.querySelectorAll', {
+      nodeId: root.nodeId,
+      selector: `[data-state="${state}"]`,
+    });
+    for (const nodeId of nodeIds)
+      await client.send('CSS.forcePseudoState', {
+        nodeId,
+        forcedPseudoClasses: [...pseudoClasses],
+      });
+  }
+  await page.mouse.move(0, 0);
+};
 const prepare: Partial<Record<string, (page: Page) => Promise<void>>> = {
+  'list-states': holdStates,
+  'link-states': holdStates,
+  'tabs-segmented': holdStates,
   'text-field-file': async (page) => {
     await page.getByLabel('Signed contract').setInputFiles({
       name: 'signed-contract.pdf',

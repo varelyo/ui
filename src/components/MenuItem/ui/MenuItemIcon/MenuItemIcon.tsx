@@ -1,4 +1,4 @@
-import { IconSizeContext } from '../../../../foundation/Icon';
+import { IconSizeContext } from '../../../Icon';
 import type { MenuItemIconProps } from '../../MenuItem.types';
 import { menuItemIconClassName } from './MenuItemIcon.styles';
 

@@ -1,14 +1,15 @@
 import type { ElementType, ReactElement } from 'react';
-import { ButtonBase, type ButtonBaseProps } from '../ButtonBase';
+import { ListItem } from '../ListItem';
+import { ListItemButton, type ListItemButtonProps } from '../ListItemButton';
+import { ListItemIcon } from '../ListItemIcon';
+import { ListItemText } from '../ListItemText';
 import { Tooltip } from '../Tooltip';
 import { useSidebarItem } from './hooks';
-import { sidebarItemClassName } from './SidebarItem.styles';
 import type {
   SidebarItemInternalProps,
   SidebarItemLinkProps,
   SidebarItemProps,
 } from './SidebarItem.types';
-import { SidebarItemIcon, SidebarItemLabel } from './ui';
 
 export function SidebarItem(props: SidebarItemLinkProps): ReactElement;
 export function SidebarItem<C extends ElementType = 'button'>(
@@ -19,27 +20,29 @@ export function SidebarItem(props: SidebarItemLinkProps | SidebarItemProps<Eleme
     icon,
     selected = false,
     disabled = false,
-    className,
+    end,
     children,
     ...rest
   } = props as SidebarItemInternalProps;
-  const item = useSidebarItem({ selected });
+  const item = useSidebarItem({ icon, end });
   return (
-    <Tooltip
-      title={children}
-      placement="right"
-      disableHoverListener={!item.collapsed}
-      disableFocusListener={!item.collapsed}
-    >
-      <ButtonBase
-        {...(rest as ButtonBaseProps<ElementType>)}
-        {...item.currentProps}
-        disabled={disabled}
-        className={sidebarItemClassName(item.color, className)}
+    <ListItem end={item.end}>
+      <Tooltip
+        title={children}
+        placement="right"
+        disableHoverListener={!item.collapsed}
+        disableFocusListener={!item.collapsed}
       >
-        {icon ? <SidebarItemIcon size={item.iconSize}>{icon}</SidebarItemIcon> : null}
-        <SidebarItemLabel>{children}</SidebarItemLabel>
-      </ButtonBase>
-    </Tooltip>
+        <ListItemButton
+          {...(rest as ListItemButtonProps<ElementType>)}
+          color={item.color}
+          selected={selected}
+          disabled={disabled}
+        >
+          {item.iconShown ? <ListItemIcon>{icon}</ListItemIcon> : null}
+          <ListItemText noWrap>{children}</ListItemText>
+        </ListItemButton>
+      </Tooltip>
+    </ListItem>
   );
 }

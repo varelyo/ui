@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import type { UseDialogParams, UseDialogResult } from '../Dialog.types';
 
 export function useDialog({
+  variant,
   maxWidth,
   ariaLabel,
   ariaLabelledBy,
@@ -12,7 +13,10 @@ export function useDialog({
     setTitleId(id);
     return () => setTitleId((current) => (current === id ? undefined : current));
   }, []);
-  const context = useMemo(() => ({ titleId, registerTitle }), [titleId, registerTitle]);
+  const context = useMemo(
+    () => ({ variant, titleId, registerTitle }),
+    [variant, titleId, registerTitle],
+  );
   const labelledBy = ariaLabelledBy ?? (ariaLabel === undefined ? titleId : undefined);
   return {
     context,

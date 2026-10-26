@@ -5,7 +5,7 @@ import type { UseDialogTitleParams, UseDialogTitleResult } from '../DialogTitle.
 
 export function useDialogTitle({ id }: UseDialogTitleParams): UseDialogTitleResult {
   const titleId = useFallbackId(id);
-  const { registerTitle } = use(DialogContext);
+  const { variant, registerTitle } = use(DialogContext);
   useLayoutEffect(() => registerTitle(titleId), [registerTitle, titleId]);
-  return { id: titleId };
+  return { id: titleId, variant };
 }

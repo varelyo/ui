@@ -12,7 +12,7 @@ export const iconButtonRootClassName = (
   cx(
     iconButton.slots.root,
     iconButton.variants[variant][color],
-    responsiveClasses(size, iconButton.sizes[variant][color], 'md'),
+    responsiveClasses(size, iconButton.sizes, 'md'),
     'shrink-0',
     className,
   );

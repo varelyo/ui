@@ -18,7 +18,10 @@ export function TabList({ ref, className, children, onKeyDown, onBlur, ...rest }
       onNavigate={list.navigate}
       onKeyDown={list.onKeyDown}
       onBlur={list.onBlur}
-      className={tabListClassName(list.orientation, className)}
+      className={tabListClassName(
+        { orientation: list.orientation, variant: list.variant },
+        className,
+      )}
     >
       <TabListContext value={list.context}>{children}</TabListContext>
     </Composite>

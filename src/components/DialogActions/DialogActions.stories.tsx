@@ -1,6 +1,6 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
+import { Stack } from '../Stack';
 import { Button } from '../Button';
 import { Paper } from '../Paper';
 import { DialogActions } from './DialogActions';

@@ -1,0 +1,1 @@
+export { useDialogContent } from './useDialogContent';

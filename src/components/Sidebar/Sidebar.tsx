@@ -12,18 +12,27 @@ export function Sidebar({
   defaultOpen = false,
   onOpenChange,
   variant = 'responsive',
+  appearance = 'standard',
   color = 'neutral',
   children,
   ...rest
 }: SidebarProps) {
-  const sidebar = useSidebar({ collapsed, open, defaultOpen, onOpenChange, variant, color });
+  const sidebar = useSidebar({
+    collapsed,
+    open,
+    defaultOpen,
+    onOpenChange,
+    variant,
+    appearance,
+    color,
+  });
   return (
     <>
       <Collapse
         in={!collapsed}
         orientation="horizontal"
         collapsedSize="3xl"
-        className={sidebarDockClassName({ variant, color })}
+        className={sidebarDockClassName({ appearance, variant, color })}
       >
         <SidebarPanel {...rest} label={label} context={sidebar.dockedContext}>
           {children}

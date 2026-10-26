@@ -6,6 +6,7 @@ export const TabsContext = createContext<TabsContextValue>({
   value: undefined,
   orientation: 'horizontal',
   selectionFollowsFocus: false,
+  variant: 'standard',
   color: 'neutral',
   select: () => undefined,
 });

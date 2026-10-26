@@ -5,7 +5,7 @@ import ts from 'typescript';
 import { compile } from 'tailwindcss';
 import { filesUnder, root } from './io.mjs';
 
-const sourceFolders = ['src/foundation', 'src/components', 'src/utils', 'src/hooks', 'src/types'];
+const sourceFolders = ['src/components', 'src/utils', 'src/hooks', 'src/types'];
 const logical = new Set([
   ts.SyntaxKind.AmpersandAmpersandToken,
   ts.SyntaxKind.BarBarToken,
@@ -88,6 +88,7 @@ function generatedClasses(maps) {
       mapClasses(value.slots, into);
       mapClasses(value.variants, into);
       mapClasses(value.sizes, into);
+      mapClasses(value.styleSizes, into);
     }
   return into;
 }

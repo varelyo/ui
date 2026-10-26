@@ -7,6 +7,7 @@ import { menuLayerClassName, menuListClassName } from '../Menu.styles';
 import type { MenuLayerProps } from '../Menu.types';
 
 export function MenuLayer({
+  variant,
   open,
   onClose,
   anchorEl,
@@ -18,7 +19,7 @@ export function MenuLayer({
   ref,
   ...rest
 }: MenuLayerProps) {
-  const menu = useMenu({ open, onClose, anchorEl, placement, autoFocus });
+  const menu = useMenu({ variant, open, onClose, anchorEl, placement, autoFocus });
   return (
     <Popper
       popper={menu.popper}
@@ -30,7 +31,7 @@ export function MenuLayer({
         elevation="md"
         ref={ref}
         {...menu.getFloatingProps(rest)}
-        className={menuListClassName(className)}
+        className={menuListClassName(variant, className)}
       >
         <FloatingList elementsRef={menu.elementsRef} labelsRef={menu.labelsRef}>
           <MenuContext value={menu.context}>{children}</MenuContext>

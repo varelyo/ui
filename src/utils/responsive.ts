@@ -23,6 +23,11 @@ export function baseValue<T>(value: Responsive<T> | undefined, fallback: T): T {
   return atBreakpoints(value, fallback)[0]?.[1] ?? fallback;
 }
 
+export function mapResponsive<T, U>(value: Responsive<T>, map: (item: T) => U): Responsive<U>;
+export function mapResponsive<T, U>(
+  value: Responsive<T> | undefined,
+  map: (item: T) => U,
+): Responsive<U> | undefined;
 export function mapResponsive<T, U>(
   value: Responsive<T> | undefined,
   map: (item: T) => U,

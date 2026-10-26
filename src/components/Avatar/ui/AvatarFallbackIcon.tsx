@@ -1,4 +1,4 @@
-import { Icon } from '../../../foundation/Icon';
+import { Icon } from '../../Icon';
 import { AVATAR_FALLBACK_ICON } from '../Avatar.constants';
 import type { AvatarFallbackIconProps } from '../Avatar.types';
 

@@ -1,11 +1,11 @@
 import { Stack } from '../../src';
-import { ContainerWidthExample } from '../../src/foundation/Container/Container.stories';
-import { GridColumnsExample, GridSpanExample } from '../../src/foundation/Grid/Grid.stories';
+import { ContainerWidthExample } from '../../src/components/Container/Container.stories';
+import { GridColumnsExample, GridSpanExample } from '../../src/components/Grid/Grid.stories';
 import {
   StackDirectionExample,
   StackDisplayExample,
   StackPaddingExample,
-} from '../../src/foundation/Stack/Stack.stories';
+} from '../../src/components/Stack/Stack.stories';
 
 export function LayoutStory() {
   return (

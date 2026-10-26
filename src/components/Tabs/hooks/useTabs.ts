@@ -8,6 +8,7 @@ export function useTabs({
   onChange,
   orientation,
   selectionFollowsFocus,
+  variant,
   color,
 }: UseTabsParams): UseTabsResult {
   const baseId = useId();
@@ -21,6 +22,7 @@ export function useTabs({
       value: current,
       orientation,
       selectionFollowsFocus,
+      variant,
       color,
       select: (next, event) => {
         if (next === current) return;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
+import { Stack } from '../Stack';
 import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableHead } from '../TableHead';

@@ -4,6 +4,7 @@ export type {
   DropzoneDragVerdict,
   DropzoneProps,
   DropzoneSize,
+  DropzoneVariant,
   FileRejection,
   FileRejectionReason,
 } from './Dropzone.types';

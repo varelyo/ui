@@ -8,16 +8,9 @@ import { useAvatarImage } from './useAvatarImage';
 const present = (node: ReactNode) =>
   node !== undefined && node !== null && node !== false && node !== '';
 
-export function useAvatar({
-  src,
-  srcSet,
-  variant,
-  color,
-  size,
-  children,
-}: UseAvatarParams): UseAvatarResult {
+export function useAvatar({ src, srcSet, size, children }: UseAvatarParams): UseAvatarResult {
   const status = useAvatarImage(src, srcSet);
-  const childProps = componentTokens[AVATAR_COMPONENT_NAME_KEY].childProps[variant][color];
+  const childProps = componentTokens[AVATAR_COMPONENT_NAME_KEY].childProps;
   const showImage = status === 'loaded';
   return {
     showImage,

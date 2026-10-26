@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { TextField } from './TextField';
 import type { TextFieldSize } from './TextField.types';
 
-const sizes: readonly TextFieldSize[] = ['sm', 'md', 'lg'];
+const sizes: readonly TextFieldSize[] = ['xs', 'sm', 'md', 'lg'];
 
 export function TextFieldStory() {
   const [amount, setAmount] = useState<string | number>(0);
@@ -58,20 +58,20 @@ export function TextFieldStory() {
           <TextField
             label="Search"
             placeholder="Search projects"
-            startAdornment={<Icon name="search" />}
+            startAddon={<Icon name="search" />}
             fullWidth
           />
           <TextField
             label="Password"
             type={visible ? 'text' : 'password'}
             defaultValue="correct horse"
-            endAdornment={
+            endAddon={
               <Button
                 variant="text"
                 size="sm"
                 aria-label={visible ? 'Hide password' : 'Show password'}
                 onClick={() => setVisible((value) => !value)}
-                startIcon={<Icon name={visible ? 'eye-off' : 'eye'} />}
+                startAddon={<Icon name={visible ? 'eye-off' : 'eye'} />}
               />
             }
             fullWidth
@@ -167,7 +167,7 @@ export function TextFieldFileStory() {
             type="file"
             label="Attachments"
             multiple
-            startAdornment={<Icon name="file" />}
+            startAddon={<Icon name="file" />}
             fullWidth
           />
         </Grid>

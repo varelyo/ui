@@ -18,7 +18,7 @@ export function CardHeader({
 }: CardHeaderProps) {
   const header = useCardHeader({ title, subheader, avatar, action });
   return (
-    <div {...rest} className={cardHeaderClassName(className)}>
+    <div {...rest} className={cardHeaderClassName(header.appearance, className)}>
       {header.hasAvatar ? <span className={cardHeaderSlotClassName}>{avatar}</span> : null}
       <span className={cardHeaderTextClassName}>
         {header.hasTitle ? <span className={cardHeaderTitleClassName}>{title}</span> : null}

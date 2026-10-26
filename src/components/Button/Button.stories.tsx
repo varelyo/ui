@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
+import { Grid } from '../Grid';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { Button } from './Button';
 import type { ButtonColor, ButtonSize, ButtonVariant } from './Button.types';
 
@@ -16,7 +16,7 @@ const colors: readonly ButtonColor[] = [
   'info',
   'success',
 ];
-const sizes: readonly ButtonSize[] = ['sm', 'md', 'lg'];
+const sizes: readonly ButtonSize[] = ['xs', 'sm', 'md', 'lg'];
 
 export function ButtonStory() {
   const [count, setCount] = useState(0);
@@ -43,7 +43,7 @@ export function ButtonStory() {
           {buttonVariants.map((variant) => (
             <Stack key={variant} direction="row" spacing="sm" alignItems="center">
               {sizes.map((size) => (
-                <Button key={size} variant={variant} size={size} startIcon={<Icon name="add" />}>
+                <Button key={size} variant={variant} size={size} startAddon={<Icon name="add" />}>
                   {`Create ${size}`}
                 </Button>
               ))}
@@ -53,13 +53,13 @@ export function ButtonStory() {
       </Example>
       <Example title="Icons">
         <Stack direction="row" spacing="sm" alignItems="center">
-          <Button variant="contained" startIcon={<Icon name="download" />}>
+          <Button variant="contained" startAddon={<Icon name="download" />}>
             Download
           </Button>
-          <Button variant="outlined" endIcon={<Icon name="arrow-right" />}>
+          <Button variant="outlined" endAddon={<Icon name="arrow-right" />}>
             Continue
           </Button>
-          <Button variant="text" startIcon={<Icon name="trash" />} color="error">
+          <Button variant="text" startAddon={<Icon name="trash" />} color="error">
             Delete
           </Button>
         </Stack>
@@ -70,7 +70,7 @@ export function ButtonStory() {
             variant="contained"
             loading
             loadingPosition="start"
-            startIcon={<Icon name="upload" />}
+            startAddon={<Icon name="upload" />}
           >
             Uploading
           </Button>
@@ -81,7 +81,7 @@ export function ButtonStory() {
             variant="outlined"
             loading
             loadingPosition="end"
-            endIcon={<Icon name="arrow-right" />}
+            endAddon={<Icon name="arrow-right" />}
           >
             Sending
           </Button>
@@ -115,7 +115,7 @@ export function ButtonStory() {
           <Button
             href="#docs"
             variant="text"
-            endIcon={<Icon name="external-link" />}
+            endAddon={<Icon name="external-link" />}
             data-testid="link"
           >
             Documentation

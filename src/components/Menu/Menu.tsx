@@ -6,11 +6,18 @@ export function Menu({
   autoFocus = true,
   placement = 'bottom-start',
   keepMounted = false,
+  variant = 'standard',
   ...rest
 }: MenuProps) {
   return (
     <OverlayRoot>
-      <MenuLayer {...rest} autoFocus={autoFocus} placement={placement} keepMounted={keepMounted} />
+      <MenuLayer
+        {...rest}
+        variant={variant}
+        autoFocus={autoFocus}
+        placement={placement}
+        keepMounted={keepMounted}
+      />
     </OverlayRoot>
   );
 }

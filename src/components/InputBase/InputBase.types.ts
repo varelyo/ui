@@ -4,10 +4,10 @@ import type {
   ComponentPropsWithRef,
   HTMLInputTypeAttribute,
   MouseEvent,
-  ReactNode,
   Ref,
   RefCallback,
 } from 'react';
+import type { Addon } from '../../types';
 import type { FormControlSlots } from '../FormControl';
 
 type NativeInputProps = Omit<
@@ -24,8 +24,8 @@ export type InputBaseProps = NativeInputProps & {
   rows?: number | undefined;
   minRows?: number | undefined;
   maxRows?: number | undefined;
-  startAdornment?: ReactNode;
-  endAdornment?: ReactNode;
+  startAddon?: Addon;
+  endAddon?: Addon;
   value?: string | number | undefined;
   defaultValue?: string | number | undefined;
   onChange?: ((event: ChangeEvent<InputBaseControl>) => void) | undefined;
@@ -46,16 +46,16 @@ export interface UseInputBaseParams {
   disabled: boolean | undefined;
   required: boolean | undefined;
   invalid: AriaAttributes['aria-invalid'];
-  startAdornment: ReactNode;
-  endAdornment: ReactNode;
+  startAddon: Addon;
+  endAddon: Addon;
   onChange: ((event: ChangeEvent<InputBaseControl>) => void) | undefined;
 }
 
 export interface UseInputBaseResult {
   slots: FormControlSlots;
   styleProps: InputBaseStyleProps;
-  hasStartAdornment: boolean;
-  hasEndAdornment: boolean;
+  hasStartAddon: boolean;
+  hasEndAddon: boolean;
   textareaRows: number;
   boxProps: {
     onMouseDown: (event: MouseEvent<HTMLDivElement>) => void;

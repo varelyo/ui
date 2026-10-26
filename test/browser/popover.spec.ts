@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { css, rem } from './helpers';
+import { css, rem, settled } from './helpers';
 
 test('a popover takes focus, reports Escape and returns focus to its anchor', async ({ page }) => {
   await page.goto('/?story=popover');
@@ -42,6 +42,7 @@ test('a popover sits under its anchor on an elevated surface and wraps at the re
   await anchor.click();
   const paper = page.getByTestId('popover-about');
   await expect(paper).toBeVisible();
+  await settled(paper);
   const [anchorBox, paperBox] = await Promise.all([anchor.boundingBox(), paper.boundingBox()]);
   expect(Math.round(paperBox!.y - (anchorBox!.y + anchorBox!.height))).toBe(4);
   expect(Math.round(paperBox!.x)).toBe(Math.round(anchorBox!.x));

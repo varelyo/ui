@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { css, rem } from './helpers';
+import { css, rem, settled } from './helpers';
 
 const openActions = async (page: Page) => {
   await page.goto('/?story=menu');
@@ -108,6 +108,7 @@ test('menu spacing, item height and separators come from the menu tokens', async
   expect(await css(menu, 'padding-top')).toBe(rem(0.25));
   expect(await css(menu, 'padding-left')).toBe(rem(0.25));
   const rename = item(page, 'Rename');
+  await settled(menu);
   expect(await css(rename, 'min-height')).toBe(rem(2));
   expect((await rename.boundingBox())!.height).toBe(32);
   expect(await css(rename, 'padding-left')).toBe(rem(0.5));
@@ -133,6 +134,7 @@ test('menu items render links and truncate long labels inside a narrow viewport'
   await expect(billing).toHaveAttribute('href', '#billing');
   await page.keyboard.press('ArrowDown');
   await expect(billing).toBeFocused();
+  await settled(menu);
   const box = await menu.boundingBox();
   expect(box!.x).toBeGreaterThanOrEqual(8);
   expect(box!.x + box!.width).toBeLessThanOrEqual(360 - 8);

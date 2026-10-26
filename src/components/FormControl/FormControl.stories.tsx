@@ -1,8 +1,8 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
+import { Grid } from '../Grid';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { FormHelperText } from '../FormHelperText';
 import { InputBase } from '../InputBase';
 import { InputLabel } from '../InputLabel';
@@ -27,7 +27,7 @@ export function FormControlStory() {
             <InputBase
               id="assembled-budget"
               defaultValue="-40"
-              startAdornment={<Icon name="payment-card" />}
+              startAddon={<Icon name="payment-card" />}
               aria-describedby="assembled-budget-helper"
             />
             <FormHelperText id="assembled-budget-helper">Must be positive</FormHelperText>

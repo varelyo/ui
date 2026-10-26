@@ -1,13 +1,13 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Avatar } from './Avatar';
 import type { AvatarColor, AvatarSize, AvatarVariant } from './Avatar.types';
 
 const variants: readonly AvatarVariant[] = ['circular', 'rounded', 'square'];
-const sizes: readonly AvatarSize[] = ['sm', 'md', 'lg'];
+const sizes: readonly AvatarSize[] = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
 const colors: readonly AvatarColor[] = [
   'neutral',
   'primary',

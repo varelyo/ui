@@ -12,6 +12,11 @@ export const inputBaseBoxClassName = (
     file && 'cursor-pointer',
     multiline ? 'items-start' : 'items-center',
     slots.input,
+    slots.addonStart,
+    slots.addonEnd,
+    slots.addonInsetStart,
+    slots.addonInsetEnd,
+    slots.multiline,
     className,
   );
 

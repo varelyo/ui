@@ -1,4 +1,5 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
+import type { CardAppearance } from '../Card';
 
 type CardHeaderOwnProps = {
   title?: ReactNode;
@@ -15,6 +16,7 @@ export interface UseCardHeaderParams {
 }
 
 export interface UseCardHeaderResult {
+  appearance: CardAppearance;
   hasTitle: boolean;
   hasSubheader: boolean;
   hasAvatar: boolean;

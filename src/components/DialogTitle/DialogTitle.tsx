@@ -11,5 +11,7 @@ export function DialogTitle<C extends ElementType = 'h2'>({
 }: DialogTitleProps<C>) {
   const Component: ElementType = component ?? 'h2';
   const title = useDialogTitle({ id });
-  return <Component {...rest} id={title.id} className={dialogTitleClassName(className)} />;
+  return (
+    <Component {...rest} id={title.id} className={dialogTitleClassName(title.variant, className)} />
+  );
 }

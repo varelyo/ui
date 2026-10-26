@@ -53,8 +53,6 @@ export interface IconButtonStyleProps {
 }
 
 export interface UseIconButtonParams {
-  variant: IconButtonVariant;
-  color: IconButtonColor;
   size: Responsive<IconButtonSize>;
   loading: boolean;
 }

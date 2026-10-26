@@ -1,2 +1,7 @@
 export { Popover } from './Popover';
-export type { PopoverClose, PopoverCloseReason, PopoverProps } from './Popover.types';
+export type {
+  PopoverClose,
+  PopoverCloseReason,
+  PopoverProps,
+  PopoverVariant,
+} from './Popover.types';

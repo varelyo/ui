@@ -1,20 +1,25 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
+import { ListSubheader } from '../ListSubheader';
 import { Paper } from '../Paper';
+import { SidebarItem } from '../SidebarItem';
 import { SidebarContent } from './SidebarContent';
 
 export function SidebarContentStory() {
   return (
-    <Example title="SidebarContent with its section inset and gap">
+    <Example title="SidebarContent with its section inset and the list it holds">
       <Stack direction="row">
         <Paper variant="outlined">
           <SidebarContent data-testid="sidebar-content-part">
-            <Typography variant="label-md">First line</Typography>
-            <Typography variant="body-sm" color="on-surface-variant-default">
-              Second line
-            </Typography>
+            <ListSubheader>Workspace</ListSubheader>
+            <SidebarItem icon={<Icon name="dashboard" />} selected>
+              Overview
+            </SidebarItem>
+            <SidebarItem icon={<Icon name="folder" />} end="4">
+              Projects
+            </SidebarItem>
           </SidebarContent>
         </Paper>
       </Stack>

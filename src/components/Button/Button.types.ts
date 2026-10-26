@@ -1,6 +1,14 @@
 import type { ElementType, ReactNode } from 'react';
 import type { ComponentTokens, IconSize } from '../../generated/maps';
-import type { ColorOf, PolymorphicProps, Responsive, SizeOf, VariantOf } from '../../types';
+import type {
+  Addon,
+  AddonProps,
+  ColorOf,
+  PolymorphicProps,
+  Responsive,
+  SizeOf,
+  VariantOf,
+} from '../../types';
 import type { CircularProgressSize } from '../CircularProgress';
 import type { BUTTON_COMPONENT_NAME_KEY } from './Button.constants';
 
@@ -14,8 +22,8 @@ type ButtonOwnProps = {
   variant?: ButtonVariant;
   color?: ButtonColor;
   size?: Responsive<ButtonSize>;
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
+  startAddon?: Addon;
+  endAddon?: Addon;
   fullWidth?: boolean;
   loading?: boolean;
   loadingPosition?: ButtonLoadingPosition;
@@ -41,11 +49,9 @@ export interface ButtonStyleProps {
 }
 
 export interface UseButtonParams {
-  variant: ButtonVariant;
-  color: ButtonColor;
   size: Responsive<ButtonSize>;
-  startIcon: ReactNode;
-  endIcon: ReactNode;
+  startAddon: Addon;
+  endAddon: Addon;
   loading: boolean;
   loadingPosition: ButtonLoadingPosition;
 }
@@ -62,4 +68,5 @@ export interface UseButtonResult {
   end: ButtonIconSlotState;
   iconSize: Responsive<IconSize> | undefined;
   progressSize: Responsive<CircularProgressSize>;
+  addon: AddonProps;
 }

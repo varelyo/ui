@@ -9,6 +9,15 @@ import {
   Grid,
   Icon,
   IconButton,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  LinearProgress,
+  Link,
   Paper,
   Stack,
   Table,
@@ -48,6 +57,15 @@ export function ContractsStory() {
   const box = useRef<HTMLElement>(null);
   const avatar = useRef<HTMLDivElement>(null);
   const sortLabel = useRef<HTMLButtonElement>(null);
+  const list = useRef<HTMLUListElement>(null);
+  const listSubheader = useRef<HTMLLIElement>(null);
+  const listItem = useRef<HTMLLIElement>(null);
+  const listItemButton = useRef<HTMLButtonElement>(null);
+  const listItemIcon = useRef<HTMLSpanElement>(null);
+  const listItemText = useRef<HTMLDivElement>(null);
+  const listItemAvatar = useRef<HTMLDivElement>(null);
+  const textLink = useRef<HTMLAnchorElement>(null);
+  const linearProgress = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     window.vyRefs = {
       button: button.current?.tagName,
@@ -68,6 +86,15 @@ export function ContractsStory() {
       box: box.current?.tagName,
       avatar: avatar.current?.tagName,
       sortLabel: sortLabel.current?.tagName,
+      list: list.current?.tagName,
+      listSubheader: listSubheader.current?.tagName,
+      listItem: listItem.current?.tagName,
+      listItemButton: listItemButton.current?.tagName,
+      listItemIcon: listItemIcon.current?.tagName,
+      listItemText: listItemText.current?.tagName,
+      listItemAvatar: listItemAvatar.current?.tagName,
+      textLink: textLink.current?.tagName,
+      linearProgress: linearProgress.current?.tagName,
     };
   }, []);
   return (
@@ -82,7 +109,7 @@ export function ContractsStory() {
               size="lg"
               fullWidth
               loadingPosition="end"
-              startIcon={<Icon name="add" />}
+              startAddon={<Icon name="add" />}
               id="contract-button"
               title="Create"
               aria-describedby="contract-heading"
@@ -162,6 +189,29 @@ export function ContractsStory() {
               </Avatar>
               <Icon ref={icon} name="star" size="lg" data-extra="icon" />
               <CircularProgress ref={progress} aria-label="Progress" data-extra="progress" />
+              <LinearProgress
+                ref={linearProgress}
+                variant="determinate"
+                value={140}
+                color="secondary"
+                size={{ xs: 'sm', lg: 'lg' }}
+                aria-label="Clamped progress"
+                title="Clamped"
+                data-extra="linear-progress"
+              />
+              <Link
+                ref={textLink}
+                href="#contract-terms"
+                underline="hover"
+                color="primary"
+                variant="body-sm"
+                disabled={false}
+                title="Terms"
+                aria-describedby="contract-heading"
+                data-extra="text-link"
+              >
+                Terms
+              </Link>
               <Divider
                 ref={divider}
                 orientation="vertical"
@@ -179,6 +229,7 @@ export function ContractsStory() {
               variant="outlined"
               elevation="md"
               square
+              selected
               data-extra="paper"
               aria-label="Summary"
             />
@@ -206,6 +257,75 @@ export function ContractsStory() {
                 </TableRow>
               </TableBody>
             </Table>
+            <List
+              ref={list}
+              size="sm"
+              color="primary"
+              nested={false}
+              disablePadding
+              subheader="Contract group"
+              aria-label="Contract list"
+              data-extra="list"
+            >
+              <ListSubheader
+                ref={listSubheader}
+                color="secondary"
+                inset
+                sticky
+                disableGutters
+                title="Label"
+                data-extra="list-subheader"
+              >
+                Label
+              </ListSubheader>
+              <ListItem
+                ref={listItem}
+                end="3"
+                divider
+                disablePadding
+                disableGutters
+                alignItems="flex-start"
+                title="Row"
+                data-extra="list-item"
+              >
+                <ListItemButton
+                  ref={listItemButton}
+                  color="secondary"
+                  size="md"
+                  selected
+                  divider
+                  disableGutters
+                  alignItems="center"
+                  autoFocus={false}
+                  id="contract-list-item-button"
+                  title="Open"
+                  name="open"
+                  value="row"
+                  aria-describedby="contract-heading"
+                  data-extra="list-item-button"
+                >
+                  <ListItemIcon ref={listItemIcon} size="lg" data-extra="list-item-icon">
+                    <Icon name="star" />
+                  </ListItemIcon>
+                  <ListItemText
+                    ref={listItemText}
+                    primary="Primary"
+                    secondary="Secondary"
+                    inset
+                    noWrap
+                    primaryVariant="body-md"
+                    secondaryVariant="label-sm"
+                    title="Text"
+                    data-extra="list-item-text"
+                  />
+                </ListItemButton>
+              </ListItem>
+              <ListItem marker="bullet" data-extra="list-item-marker">
+                <ListItemAvatar ref={listItemAvatar} title="Avatar" data-extra="list-item-avatar">
+                  <Avatar size="sm">AK</Avatar>
+                </ListItemAvatar>
+              </ListItem>
+            </List>
             <Container
               ref={container}
               maxWidth="sm"

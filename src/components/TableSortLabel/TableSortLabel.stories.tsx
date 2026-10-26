@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { Chip } from '../Chip';
 import { IconButton } from '../IconButton';
 import { Table, type TableSize, type TableSortDirection } from '../Table';

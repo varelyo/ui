@@ -1,5 +1,5 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
-import type { TabValue } from '../Tabs';
+import type { TabsColor, TabsVariant, TabValue } from '../Tabs';
 
 type TabPanelOwnProps = {
   value: TabValue;
@@ -23,5 +23,7 @@ export interface TabPanelAccessibilityProps {
 
 export interface UseTabPanelResult {
   selected: boolean;
+  variant: TabsVariant;
+  color: TabsColor;
   panelProps: TabPanelAccessibilityProps;
 }

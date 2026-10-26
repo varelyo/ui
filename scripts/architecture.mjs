@@ -3,7 +3,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { filesUnder, root } from './io.mjs';
 
-const componentRoots = ['src/components', 'src/foundation'];
+const componentRoots = ['src/components'];
 const sharedRoots = ['src/hooks', 'src/utils', 'src/types'];
 const checkedRoots = [...componentRoots, ...sharedRoots];
 const importPattern =

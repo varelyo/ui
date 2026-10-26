@@ -1,9 +1,10 @@
 import type { ComponentPropsWithRef, ReactNode, SyntheticEvent } from 'react';
 import type { ComponentTokens } from '../../generated/maps';
-import type { ColorOf } from '../../types';
+import type { ColorOf, VariantOf } from '../../types';
 import type { TABS_COMPONENT_NAME_KEY } from './Tabs.constants';
 
 export type TabsTokens = ComponentTokens[typeof TABS_COMPONENT_NAME_KEY];
+export type TabsVariant = VariantOf<TabsTokens>;
 export type TabsColor = ColorOf<TabsTokens>;
 export type TabValue = string | number;
 export type TabsOrientation = 'horizontal' | 'vertical';
@@ -14,6 +15,7 @@ type TabsOwnProps = {
   onChange?: (event: SyntheticEvent, value: TabValue) => void;
   orientation?: TabsOrientation;
   selectionFollowsFocus?: boolean;
+  variant?: TabsVariant;
   color?: TabsColor;
   children?: ReactNode;
 };
@@ -26,6 +28,7 @@ export interface TabsContextValue {
   value: TabValue | undefined;
   orientation: TabsOrientation;
   selectionFollowsFocus: boolean;
+  variant: TabsVariant;
   color: TabsColor;
   select(value: TabValue, event: SyntheticEvent): void;
 }
@@ -36,6 +39,7 @@ export interface UseTabsParams {
   onChange: ((event: SyntheticEvent, value: TabValue) => void) | undefined;
   orientation: TabsOrientation;
   selectionFollowsFocus: boolean;
+  variant: TabsVariant;
   color: TabsColor;
 }
 

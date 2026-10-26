@@ -1,8 +1,9 @@
 const literal = (value) => `'${value.replaceAll('\\', '\\\\').replaceAll("'", "\\'")}'`;
-const element = (item) => {
-  if (item.path) return `{ path: ${literal(item.path)} }`;
-  const [tag, values] = Object.entries(item)[0];
-  return `{ ${tag}: [${values.join(', ')}] }`;
+const element = ({ fill, ...shape }) => {
+  const paint = fill ? `, fill: ${literal(fill)}` : '';
+  if (shape.path) return `{ path: ${literal(shape.path)}${paint} }`;
+  const [tag, values] = Object.entries(shape)[0];
+  return `{ ${tag}: [${values.join(', ')}]${paint} }`;
 };
 
 export function projectIcons(icons) {
@@ -12,9 +13,9 @@ export function projectIcons(icons) {
   );
   return [
     'export type IconElement =',
-    '  | { readonly path: string }',
-    '  | { readonly circle: readonly [number, number, number] }',
-    '  | { readonly ellipse: readonly [number, number, number, number] };',
+    "  | { readonly path: string; readonly fill?: 'currentColor' }",
+    "  | { readonly circle: readonly [number, number, number]; readonly fill?: 'currentColor' }",
+    "  | { readonly ellipse: readonly [number, number, number, number]; readonly fill?: 'currentColor' };",
     '',
     'export const icons = {',
     ...entries,

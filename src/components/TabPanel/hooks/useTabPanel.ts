@@ -7,6 +7,8 @@ export function useTabPanel({ value }: UseTabPanelParams): UseTabPanelResult {
   const selected = tabs.value === value;
   return {
     selected,
+    variant: tabs.variant,
+    color: tabs.color,
     panelProps: {
       role: 'tabpanel',
       id: panelId(tabs.baseId, value),

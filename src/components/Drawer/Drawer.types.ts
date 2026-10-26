@@ -1,5 +1,11 @@
 import type { ComponentPropsWithRef, ReactNode, Ref } from 'react';
+import type { ComponentTokens } from '../../generated/maps';
+import type { VariantOf } from '../../types';
 import type { ModalClose } from '../Modal';
+import type { DRAWER_COMPONENT_NAME_KEY } from './Drawer.constants';
+
+export type DrawerTokens = ComponentTokens[typeof DRAWER_COMPONENT_NAME_KEY];
+export type DrawerAppearance = VariantOf<DrawerTokens>;
 
 export type DrawerAnchor = 'left' | 'right' | 'top' | 'bottom';
 export type DrawerVariant = 'temporary' | 'persistent' | 'permanent';
@@ -9,6 +15,7 @@ type DrawerOwnProps = {
   onClose?: ModalClose;
   anchor?: DrawerAnchor;
   variant?: DrawerVariant;
+  appearance?: DrawerAppearance;
   children?: ReactNode;
   keepMounted?: boolean;
 };
@@ -19,6 +26,7 @@ export type DrawerProps = DrawerOwnProps &
 export type DrawerPanelAttributes = Omit<ComponentPropsWithRef<'div'>, 'style' | 'children'>;
 
 export interface DrawerTemporaryProps {
+  appearance: DrawerAppearance;
   open: boolean;
   onClose: ModalClose | undefined;
   anchor: DrawerAnchor;
@@ -28,6 +36,7 @@ export interface DrawerTemporaryProps {
 }
 
 export interface DrawerDockedProps {
+  appearance: DrawerAppearance;
   open: boolean;
   anchor: DrawerAnchor;
   animated: boolean;
@@ -42,6 +51,7 @@ export interface UseDrawerResult {
 }
 
 export interface DrawerStyleProps {
+  appearance: DrawerAppearance;
   anchor: DrawerAnchor;
 }
 

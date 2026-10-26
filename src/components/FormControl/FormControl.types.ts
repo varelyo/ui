@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef } from 'react';
 import type { ComponentTokens, IconSize } from '../../generated/maps';
-import type { Responsive, SizeOf, VariantOf } from '../../types';
+import type { AddonProps, Responsive, SizeOf, VariantOf } from '../../types';
 import type { FORM_CONTROL_COMPONENT_NAME_KEY } from './FormControl.constants';
 
 export type FormControlTokens = ComponentTokens[typeof FORM_CONTROL_COMPONENT_NAME_KEY];
@@ -23,6 +23,7 @@ export interface FormControlContextValue {
   required: boolean;
   slots: FormControlSlots;
   adornmentSize: Responsive<IconSize> | undefined;
+  addon: AddonProps;
 }
 
 export interface FormControlStyleProps {
@@ -32,7 +33,6 @@ export interface FormControlStyleProps {
 }
 
 export interface UseFormControlStateParams {
-  variant: FormControlVariant;
   size: Responsive<FormControlSize>;
   disabled: boolean;
   error: boolean;

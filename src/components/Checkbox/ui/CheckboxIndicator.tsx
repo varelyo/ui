@@ -1,4 +1,4 @@
-import { Icon } from '../../../foundation/Icon';
+import { Icon } from '../../Icon';
 import { checkboxIndicatorClassName, checkboxMarkClassName } from '../Checkbox.styles';
 
 export function CheckboxIndicator({

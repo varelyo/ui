@@ -25,7 +25,7 @@ export function MenuItem(props: MenuItemLinkProps | MenuItemProps<ElementType>) 
       tabIndex={item.tabIndex}
       disabled={disabled}
       data-selected={selected ? '' : undefined}
-      className={menuItemClassName(className)}
+      className={menuItemClassName(item.variant, className)}
     >
       {icon ? <MenuItemIcon size={item.iconSize}>{icon}</MenuItemIcon> : null}
       <MenuItemLabel>{children}</MenuItemLabel>

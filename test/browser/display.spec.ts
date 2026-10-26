@@ -37,10 +37,10 @@ test('skeleton shapes take their token sizes and animations respect reduced moti
   await expect(text).toHaveAttribute('aria-hidden', 'true');
   expect((await text.boundingBox())!.height).toBe(Number.parseFloat(rem(0.75)));
   expect((await page.getByTestId('skeleton-rectangular-lg').boundingBox())!.height).toBe(
-    Number.parseFloat(rem(3)),
+    Number.parseFloat(rem(2.25)),
   );
   const circle = await page.getByTestId('skeleton-circular-sm').boundingBox();
-  expect([circle!.width, circle!.height]).toEqual([32, 32]);
+  expect([circle!.width, circle!.height]).toEqual([28, 28]);
   expect(await css(page.getByTestId('skeleton-pulse'), 'animation-name')).toBe('vy-pulse');
   expect(await css(page.getByTestId('skeleton-wave'), 'animation-name')).toBe('vy-wave');
   const wrapped = page.getByTestId('skeleton-children');
@@ -81,7 +81,7 @@ test('avatars show the image, then children, then the person icon', async ({ pag
   await expect(page.getByTestId('avatar-icon').locator('svg[data-icon="user"]')).toHaveCount(1);
   await expect(page.getByTestId('avatar-empty').locator('svg[data-icon="user"]')).toHaveCount(1);
   const md = await page.getByTestId('avatar-circular-md').boundingBox();
-  expect([md!.width, md!.height]).toEqual([44, 44]);
+  expect([md!.width, md!.height]).toEqual([32, 32]);
   expect(await css(page.getByTestId('avatar-square-md'), 'border-top-left-radius')).toBe('0px');
 });
 

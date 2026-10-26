@@ -5,12 +5,11 @@ import type {
   Breakpoint,
   ButtonSize,
   ContainerWidth,
-  GapStep,
   GridCount,
   GridOffset,
   IconSize,
   Padding,
-  PaddingStep,
+  SpaceStep,
   Responsive,
   Spacing,
   StackAlignItems,
@@ -21,7 +20,7 @@ import type {
 } from '../../src';
 
 export const matrixBreakpoints: readonly Breakpoint[] = ['xs', 'sm', 'md', 'lg', 'xl'];
-export const matrixSteps: readonly (GapStep & PaddingStep)[] = [
+export const matrixSteps: readonly SpaceStep[] = [
   'none',
   '2xs',
   'xs',
@@ -78,7 +77,7 @@ export const matrixControlSizes: readonly (ButtonSize & TextFieldSize)[] = ['sm'
 export const matrixGrowth: readonly BoxFlexGrow[] = [0, 1];
 export const matrixMinHeights: readonly BoxMinHeight[] = ['auto', 'viewport'];
 
-export const paddingForms = (step: PaddingStep): ReadonlyArray<readonly [string, Padding]> => [
+export const paddingForms = (step: SpaceStep): ReadonlyArray<readonly [string, Padding]> => [
   ['all', step],
   ['vertical', [step, 'none']],
   ['horizontal', ['none', step]],

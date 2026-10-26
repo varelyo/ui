@@ -13,7 +13,7 @@ export const formControlClassName = (
     'inline-flex min-w-0 flex-col',
     field.slots.root,
     field.variants[variant].primary,
-    responsiveClasses(size, field.sizes[variant].primary, 'md'),
+    responsiveClasses(size, field.sizes, 'md'),
     fullWidth && 'w-full',
     className,
   );

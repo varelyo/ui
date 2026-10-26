@@ -113,7 +113,7 @@ test('the arrow takes the icon size and the gap the table size gives it', async 
     const label = table.getByRole('button', { name: `Name ${size}`, exact: true });
     const icon = label.locator('[data-slot="sort-icon"]');
     expect(await css(icon, 'width')).toBe(px(`semantic.iconSize.${steps[size].icon}`));
-    expect(await css(label, 'column-gap')).toBe(px(`semantic.gap.${steps[size].gap}`));
+    expect(await css(label, 'column-gap')).toBe(px(`semantic.space.${steps[size].gap}`));
     const inactive = table.getByRole('button', { name: 'Amount', exact: true });
     await expect(inactive.locator('[data-slot="sort-icon"]')).toHaveAttribute(
       'data-icon',

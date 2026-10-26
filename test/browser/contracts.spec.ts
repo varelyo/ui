@@ -46,6 +46,20 @@ const ownProps = [
   'minheight',
   'sortdirection',
   'active',
+  'nested',
+  'disablepadding',
+  'subheader',
+  'inset',
+  'sticky',
+  'end',
+  'selected',
+  'autofocus',
+  'primary',
+  'secondary',
+  'primaryvariant',
+  'secondaryvariant',
+  'underline',
+  'marker',
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -75,6 +89,15 @@ test('refs reach the documented elements', async ({ page }) => {
       box: 'SECTION',
       avatar: 'DIV',
       sortLabel: 'BUTTON',
+      list: 'UL',
+      listSubheader: 'LI',
+      listItem: 'LI',
+      listItemButton: 'BUTTON',
+      listItemIcon: 'SPAN',
+      listItemText: 'DIV',
+      listItemAvatar: 'DIV',
+      textLink: 'A',
+      linearProgress: 'SPAN',
     });
 });
 
@@ -116,6 +139,30 @@ test('native attributes reach the rendered element and component props never lea
   await expect(sortLabel).toHaveAttribute('type', 'button');
   await expect(sortLabel).toHaveAttribute('data-active', '');
   await expect(page.locator('[data-extra="body-cell"]')).not.toHaveAttribute('aria-sort');
+  await expect(page.locator('[data-extra="list"]')).toHaveAttribute('aria-label', 'Contract list');
+  await expect(page.locator('[data-extra="list-subheader"]')).toHaveAttribute('title', 'Label');
+  await expect(page.locator('[data-extra="list-item"]')).toHaveAttribute('title', 'Row');
+  const listItemButton = page.locator('[data-extra="list-item-button"]');
+  await expect(listItemButton).toHaveAttribute('id', 'contract-list-item-button');
+  await expect(listItemButton).toHaveAttribute('type', 'button');
+  await expect(listItemButton).toHaveAttribute('title', 'Open');
+  await expect(listItemButton).toHaveAttribute('name', 'open');
+  await expect(listItemButton).toHaveAttribute('value', 'row');
+  await expect(listItemButton).toHaveAttribute('aria-describedby', 'contract-heading');
+  await expect(listItemButton).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('[data-extra="list-item-icon"]')).toHaveAttribute(
+    'aria-hidden',
+    'true',
+  );
+  await expect(page.locator('[data-extra="list-item-text"]')).toHaveAttribute('title', 'Text');
+  await expect(page.locator('[data-extra="list-item-avatar"]')).toHaveAttribute('title', 'Avatar');
+  const textLink = page.locator('[data-extra="text-link"]');
+  await expect(textLink).toHaveAttribute('href', '#contract-terms');
+  await expect(textLink).toHaveAttribute('title', 'Terms');
+  await expect(textLink).toHaveAttribute('aria-describedby', 'contract-heading');
+  await expect(textLink).not.toHaveAttribute('aria-disabled');
+  await expect(page.locator('[data-extra="linear-progress"]')).toHaveAttribute('title', 'Clamped');
+  await expect(page.locator('[data-extra="paper"]')).toHaveAttribute('data-selected', '');
   const leaked = await page.evaluate(
     (names) =>
       [...document.querySelectorAll('#contract-scope, #contract-scope *')].flatMap((element) =>
@@ -156,7 +203,7 @@ for (const story of stories)
 test('loading at the end replaces the end icon with one indicator', async ({ page }) => {
   await page.goto('/?story=button');
   const sending = page.getByRole('button', { name: 'Sending' });
-  const end = sending.locator('[data-slot="end-icon"]');
+  const end = sending.locator('[data-slot="end-addon"]');
   await expect(end.locator('[role="progressbar"]')).toHaveCount(1);
   await expect(end.locator('svg[data-icon="arrow-right"]')).toHaveCount(0);
   await expect(sending).toHaveAttribute('aria-busy', 'true');

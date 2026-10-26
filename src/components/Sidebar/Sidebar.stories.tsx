@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Icon, type IconName } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Icon, type IconName } from '../Icon';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
+import { Collapse } from '../Collapse';
+import { List } from '../List';
+import { ListItem } from '../ListItem';
+import { ListItemButton } from '../ListItemButton';
+import { ListItemIcon } from '../ListItemIcon';
+import { ListItemText } from '../ListItemText';
+import { ListSubheader } from '../ListSubheader';
 import { Paper } from '../Paper';
 import { SidebarContent } from '../SidebarContent';
 import { SidebarFooter } from '../SidebarFooter';
@@ -14,11 +21,16 @@ import { SidebarItem } from '../SidebarItem';
 import { Sidebar } from './Sidebar';
 import type { SidebarColor } from './Sidebar.types';
 
-const destinations: readonly { name: string; icon: IconName }[] = [
+const destinations: readonly { name: string; icon: IconName; count?: string }[] = [
   { name: 'Overview', icon: 'dashboard' },
   { name: 'Projects', icon: 'folder' },
-  { name: 'Members', icon: 'users' },
+  { name: 'Members', icon: 'users', count: '8' },
   { name: 'Calendar', icon: 'calendar' },
+];
+
+const teamPages: readonly { name: string; icon: IconName }[] = [
+  { name: 'Issues', icon: 'file' },
+  { name: 'Views', icon: 'eye' },
 ];
 
 const colors: readonly SidebarColor[] = ['neutral', 'primary', 'secondary'];
@@ -27,13 +39,14 @@ export function SidebarStory() {
   const [collapsed, setCollapsed] = useState(false);
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState('Overview');
+  const [team, setTeam] = useState(true);
   return (
     <Stack spacing="xl">
-      <Example title="Docked from md, a drawer below md, and an icon rail when collapsed">
+      <Example title="Docked from md, a drawer below md, an icon rail when collapsed, a count, a group label and a nested level">
         <Stack direction="row" spacing="sm">
           <Button
             variant="outlined"
-            startIcon={<Icon name="sidebar" />}
+            startAddon={<Icon name="sidebar" />}
             onClick={() => setCollapsed((value) => !value)}
             data-testid="sidebar-collapse"
           >
@@ -42,7 +55,7 @@ export function SidebarStory() {
           <Stack display={{ xs: 'flex', md: 'none' }}>
             <Button
               variant="contained"
-              startIcon={<Icon name="menu" />}
+              startAddon={<Icon name="menu" />}
               onClick={() => setOpen(true)}
               data-testid="sidebar-menu"
             >
@@ -68,10 +81,11 @@ export function SidebarStory() {
                 </Stack>
               </SidebarHeader>
               <SidebarContent>
-                {destinations.map(({ name, icon }) => (
+                {destinations.map(({ name, icon, count }) => (
                   <SidebarItem
                     key={name}
                     icon={<Icon name={icon} />}
+                    end={count}
                     selected={current === name}
                     onClick={() => setCurrent(name)}
                     data-testid={`sidebar-item-${name}`}
@@ -93,6 +107,39 @@ export function SidebarStory() {
                 >
                   Help centre
                 </SidebarItem>
+                {collapsed ? null : (
+                  <>
+                    <ListSubheader data-testid="sidebar-group-label">Your teams</ListSubheader>
+                    <ListItem end={<Icon name={team ? 'chevron-up' : 'chevron-down'} />}>
+                      <ListItemButton
+                        onClick={() => setTeam((value) => !value)}
+                        aria-expanded={team}
+                        aria-controls="sidebar-team-engineering"
+                        data-testid="sidebar-team-toggle"
+                      >
+                        <ListItemIcon>
+                          <Icon name="users" />
+                        </ListItemIcon>
+                        <ListItemText primary="Engineering" noWrap />
+                      </ListItemButton>
+                      <Collapse in={team}>
+                        <List nested id="sidebar-team-engineering" aria-label="Engineering">
+                          {teamPages.map(({ name, icon }) => (
+                            <SidebarItem
+                              key={name}
+                              icon={<Icon name={icon} />}
+                              selected={current === name}
+                              onClick={() => setCurrent(name)}
+                              data-testid={`sidebar-item-${name}`}
+                            >
+                              {name}
+                            </SidebarItem>
+                          ))}
+                        </List>
+                      </Collapse>
+                    </ListItem>
+                  </>
+                )}
               </SidebarContent>
               <SidebarFooter>
                 <SidebarItem icon={<Icon name="settings" />}>Settings</SidebarItem>
@@ -126,7 +173,7 @@ function ColorSidebar({ color }: { color: SidebarColor }) {
       <Stack display={{ xs: 'flex', md: 'none' }} alignItems="flex-start">
         <Button
           variant="outlined"
-          startIcon={<Icon name="menu" />}
+          startAddon={<Icon name="menu" />}
           onClick={() => setOpen(true)}
           data-testid={`sidebar-${color}-menu`}
         >

@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react';
+import { use, type ReactNode } from 'react';
+import { CardContext } from '../../Card';
 import type { UseCardHeaderParams, UseCardHeaderResult } from '../CardHeader.types';
 
 const present = (node: ReactNode) =>
@@ -10,7 +11,9 @@ export function useCardHeader({
   avatar,
   action,
 }: UseCardHeaderParams): UseCardHeaderResult {
+  const { appearance } = use(CardContext);
   return {
+    appearance,
     hasTitle: present(title),
     hasSubheader: present(subheader),
     hasAvatar: present(avatar),

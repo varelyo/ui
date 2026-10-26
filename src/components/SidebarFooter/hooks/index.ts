@@ -1,0 +1,1 @@
+export { useSidebarFooter } from './useSidebarFooter';

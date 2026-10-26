@@ -1,7 +1,7 @@
 import type { ElementType, ReactNode, Ref } from 'react';
 import type { IconSize } from '../../generated/maps';
 import type { PolymorphicProps } from '../../types';
-import type { MenuContextValue } from '../Menu';
+import type { MenuContextValue, MenuVariant } from '../Menu';
 
 type MenuItemOwnProps = {
   icon?: ReactNode;
@@ -26,6 +26,7 @@ export interface UseMenuItemParams {
 }
 
 export interface UseMenuItemResult {
+  variant: MenuVariant;
   ref: (node: HTMLElement | null) => void;
   tabIndex: 0 | -1;
   iconSize: IconSize;

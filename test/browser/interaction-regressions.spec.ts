@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { fileTransfer } from './helpers';
+import { fileTransfer, settled } from './helpers';
 
 test('form reset restores uncontrolled controls and preserves controlled props across renders', async ({
   page,
@@ -160,6 +160,7 @@ test('a tooltip stays open while crossing the gap and hovering its content, then
   await page.getByTestId('trigger-top').hover();
   const tooltip = page.getByRole('tooltip', { name: 'Opens top' });
   await expect(tooltip).toBeVisible();
+  await settled(tooltip);
   const box = await tooltip.boundingBox();
   if (!box) throw new Error('Missing tooltip box');
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2, { steps: 12 });

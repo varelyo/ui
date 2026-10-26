@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { css, rem } from './helpers';
+import { css, rem, settled } from './helpers';
 
 test('a portal renders at the end of the document inside the scope it opened from', async ({
   page,
@@ -42,6 +42,7 @@ test('the popper core positions content under its anchor and draws nothing itsel
   await anchor.click();
   const popper = page.getByTestId('popper');
   await expect(popper).toBeVisible();
+  await settled(popper);
   const [anchorBox, popperBox] = await Promise.all([anchor.boundingBox(), popper.boundingBox()]);
   expect(Math.round(popperBox!.y - (anchorBox!.y + anchorBox!.height))).toBe(8);
   expect(Math.round(popperBox!.x)).toBe(Math.round(anchorBox!.x));
@@ -57,6 +58,7 @@ test('the popper stays inside the viewport with the collision padding', async ({
   await page.goto('/?story=tooltip');
   const tooltip = page.getByTestId('long-tooltip');
   await expect(tooltip).toBeVisible();
+  await settled(tooltip);
   const box = await tooltip.boundingBox();
   expect(box!.x + box!.width).toBeLessThanOrEqual(360 - 8);
   expect(await css(tooltip, 'max-width')).toBe(rem(20));

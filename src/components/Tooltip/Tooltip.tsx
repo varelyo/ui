@@ -14,6 +14,7 @@ export function Tooltip({
   leaveDelay = 'none',
   disableHoverListener = false,
   disableFocusListener = false,
+  variant = 'standard',
   ...surfaceProps
 }: TooltipProps) {
   return (
@@ -29,6 +30,7 @@ export function Tooltip({
         leaveDelay={leaveDelay}
         disableHoverListener={disableHoverListener}
         disableFocusListener={disableFocusListener}
+        variant={variant}
         surfaceProps={surfaceProps}
       >
         {children}

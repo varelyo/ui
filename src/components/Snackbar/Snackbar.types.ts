@@ -7,7 +7,12 @@ import type {
   ReactNode,
   Ref,
 } from 'react';
-import type { DwellStep } from '../../generated/maps';
+import type { ComponentTokens, DwellStep } from '../../generated/maps';
+import type { VariantOf } from '../../types';
+import type { SNACKBAR_COMPONENT_NAME_KEY } from './Snackbar.constants';
+
+export type SnackbarTokens = ComponentTokens[typeof SNACKBAR_COMPONENT_NAME_KEY];
+export type SnackbarVariant = VariantOf<SnackbarTokens>;
 
 export type SnackbarCloseReason = 'timeout' | 'escapeKeyDown';
 
@@ -28,6 +33,7 @@ type SnackbarOwnProps = {
   autoHideDuration?: DwellStep | null;
   anchorOrigin?: SnackbarAnchorOrigin;
   role?: SnackbarRole;
+  variant?: SnackbarVariant;
   children?: ReactNode;
 };
 

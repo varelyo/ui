@@ -9,6 +9,6 @@ export const selectOptionClassName = (variant: SelectVariant, className?: ClassV
   cx(
     select.variants[variant].primary,
     select.slots.option,
-    'flex w-full shrink-0 items-center justify-start text-left transition-colors duration-xs ease-standard motion-reduce:transition-none',
+    'flex w-full shrink-0 items-center justify-start text-left transition-colors duration-sm ease-standard motion-reduce:transition-none',
     className,
   );

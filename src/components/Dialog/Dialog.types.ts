@@ -1,6 +1,11 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
-import type { ContainerWidth } from '../../generated/maps';
+import type { ComponentTokens, ContainerWidth } from '../../generated/maps';
+import type { VariantOf } from '../../types';
 import type { ModalClose } from '../Modal';
+import type { DIALOG_COMPONENT_NAME_KEY } from './Dialog.constants';
+
+export type DialogTokens = ComponentTokens[typeof DIALOG_COMPONENT_NAME_KEY];
+export type DialogVariant = VariantOf<DialogTokens>;
 
 export type DialogMaxWidth = ContainerWidth | false;
 
@@ -12,6 +17,7 @@ type DialogOwnProps = {
   maxWidth?: DialogMaxWidth;
   keepMounted?: boolean;
   disableEscapeKeyDown?: boolean;
+  variant?: DialogVariant;
 };
 
 export type DialogProps = DialogOwnProps &
@@ -20,6 +26,7 @@ export type DialogProps = DialogOwnProps &
 export type DialogWidth = ContainerWidth | 'none';
 
 export interface DialogContextValue {
+  variant: DialogVariant;
   titleId: string | undefined;
   registerTitle: (id: string) => () => void;
 }
@@ -30,6 +37,7 @@ export interface DialogStyleProps {
 }
 
 export interface UseDialogParams {
+  variant: DialogVariant;
   maxWidth: DialogMaxWidth;
   ariaLabel: string | undefined;
   ariaLabelledBy: string | undefined;

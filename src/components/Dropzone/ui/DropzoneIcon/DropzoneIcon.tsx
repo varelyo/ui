@@ -1,4 +1,4 @@
-import { IconSizeContext } from '../../../../foundation/Icon';
+import { IconSizeContext } from '../../../Icon';
 import { DROPZONE_SLOTS } from '../../Dropzone.constants';
 import type { DropzoneIconProps } from './DropzoneIcon.types';
 import { dropzoneIconClassName } from './DropzoneIcon.styles';

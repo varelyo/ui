@@ -1,6 +1,6 @@
 import { useMergeRefs } from '@floating-ui/react';
 import { usePresence } from '../../../hooks';
-import type { UsePopperLayerParams, UsePopperLayerResult } from '../Popper.types';
+import type { PopperSide, UsePopperLayerParams, UsePopperLayerResult } from '../Popper.types';
 
 export function usePopperLayer({
   popper,
@@ -13,6 +13,7 @@ export function usePopperLayer({
     rendered: presence.rendered,
     ref: (node) => merged?.(node),
     layerProps: {
+      'data-side': popper.placement.split('-')[0] as PopperSide,
       ...(presence.closed ? { 'data-closed': '' } : {}),
       ...(presence.hidden ? { hidden: true } : {}),
     },

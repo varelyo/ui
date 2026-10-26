@@ -4,6 +4,7 @@ import type { DrawerDockedProps } from '../Drawer.types';
 import { useDrawerDocked } from '../hooks';
 
 export function DrawerDocked({
+  appearance,
   open,
   anchor,
   animated,
@@ -19,7 +20,7 @@ export function DrawerDocked({
       {...attributes}
       {...drawer.layerProps}
       ref={drawer.ref}
-      className={drawerDockedPaperClassName({ anchor, animated }, className)}
+      className={drawerDockedPaperClassName({ appearance, anchor, animated }, className)}
     >
       {children}
     </Paper>

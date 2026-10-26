@@ -1,4 +1,4 @@
-import { ThemeScope } from '../../foundation/ThemeScope';
+import { ThemeScope } from '../ThemeScope';
 import { Portal } from '../Portal';
 import { useSnackbar } from './hooks';
 import { SNACKBAR_DEFAULT_ANCHOR } from './Snackbar.constants';
@@ -14,6 +14,7 @@ export function Snackbar({
   autoHideDuration = null,
   anchorOrigin = SNACKBAR_DEFAULT_ANCHOR,
   role = 'status',
+  variant = 'standard',
   className,
   children,
   ref,
@@ -36,14 +37,14 @@ export function Snackbar({
   const custom = children !== undefined;
   return (
     <Portal>
-      <div role={role} className={snackbarViewportClassName(anchorOrigin)}>
+      <div role={role} className={snackbarViewportClassName(variant, anchorOrigin)}>
         {snackbar.rendered ? (
           <ThemeScope
             {...rest}
             {...snackbar.surfaceProps}
             ref={snackbar.ref}
             {...(custom ? {} : { mode: 'inverse' as const })}
-            className={snackbarSurfaceClassName(!custom, className)}
+            className={snackbarSurfaceClassName(variant, !custom, className)}
           >
             {custom ? (
               children

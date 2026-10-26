@@ -1,1 +1,0 @@
-export { SidebarItemIcon } from './SidebarItemIcon';

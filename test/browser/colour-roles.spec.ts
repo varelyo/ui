@@ -310,7 +310,7 @@ test('a chip is neutral by default: a filled chip on the highest container with 
   await painted(clickable, 'color');
   await painted(filled, 'color');
   await painted(outlined, 'color');
-  await painted(page.getByTestId('chip-avatar'), 'color');
+  await painted(page.getByTestId('chip-avatar-md'), 'color');
   await unpainted(page.getByTestId('chip-outlined-primary'), 'color');
   await unpainted(clickable, 'background-color');
   await paint(page, 'surfaceContainerHighest.default');
@@ -324,7 +324,7 @@ test('a chip is neutral by default: a filled chip on the highest container with 
   await page.mouse.move(0, 0);
   await paint(page, 'outlineVariant.default');
   await painted(outlined, 'border-top-color');
-  await painted(page.getByTestId('chip-avatar'), 'border-top-color');
+  await painted(page.getByTestId('chip-avatar-md'), 'border-top-color');
 });
 
 test('a sort label paints its arrow only while active, and hints at it in the lower-emphasis role under the pointer', async ({
@@ -501,4 +501,258 @@ test('a coloured dropzone takes the error roles for a refused drag', async ({ pa
   await painted(zone.locator('[data-slot="helper-text"]'), 'color');
   await paint(page, 'secondaryContainer.default');
   await unpainted(zone, 'background-color');
+});
+
+test('a neutral list item rests in onSurfaceVariant, hovers onto surface.hover and marks the current item with the highest container', async ({
+  page,
+}) => {
+  await page.goto('/?story=list');
+  const rest = page.getByTestId('list-neutral-overview');
+  const current = page.getByTestId('list-neutral-members');
+  const icon = (row: Locator) => row.locator('span[aria-hidden="true"]').first();
+  await paint(page, 'onSurfaceVariant.default');
+  await painted(rest, 'color');
+  await painted(icon(rest), 'color');
+  await painted(current.getByText('Eight people'), 'color');
+  await painted(current.locator('xpath=..').locator(':scope > [data-list-item-end]'), 'color');
+  await paint(page, 'surfaceContainerHighest.default');
+  await paint(page, 'onSurface.default');
+  await painted(current, 'background-color');
+  await painted(current, 'color');
+  await painted(icon(current), 'color');
+  await unpainted(rest, 'background-color');
+  await paint(page, 'surface.hover');
+  await rest.hover();
+  await painted(rest, 'background-color');
+  await painted(icon(rest), 'color');
+  await paint(page, 'onSurface.disabled');
+  await painted(page.getByTestId('list-neutral-archive'), 'color');
+});
+
+test('a primary or secondary list marks its current item, second line, icon and end with its container roles', async ({
+  page,
+}) => {
+  await page.goto('/?story=list');
+  const current = (color: string) => page.getByTestId(`list-${color}-members`);
+  const end = (color: string) =>
+    current(color).locator('xpath=..').locator(':scope > [data-list-item-end]');
+  for (const [color, container] of [
+    ['primary', 'primaryContainer'],
+    ['secondary', 'secondaryContainer'],
+  ] as const) {
+    const on = `on${container[0]!.toUpperCase()}${container.slice(1)}`;
+    await unpainted(current(color), 'background-color');
+    await paint(page, `${container}.default`);
+    await paint(page, `${on}.default`);
+    await painted(current(color), 'background-color');
+    await painted(current(color), 'color');
+    await painted(current(color).locator('span[aria-hidden="true"]').first(), 'color');
+    await painted(current(color).getByText('Eight people'), 'color');
+    await painted(end(color), 'color');
+  }
+  await unpainted(current('neutral'), 'background-color');
+});
+
+test('group labels take their colour roles, a sticky label sits on the surface and dividers and static rows take theirs', async ({
+  page,
+}) => {
+  await page.goto('/?story=list-subheader');
+  const label = page.getByRole('list', { name: 'Group labels' }).locator(':scope > li');
+  await paint(page, 'onSurfaceVariant.default');
+  await painted(label.nth(0), 'color');
+  await paint(page, 'primary.default');
+  await painted(label.nth(1), 'color');
+  await paint(page, 'secondary.default');
+  await painted(label.nth(2), 'color');
+  await paint(page, 'surface.default');
+  await painted(label.nth(4), 'background-color');
+  await unpainted(label.nth(0), 'background-color');
+  await page.goto('/?story=list-item');
+  await paint(page, 'outlineVariant.default');
+  await painted(page.getByTestId('list-item-end'), 'border-bottom-color');
+  await paint(page, 'onSurface.default');
+  await painted(page.getByTestId('list-item-static'), 'color');
+  await page.goto('/?story=list-compositions');
+  await paint(page, 'outlineVariant.default');
+  await expect
+    .poll(() =>
+      page
+        .getByTestId('list-team-engineering')
+        .evaluate((element) => getComputedStyle(element, '::before').borderInlineStartColor),
+    )
+    .toBe(probe);
+});
+
+test('a list row has its own solid colour under hover, while pressed, in keyboard focus, as the current item under hover and press, and when disabled', async ({
+  page,
+}) => {
+  const row = (color: string, state: string) => page.getByTestId(`list-state-md-${color}-${state}`);
+  const open = async () => {
+    await page.goto('/?story=list-states');
+    await page.mouse.move(0, 0);
+  };
+  await open();
+  await paint(page, 'surface.hover');
+  await unpainted(row('neutral', 'rest'), 'background-color');
+  await row('neutral', 'rest').hover();
+  await painted(row('neutral', 'rest'), 'background-color');
+  await open();
+  await paint(page, 'surface.active');
+  await row('neutral', 'rest').hover();
+  await unpainted(row('neutral', 'rest'), 'background-color');
+  await page.mouse.down();
+  await painted(row('neutral', 'rest'), 'background-color');
+  await page.mouse.up();
+  await open();
+  await paint(page, 'surface.hover');
+  await row('neutral', 'hover').focus();
+  await page.keyboard.press('Tab');
+  await expect(row('neutral', 'pressed')).toBeFocused();
+  await painted(row('neutral', 'pressed'), 'background-color');
+  expect(await css(row('neutral', 'pressed'), 'outline-style')).toBe('solid');
+  await open();
+  await paint(page, 'surfaceContainerHighest.hover');
+  await unpainted(row('neutral', 'selected'), 'background-color');
+  await row('neutral', 'selected').hover();
+  await painted(row('neutral', 'selected'), 'background-color');
+  await paint(page, 'onSurface.default');
+  await painted(
+    row('neutral', 'selected').locator('xpath=..').locator(':scope > [data-list-item-end]'),
+    'color',
+  );
+  await open();
+  await paint(page, 'surfaceContainerHighest.active');
+  await row('neutral', 'selected').hover();
+  await page.mouse.down();
+  await painted(row('neutral', 'selected'), 'background-color');
+  await page.mouse.up();
+  for (const [color, container] of [
+    ['primary', 'primaryContainer'],
+    ['secondary', 'secondaryContainer'],
+  ] as const) {
+    await open();
+    await paint(page, `${container}.hover`);
+    await row(color, 'selected').hover();
+    await painted(row(color, 'selected'), 'background-color');
+    await open();
+    await paint(page, `${container}.active`);
+    await row(color, 'selected').hover();
+    await page.mouse.down();
+    await painted(row(color, 'selected'), 'background-color');
+    await page.mouse.up();
+  }
+  await open();
+  await paint(page, 'surface.hover');
+  await paint(page, 'onSurface.disabled');
+  const disabled = row('neutral', 'disabled');
+  await disabled.hover({ force: true });
+  await unpainted(disabled, 'background-color');
+  await painted(disabled, 'color');
+  await expect(disabled).toBeDisabled();
+  expect(await css(disabled, 'cursor')).toBe('default');
+  expect(await css(row('neutral', 'rest'), 'cursor')).toBe('pointer');
+});
+
+test('a link paints its text and underline with its colour roles in every state', async ({
+  page,
+}) => {
+  await page.goto('/?story=link');
+  const neutral = page.getByTestId('link-always-neutral');
+  const primary = page.getByTestId('link-always-primary');
+  const disabled = page.getByTestId('link-always-disabled');
+  await paint(page, 'onSurface.default');
+  await painted(neutral, 'color');
+  await painted(neutral, 'text-decoration-color');
+  await paint(page, 'primary.default');
+  await painted(primary, 'color');
+  await painted(primary, 'text-decoration-color');
+  await paint(page, 'primary.hover');
+  await primary.hover();
+  await painted(primary, 'color');
+  await painted(primary, 'text-decoration-color');
+  await paint(page, 'onSurfaceVariant.default');
+  await neutral.hover();
+  await painted(neutral, 'color');
+  await painted(neutral, 'text-decoration-color');
+  await page.mouse.move(0, 0);
+  await paint(page, 'onSurface.disabled');
+  await painted(disabled, 'color');
+  await painted(disabled, 'text-decoration-color');
+  await painted(page.getByTestId('link-hover-disabled'), 'color');
+  await unpainted(page.getByTestId('link-hover-disabled'), 'text-decoration-color');
+});
+
+test('a linear progress draws its track in the highest container and its bar in its colour', async ({
+  page,
+}) => {
+  await page.goto('/?story=linear-progress');
+  const primary = page.getByTestId('linear-progress-value-50');
+  const secondary = page.getByTestId('linear-progress-secondary');
+  const indicator = (track: Locator) => track.locator('[data-slot="indicator"]');
+  await paint(page, 'surfaceContainerHighest.default');
+  await painted(primary, 'background-color');
+  await painted(secondary, 'background-color');
+  await paint(page, 'primary.default');
+  await painted(indicator(primary), 'background-color');
+  await unpainted(indicator(secondary), 'background-color');
+  await paint(page, 'secondary.default');
+  await painted(indicator(secondary), 'background-color');
+});
+
+test('a selected paper or card takes the primary edge and the quiet primary tint', async ({
+  page,
+}) => {
+  await page.goto('/?story=paper-selected');
+  await paint(page, 'primary.default');
+  await paint(page, 'primaryContainer.low');
+  for (const variant of ['outlined', 'elevation']) {
+    await painted(page.getByTestId(`paper-${variant}-selected`), 'border-top-color');
+    await painted(page.getByTestId(`paper-${variant}-selected`), 'background-color');
+    await unpainted(page.getByTestId(`paper-${variant}`), 'border-top-color');
+    await unpainted(page.getByTestId(`paper-${variant}`), 'background-color');
+  }
+  await page.goto('/?story=card-selected');
+  await paint(page, 'primary.default');
+  await paint(page, 'primaryContainer.low');
+  await painted(page.getByTestId('card-plan-team'), 'border-left-color');
+  await painted(page.getByTestId('card-plan-team'), 'background-color');
+  await unpainted(page.getByTestId('card-plan-starter'), 'background-color');
+});
+
+test('segmented tabs fill the track with surfaceContainerHigh and raise the selected option on the surface', async ({
+  page,
+}) => {
+  await page.goto('/?story=tabs-segmented');
+  const tabs = page.getByTestId('tabs-segmented');
+  const option = (name: string) => tabs.getByRole('tab', { name, exact: true });
+  await paint(page, 'surfaceContainerHigh.default');
+  await painted(tabs.getByRole('tablist'), 'background-color');
+  await paint(page, 'surface.default');
+  await painted(option('Board'), 'background-color');
+  await unpainted(option('List'), 'background-color');
+  await paint(page, 'onSurfaceVariant.default');
+  await painted(option('List'), 'color');
+  await paint(page, 'surface.hover');
+  await option('Calendar').hover();
+  await painted(option('Calendar'), 'background-color');
+  await page.mouse.move(0, 0);
+  await paint(page, 'primary.default');
+  await painted(
+    page.getByTestId('tabs-segmented-primary').getByRole('tab', { name: 'Day', exact: true }),
+    'color',
+  );
+});
+
+test('list markers take the lower-emphasis text role, or the list colour', async ({ page }) => {
+  await page.goto('/?story=list-markers');
+  const marker = (testId: string) =>
+    page.getByTestId(testId).locator('[data-list-item-marker]').first();
+  await paint(page, 'onSurfaceVariant.default');
+  await painted(marker('list-bullets-neutral'), 'color');
+  await painted(marker('list-numbers-neutral'), 'color');
+  await unpainted(marker('list-bullets-primary'), 'color');
+  await paint(page, 'primary.default');
+  await painted(marker('list-bullets-primary'), 'color');
+  await paint(page, 'secondary.default');
+  await painted(marker('list-numbers-secondary'), 'color');
 });
