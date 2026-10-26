@@ -11,19 +11,20 @@ export type Mode = 'light' | 'dark';
 export type ScopeMode = Mode | 'inverse';
 export const defaultBrand: Brand = 'neutral';
 export const defaultMode: Mode = 'light';
-export type PaddingStep = 'none' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
-export type GapStep = 'none' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+export type SpaceStep = 'none' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
 export type MotionStep = 'none' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
 export type DwellStep = 'short' | 'medium' | 'long';
 export type TypographyVariant = 'display-sm' | 'display-md' | 'display-lg' | 'headline-sm' | 'headline-md' | 'headline-lg' | 'title-sm' | 'title-md' | 'title-lg' | 'body-sm' | 'body-md' | 'body-lg' | 'label-sm' | 'label-md' | 'label-lg';
 export type TextColor = 'primary-default' | 'on-primary-default' | 'on-primary-container-default' | 'secondary-default' | 'on-secondary-default' | 'on-secondary-container-default' | 'error-default' | 'on-error-default' | 'on-error-container-default' | 'warning-default' | 'on-warning-default' | 'on-warning-container-default' | 'info-default' | 'on-info-default' | 'on-info-container-default' | 'success-default' | 'on-success-default' | 'on-success-container-default' | 'tertiary-default' | 'on-tertiary-default' | 'on-tertiary-container-default' | 'on-surface-default' | 'on-surface-disabled' | 'on-surface-variant-default';
 export type IconSize = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+export type ControlInnerSize = '2xs' | 'xs' | 'sm' | 'md';
 export type ContainerWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type ByBreakpoint = Readonly<Record<Breakpoint, string>>;
 export type ComponentMap = {
   readonly slots: Readonly<Record<string, string>>;
   readonly variants: Readonly<Record<string, Readonly<Record<string, string | null>>>>;
-  readonly sizes: Readonly<Record<string, Readonly<Record<string, Readonly<Record<string, ByBreakpoint | null>>>>>>;
+  readonly sizes: Readonly<Record<string, ByBreakpoint | null>>;
+  readonly styleSizes?: Readonly<Record<string, Readonly<Record<string, ByBreakpoint | null>>>>;
   readonly childProps: Readonly<Record<string, unknown>>;
 };
 export const layout = {
@@ -1399,9 +1400,47 @@ export const layout = {
     "on-surface-variant-default": "text-on-surface-variant-default"
   }
 } as const;
+export type CssVariables = {
+  readonly space: Readonly<Record<SpaceStep, string>>;
+  readonly motionDuration: Readonly<Record<MotionStep, string>>;
+  readonly dwell: Readonly<Record<DwellStep, string>>;
+};
+export const cssVariables = {
+  "space": {
+    "none": "--vy-space-none",
+    "2xs": "--vy-space-2xs",
+    "xs": "--vy-space-xs",
+    "sm": "--vy-space-sm",
+    "md": "--vy-space-md",
+    "lg": "--vy-space-lg",
+    "xl": "--vy-space-xl",
+    "2xl": "--vy-space-2xl",
+    "3xl": "--vy-space-3xl"
+  },
+  "motionDuration": {
+    "none": "--vy-motion-duration-none",
+    "2xs": "--vy-motion-duration-2xs",
+    "xs": "--vy-motion-duration-xs",
+    "sm": "--vy-motion-duration-sm",
+    "md": "--vy-motion-duration-md",
+    "lg": "--vy-motion-duration-lg",
+    "xl": "--vy-motion-duration-xl",
+    "2xl": "--vy-motion-duration-2xl",
+    "3xl": "--vy-motion-duration-3xl"
+  },
+  "dwell": {
+    "short": "--vy-dwell-short",
+    "medium": "--vy-dwell-medium",
+    "long": "--vy-dwell-long"
+  }
+} as const satisfies CssVariables;
 export const button = {
   "slots": {
-    "root": "vy-button-root"
+    "root": "vy-button-root",
+    "addonStart": "vy-button-addon-start",
+    "addonEnd": "vy-button-addon-end",
+    "addonInsetStart": "vy-button-addon-inset-start",
+    "addonInsetEnd": "vy-button-addon-inset-end"
   },
   "variants": {
     "contained": {
@@ -1430,900 +1469,78 @@ export const button = {
     }
   },
   "sizes": {
-    "contained": {
-      "primary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-button-xs",
+      "sm": "sm:vy-button-xs",
+      "md": "md:vy-button-xs",
+      "lg": "lg:vy-button-xs",
+      "xl": "xl:vy-button-xs"
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-button-sm",
+      "sm": "sm:vy-button-sm",
+      "md": "md:vy-button-sm",
+      "lg": "lg:vy-button-sm",
+      "xl": "xl:vy-button-sm"
     },
-    "text": {
-      "primary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-button-sm",
-          "sm": "sm:vy-button-sm",
-          "md": "md:vy-button-sm",
-          "lg": "lg:vy-button-sm",
-          "xl": "xl:vy-button-sm"
-        },
-        "md": {
-          "xs": "vy-button-md",
-          "sm": "sm:vy-button-md",
-          "md": "md:vy-button-md",
-          "lg": "lg:vy-button-md",
-          "xl": "xl:vy-button-md"
-        },
-        "lg": {
-          "xs": "vy-button-lg",
-          "sm": "sm:vy-button-lg",
-          "md": "md:vy-button-lg",
-          "lg": "lg:vy-button-lg",
-          "xl": "xl:vy-button-lg"
-        }
-      }
+    "md": {
+      "xs": "vy-button-md",
+      "sm": "sm:vy-button-md",
+      "md": "md:vy-button-md",
+      "lg": "lg:vy-button-md",
+      "xl": "xl:vy-button-md"
+    },
+    "lg": {
+      "xs": "vy-button-lg",
+      "sm": "sm:vy-button-lg",
+      "md": "md:vy-button-lg",
+      "lg": "lg:vy-button-lg",
+      "xl": "xl:vy-button-lg"
     }
   },
   "childProps": {
-    "contained": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "icon": {
+        "size": "xs"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "2xs"
       }
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "icon": {
+        "size": "sm"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "xs"
       }
     },
-    "text": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "md": {
+      "icon": {
+        "size": "sm"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "sm"
       },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "md"
       }
     }
   }
@@ -2336,7 +1553,12 @@ export const textField = {
     "helperText": "vy-text-field-helper-text",
     "adornment": "vy-text-field-adornment",
     "fileSelectorButton": "vy-text-field-file-selector-button",
-    "root": "vy-text-field-root"
+    "root": "vy-text-field-root",
+    "addonStart": "vy-text-field-addon-start",
+    "addonEnd": "vy-text-field-addon-end",
+    "multiline": "vy-text-field-multiline",
+    "addonInsetStart": "vy-text-field-addon-inset-start",
+    "addonInsetEnd": "vy-text-field-addon-inset-end"
   },
   "variants": {
     "outlined": {
@@ -2347,94 +1569,66 @@ export const textField = {
     }
   },
   "sizes": {
-    "outlined": {
-      "primary": {
-        "sm": {
-          "xs": "vy-text-field-sm",
-          "sm": "sm:vy-text-field-sm",
-          "md": "md:vy-text-field-sm",
-          "lg": "lg:vy-text-field-sm",
-          "xl": "xl:vy-text-field-sm"
-        },
-        "md": {
-          "xs": "vy-text-field-md",
-          "sm": "sm:vy-text-field-md",
-          "md": "md:vy-text-field-md",
-          "lg": "lg:vy-text-field-md",
-          "xl": "xl:vy-text-field-md"
-        },
-        "lg": {
-          "xs": "vy-text-field-lg",
-          "sm": "sm:vy-text-field-lg",
-          "md": "md:vy-text-field-lg",
-          "lg": "lg:vy-text-field-lg",
-          "xl": "xl:vy-text-field-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-text-field-xs",
+      "sm": "sm:vy-text-field-xs",
+      "md": "md:vy-text-field-xs",
+      "lg": "lg:vy-text-field-xs",
+      "xl": "xl:vy-text-field-xs"
     },
-    "filled": {
-      "primary": {
-        "sm": {
-          "xs": "vy-text-field-sm",
-          "sm": "sm:vy-text-field-sm",
-          "md": "md:vy-text-field-sm",
-          "lg": "lg:vy-text-field-sm",
-          "xl": "xl:vy-text-field-sm"
-        },
-        "md": {
-          "xs": "vy-text-field-md",
-          "sm": "sm:vy-text-field-md",
-          "md": "md:vy-text-field-md",
-          "lg": "lg:vy-text-field-md",
-          "xl": "xl:vy-text-field-md"
-        },
-        "lg": {
-          "xs": "vy-text-field-lg",
-          "sm": "sm:vy-text-field-lg",
-          "md": "md:vy-text-field-lg",
-          "lg": "lg:vy-text-field-lg",
-          "xl": "xl:vy-text-field-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-text-field-sm",
+      "sm": "sm:vy-text-field-sm",
+      "md": "md:vy-text-field-sm",
+      "lg": "lg:vy-text-field-sm",
+      "xl": "xl:vy-text-field-sm"
+    },
+    "md": {
+      "xs": "vy-text-field-md",
+      "sm": "sm:vy-text-field-md",
+      "md": "md:vy-text-field-md",
+      "lg": "lg:vy-text-field-md",
+      "xl": "xl:vy-text-field-md"
+    },
+    "lg": {
+      "xs": "vy-text-field-lg",
+      "sm": "sm:vy-text-field-lg",
+      "md": "md:vy-text-field-lg",
+      "lg": "lg:vy-text-field-lg",
+      "xl": "xl:vy-text-field-lg"
     }
   },
   "childProps": {
-    "outlined": {
-      "primary": {
-        "sm": {
-          "adornment": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "adornment": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "adornment": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "adornment": {
+        "size": "xs"
+      },
+      "addon": {
+        "size": "2xs"
       }
     },
-    "filled": {
-      "primary": {
-        "sm": {
-          "adornment": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "adornment": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "adornment": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "adornment": {
+        "size": "sm"
+      },
+      "addon": {
+        "size": "xs"
+      }
+    },
+    "md": {
+      "adornment": {
+        "size": "sm"
+      },
+      "addon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "adornment": {
+        "size": "sm"
+      },
+      "addon": {
+        "size": "md"
       }
     }
   }
@@ -2463,369 +1657,88 @@ export const circularProgress = {
     }
   },
   "sizes": {
+    "sm": {
+      "xs": "vy-circular-progress-sm",
+      "sm": "sm:vy-circular-progress-sm",
+      "md": "md:vy-circular-progress-sm",
+      "lg": "lg:vy-circular-progress-sm",
+      "xl": "xl:vy-circular-progress-sm"
+    },
+    "md": {
+      "xs": "vy-circular-progress-md",
+      "sm": "sm:vy-circular-progress-md",
+      "md": "md:vy-circular-progress-md",
+      "lg": "lg:vy-circular-progress-md",
+      "xl": "xl:vy-circular-progress-md"
+    },
+    "lg": {
+      "xs": "vy-circular-progress-lg",
+      "sm": "sm:vy-circular-progress-lg",
+      "md": "md:vy-circular-progress-lg",
+      "lg": "lg:vy-circular-progress-lg",
+      "xl": "xl:vy-circular-progress-lg"
+    },
+    "xl": {
+      "xs": "vy-circular-progress-xl",
+      "sm": "sm:vy-circular-progress-xl",
+      "md": "md:vy-circular-progress-xl",
+      "lg": "lg:vy-circular-progress-xl",
+      "xl": "xl:vy-circular-progress-xl"
+    }
+  },
+  "childProps": {}
+} as const satisfies ComponentMap;
+export const linearProgress = {
+  "slots": {
+    "root": "vy-linear-progress-root",
+    "indicator": "vy-linear-progress-indicator"
+  },
+  "variants": {
     "indeterminate": {
-      "primary": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      }
+      "primary": "vy-linear-progress-indeterminate-primary",
+      "secondary": "vy-linear-progress-indeterminate-secondary",
+      "error": "vy-linear-progress-indeterminate-error",
+      "warning": "vy-linear-progress-indeterminate-warning",
+      "info": "vy-linear-progress-indeterminate-info",
+      "success": "vy-linear-progress-indeterminate-success"
     },
     "determinate": {
-      "primary": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-circular-progress-sm",
-          "sm": "sm:vy-circular-progress-sm",
-          "md": "md:vy-circular-progress-sm",
-          "lg": "lg:vy-circular-progress-sm",
-          "xl": "xl:vy-circular-progress-sm"
-        },
-        "md": {
-          "xs": "vy-circular-progress-md",
-          "sm": "sm:vy-circular-progress-md",
-          "md": "md:vy-circular-progress-md",
-          "lg": "lg:vy-circular-progress-md",
-          "xl": "xl:vy-circular-progress-md"
-        },
-        "lg": {
-          "xs": "vy-circular-progress-lg",
-          "sm": "sm:vy-circular-progress-lg",
-          "md": "md:vy-circular-progress-lg",
-          "lg": "lg:vy-circular-progress-lg",
-          "xl": "xl:vy-circular-progress-lg"
-        },
-        "xl": {
-          "xs": "vy-circular-progress-xl",
-          "sm": "sm:vy-circular-progress-xl",
-          "md": "md:vy-circular-progress-xl",
-          "lg": "lg:vy-circular-progress-xl",
-          "xl": "xl:vy-circular-progress-xl"
-        }
-      }
+      "primary": "vy-linear-progress-determinate-primary",
+      "secondary": "vy-linear-progress-determinate-secondary",
+      "error": "vy-linear-progress-determinate-error",
+      "warning": "vy-linear-progress-determinate-warning",
+      "info": "vy-linear-progress-determinate-info",
+      "success": "vy-linear-progress-determinate-success"
+    }
+  },
+  "sizes": {
+    "sm": {
+      "xs": "vy-linear-progress-sm",
+      "sm": "sm:vy-linear-progress-sm",
+      "md": "md:vy-linear-progress-sm",
+      "lg": "lg:vy-linear-progress-sm",
+      "xl": "xl:vy-linear-progress-sm"
+    },
+    "md": {
+      "xs": "vy-linear-progress-md",
+      "sm": "sm:vy-linear-progress-md",
+      "md": "md:vy-linear-progress-md",
+      "lg": "lg:vy-linear-progress-md",
+      "xl": "xl:vy-linear-progress-md"
+    },
+    "lg": {
+      "xs": "vy-linear-progress-lg",
+      "sm": "sm:vy-linear-progress-lg",
+      "md": "md:vy-linear-progress-lg",
+      "lg": "lg:vy-linear-progress-lg",
+      "xl": "xl:vy-linear-progress-lg"
+    },
+    "xl": {
+      "xs": "vy-linear-progress-xl",
+      "sm": "sm:vy-linear-progress-xl",
+      "md": "md:vy-linear-progress-xl",
+      "lg": "lg:vy-linear-progress-xl",
+      "xl": "xl:vy-linear-progress-xl"
     }
   },
   "childProps": {}
@@ -2903,7 +1816,8 @@ export const drawer = {
 } as const satisfies ComponentMap;
 export const paper = {
   "slots": {
-    "root": "vy-paper-root"
+    "root": "vy-paper-root",
+    "selection": "vy-paper-selection"
   },
   "variants": {
     "elevation": {
@@ -2914,138 +1828,145 @@ export const paper = {
     }
   },
   "sizes": {
+    "none": null,
+    "2xs": null,
+    "xs": null,
+    "sm": null,
+    "md": null,
+    "lg": null,
+    "xl": null,
+    "2xl": null,
+    "3xl": null
+  },
+  "styleSizes": {
     "elevation": {
-      "primary": {
-        "none": {
-          "xs": "vy-paper-elevation-primary-none",
-          "sm": "sm:vy-paper-elevation-primary-none",
-          "md": "md:vy-paper-elevation-primary-none",
-          "lg": "lg:vy-paper-elevation-primary-none",
-          "xl": "xl:vy-paper-elevation-primary-none"
-        },
-        "2xs": {
-          "xs": "vy-paper-elevation-primary-2xs",
-          "sm": "sm:vy-paper-elevation-primary-2xs",
-          "md": "md:vy-paper-elevation-primary-2xs",
-          "lg": "lg:vy-paper-elevation-primary-2xs",
-          "xl": "xl:vy-paper-elevation-primary-2xs"
-        },
-        "xs": {
-          "xs": "vy-paper-elevation-primary-xs",
-          "sm": "sm:vy-paper-elevation-primary-xs",
-          "md": "md:vy-paper-elevation-primary-xs",
-          "lg": "lg:vy-paper-elevation-primary-xs",
-          "xl": "xl:vy-paper-elevation-primary-xs"
-        },
-        "sm": {
-          "xs": "vy-paper-elevation-primary-sm",
-          "sm": "sm:vy-paper-elevation-primary-sm",
-          "md": "md:vy-paper-elevation-primary-sm",
-          "lg": "lg:vy-paper-elevation-primary-sm",
-          "xl": "xl:vy-paper-elevation-primary-sm"
-        },
-        "md": {
-          "xs": "vy-paper-elevation-primary-md",
-          "sm": "sm:vy-paper-elevation-primary-md",
-          "md": "md:vy-paper-elevation-primary-md",
-          "lg": "lg:vy-paper-elevation-primary-md",
-          "xl": "xl:vy-paper-elevation-primary-md"
-        },
-        "lg": {
-          "xs": "vy-paper-elevation-primary-lg",
-          "sm": "sm:vy-paper-elevation-primary-lg",
-          "md": "md:vy-paper-elevation-primary-lg",
-          "lg": "lg:vy-paper-elevation-primary-lg",
-          "xl": "xl:vy-paper-elevation-primary-lg"
-        },
-        "xl": {
-          "xs": "vy-paper-elevation-primary-xl",
-          "sm": "sm:vy-paper-elevation-primary-xl",
-          "md": "md:vy-paper-elevation-primary-xl",
-          "lg": "lg:vy-paper-elevation-primary-xl",
-          "xl": "xl:vy-paper-elevation-primary-xl"
-        },
-        "2xl": {
-          "xs": "vy-paper-elevation-primary-2xl",
-          "sm": "sm:vy-paper-elevation-primary-2xl",
-          "md": "md:vy-paper-elevation-primary-2xl",
-          "lg": "lg:vy-paper-elevation-primary-2xl",
-          "xl": "xl:vy-paper-elevation-primary-2xl"
-        },
-        "3xl": {
-          "xs": "vy-paper-elevation-primary-3xl",
-          "sm": "sm:vy-paper-elevation-primary-3xl",
-          "md": "md:vy-paper-elevation-primary-3xl",
-          "lg": "lg:vy-paper-elevation-primary-3xl",
-          "xl": "xl:vy-paper-elevation-primary-3xl"
-        }
+      "none": {
+        "xs": "vy-paper-elevation-none",
+        "sm": "sm:vy-paper-elevation-none",
+        "md": "md:vy-paper-elevation-none",
+        "lg": "lg:vy-paper-elevation-none",
+        "xl": "xl:vy-paper-elevation-none"
+      },
+      "2xs": {
+        "xs": "vy-paper-elevation-2xs",
+        "sm": "sm:vy-paper-elevation-2xs",
+        "md": "md:vy-paper-elevation-2xs",
+        "lg": "lg:vy-paper-elevation-2xs",
+        "xl": "xl:vy-paper-elevation-2xs"
+      },
+      "xs": {
+        "xs": "vy-paper-elevation-xs",
+        "sm": "sm:vy-paper-elevation-xs",
+        "md": "md:vy-paper-elevation-xs",
+        "lg": "lg:vy-paper-elevation-xs",
+        "xl": "xl:vy-paper-elevation-xs"
+      },
+      "sm": {
+        "xs": "vy-paper-elevation-sm",
+        "sm": "sm:vy-paper-elevation-sm",
+        "md": "md:vy-paper-elevation-sm",
+        "lg": "lg:vy-paper-elevation-sm",
+        "xl": "xl:vy-paper-elevation-sm"
+      },
+      "md": {
+        "xs": "vy-paper-elevation-md",
+        "sm": "sm:vy-paper-elevation-md",
+        "md": "md:vy-paper-elevation-md",
+        "lg": "lg:vy-paper-elevation-md",
+        "xl": "xl:vy-paper-elevation-md"
+      },
+      "lg": {
+        "xs": "vy-paper-elevation-lg",
+        "sm": "sm:vy-paper-elevation-lg",
+        "md": "md:vy-paper-elevation-lg",
+        "lg": "lg:vy-paper-elevation-lg",
+        "xl": "xl:vy-paper-elevation-lg"
+      },
+      "xl": {
+        "xs": "vy-paper-elevation-xl",
+        "sm": "sm:vy-paper-elevation-xl",
+        "md": "md:vy-paper-elevation-xl",
+        "lg": "lg:vy-paper-elevation-xl",
+        "xl": "xl:vy-paper-elevation-xl"
+      },
+      "2xl": {
+        "xs": "vy-paper-elevation-2xl",
+        "sm": "sm:vy-paper-elevation-2xl",
+        "md": "md:vy-paper-elevation-2xl",
+        "lg": "lg:vy-paper-elevation-2xl",
+        "xl": "xl:vy-paper-elevation-2xl"
+      },
+      "3xl": {
+        "xs": "vy-paper-elevation-3xl",
+        "sm": "sm:vy-paper-elevation-3xl",
+        "md": "md:vy-paper-elevation-3xl",
+        "lg": "lg:vy-paper-elevation-3xl",
+        "xl": "xl:vy-paper-elevation-3xl"
       }
     },
     "outlined": {
-      "primary": {
-        "none": {
-          "xs": "vy-paper-outlined-primary-none",
-          "sm": "sm:vy-paper-outlined-primary-none",
-          "md": "md:vy-paper-outlined-primary-none",
-          "lg": "lg:vy-paper-outlined-primary-none",
-          "xl": "xl:vy-paper-outlined-primary-none"
-        },
-        "2xs": {
-          "xs": "vy-paper-outlined-primary-2xs",
-          "sm": "sm:vy-paper-outlined-primary-2xs",
-          "md": "md:vy-paper-outlined-primary-2xs",
-          "lg": "lg:vy-paper-outlined-primary-2xs",
-          "xl": "xl:vy-paper-outlined-primary-2xs"
-        },
-        "xs": {
-          "xs": "vy-paper-outlined-primary-xs",
-          "sm": "sm:vy-paper-outlined-primary-xs",
-          "md": "md:vy-paper-outlined-primary-xs",
-          "lg": "lg:vy-paper-outlined-primary-xs",
-          "xl": "xl:vy-paper-outlined-primary-xs"
-        },
-        "sm": {
-          "xs": "vy-paper-outlined-primary-sm",
-          "sm": "sm:vy-paper-outlined-primary-sm",
-          "md": "md:vy-paper-outlined-primary-sm",
-          "lg": "lg:vy-paper-outlined-primary-sm",
-          "xl": "xl:vy-paper-outlined-primary-sm"
-        },
-        "md": {
-          "xs": "vy-paper-outlined-primary-md",
-          "sm": "sm:vy-paper-outlined-primary-md",
-          "md": "md:vy-paper-outlined-primary-md",
-          "lg": "lg:vy-paper-outlined-primary-md",
-          "xl": "xl:vy-paper-outlined-primary-md"
-        },
-        "lg": {
-          "xs": "vy-paper-outlined-primary-lg",
-          "sm": "sm:vy-paper-outlined-primary-lg",
-          "md": "md:vy-paper-outlined-primary-lg",
-          "lg": "lg:vy-paper-outlined-primary-lg",
-          "xl": "xl:vy-paper-outlined-primary-lg"
-        },
-        "xl": {
-          "xs": "vy-paper-outlined-primary-xl",
-          "sm": "sm:vy-paper-outlined-primary-xl",
-          "md": "md:vy-paper-outlined-primary-xl",
-          "lg": "lg:vy-paper-outlined-primary-xl",
-          "xl": "xl:vy-paper-outlined-primary-xl"
-        },
-        "2xl": {
-          "xs": "vy-paper-outlined-primary-2xl",
-          "sm": "sm:vy-paper-outlined-primary-2xl",
-          "md": "md:vy-paper-outlined-primary-2xl",
-          "lg": "lg:vy-paper-outlined-primary-2xl",
-          "xl": "xl:vy-paper-outlined-primary-2xl"
-        },
-        "3xl": {
-          "xs": "vy-paper-outlined-primary-3xl",
-          "sm": "sm:vy-paper-outlined-primary-3xl",
-          "md": "md:vy-paper-outlined-primary-3xl",
-          "lg": "lg:vy-paper-outlined-primary-3xl",
-          "xl": "xl:vy-paper-outlined-primary-3xl"
-        }
+      "none": {
+        "xs": "vy-paper-outlined-none",
+        "sm": "sm:vy-paper-outlined-none",
+        "md": "md:vy-paper-outlined-none",
+        "lg": "lg:vy-paper-outlined-none",
+        "xl": "xl:vy-paper-outlined-none"
+      },
+      "2xs": {
+        "xs": "vy-paper-outlined-2xs",
+        "sm": "sm:vy-paper-outlined-2xs",
+        "md": "md:vy-paper-outlined-2xs",
+        "lg": "lg:vy-paper-outlined-2xs",
+        "xl": "xl:vy-paper-outlined-2xs"
+      },
+      "xs": {
+        "xs": "vy-paper-outlined-xs",
+        "sm": "sm:vy-paper-outlined-xs",
+        "md": "md:vy-paper-outlined-xs",
+        "lg": "lg:vy-paper-outlined-xs",
+        "xl": "xl:vy-paper-outlined-xs"
+      },
+      "sm": {
+        "xs": "vy-paper-outlined-sm",
+        "sm": "sm:vy-paper-outlined-sm",
+        "md": "md:vy-paper-outlined-sm",
+        "lg": "lg:vy-paper-outlined-sm",
+        "xl": "xl:vy-paper-outlined-sm"
+      },
+      "md": {
+        "xs": "vy-paper-outlined-md",
+        "sm": "sm:vy-paper-outlined-md",
+        "md": "md:vy-paper-outlined-md",
+        "lg": "lg:vy-paper-outlined-md",
+        "xl": "xl:vy-paper-outlined-md"
+      },
+      "lg": {
+        "xs": "vy-paper-outlined-lg",
+        "sm": "sm:vy-paper-outlined-lg",
+        "md": "md:vy-paper-outlined-lg",
+        "lg": "lg:vy-paper-outlined-lg",
+        "xl": "xl:vy-paper-outlined-lg"
+      },
+      "xl": {
+        "xs": "vy-paper-outlined-xl",
+        "sm": "sm:vy-paper-outlined-xl",
+        "md": "md:vy-paper-outlined-xl",
+        "lg": "lg:vy-paper-outlined-xl",
+        "xl": "xl:vy-paper-outlined-xl"
+      },
+      "2xl": {
+        "xs": "vy-paper-outlined-2xl",
+        "sm": "sm:vy-paper-outlined-2xl",
+        "md": "md:vy-paper-outlined-2xl",
+        "lg": "lg:vy-paper-outlined-2xl",
+        "xl": "xl:vy-paper-outlined-2xl"
+      },
+      "3xl": {
+        "xs": "vy-paper-outlined-3xl",
+        "sm": "sm:vy-paper-outlined-3xl",
+        "md": "md:vy-paper-outlined-3xl",
+        "lg": "lg:vy-paper-outlined-3xl",
+        "xl": "xl:vy-paper-outlined-3xl"
       }
     }
   },
@@ -3064,138 +1985,145 @@ export const collapse = {
     }
   },
   "sizes": {
+    "none": null,
+    "2xs": null,
+    "xs": null,
+    "sm": null,
+    "md": null,
+    "lg": null,
+    "xl": null,
+    "2xl": null,
+    "3xl": null
+  },
+  "styleSizes": {
     "vertical": {
-      "primary": {
-        "none": {
-          "xs": "vy-collapse-none",
-          "sm": "sm:vy-collapse-none",
-          "md": "md:vy-collapse-none",
-          "lg": "lg:vy-collapse-none",
-          "xl": "xl:vy-collapse-none"
-        },
-        "2xs": {
-          "xs": "vy-collapse-vertical-primary-2xs",
-          "sm": "sm:vy-collapse-vertical-primary-2xs",
-          "md": "md:vy-collapse-vertical-primary-2xs",
-          "lg": "lg:vy-collapse-vertical-primary-2xs",
-          "xl": "xl:vy-collapse-vertical-primary-2xs"
-        },
-        "xs": {
-          "xs": "vy-collapse-vertical-primary-xs",
-          "sm": "sm:vy-collapse-vertical-primary-xs",
-          "md": "md:vy-collapse-vertical-primary-xs",
-          "lg": "lg:vy-collapse-vertical-primary-xs",
-          "xl": "xl:vy-collapse-vertical-primary-xs"
-        },
-        "sm": {
-          "xs": "vy-collapse-vertical-primary-sm",
-          "sm": "sm:vy-collapse-vertical-primary-sm",
-          "md": "md:vy-collapse-vertical-primary-sm",
-          "lg": "lg:vy-collapse-vertical-primary-sm",
-          "xl": "xl:vy-collapse-vertical-primary-sm"
-        },
-        "md": {
-          "xs": "vy-collapse-vertical-primary-md",
-          "sm": "sm:vy-collapse-vertical-primary-md",
-          "md": "md:vy-collapse-vertical-primary-md",
-          "lg": "lg:vy-collapse-vertical-primary-md",
-          "xl": "xl:vy-collapse-vertical-primary-md"
-        },
-        "lg": {
-          "xs": "vy-collapse-vertical-primary-lg",
-          "sm": "sm:vy-collapse-vertical-primary-lg",
-          "md": "md:vy-collapse-vertical-primary-lg",
-          "lg": "lg:vy-collapse-vertical-primary-lg",
-          "xl": "xl:vy-collapse-vertical-primary-lg"
-        },
-        "xl": {
-          "xs": "vy-collapse-vertical-primary-xl",
-          "sm": "sm:vy-collapse-vertical-primary-xl",
-          "md": "md:vy-collapse-vertical-primary-xl",
-          "lg": "lg:vy-collapse-vertical-primary-xl",
-          "xl": "xl:vy-collapse-vertical-primary-xl"
-        },
-        "2xl": {
-          "xs": "vy-collapse-vertical-primary-2xl",
-          "sm": "sm:vy-collapse-vertical-primary-2xl",
-          "md": "md:vy-collapse-vertical-primary-2xl",
-          "lg": "lg:vy-collapse-vertical-primary-2xl",
-          "xl": "xl:vy-collapse-vertical-primary-2xl"
-        },
-        "3xl": {
-          "xs": "vy-collapse-vertical-primary-3xl",
-          "sm": "sm:vy-collapse-vertical-primary-3xl",
-          "md": "md:vy-collapse-vertical-primary-3xl",
-          "lg": "lg:vy-collapse-vertical-primary-3xl",
-          "xl": "xl:vy-collapse-vertical-primary-3xl"
-        }
+      "none": {
+        "xs": "vy-collapse-vertical-none",
+        "sm": "sm:vy-collapse-vertical-none",
+        "md": "md:vy-collapse-vertical-none",
+        "lg": "lg:vy-collapse-vertical-none",
+        "xl": "xl:vy-collapse-vertical-none"
+      },
+      "2xs": {
+        "xs": "vy-collapse-vertical-2xs",
+        "sm": "sm:vy-collapse-vertical-2xs",
+        "md": "md:vy-collapse-vertical-2xs",
+        "lg": "lg:vy-collapse-vertical-2xs",
+        "xl": "xl:vy-collapse-vertical-2xs"
+      },
+      "xs": {
+        "xs": "vy-collapse-vertical-xs",
+        "sm": "sm:vy-collapse-vertical-xs",
+        "md": "md:vy-collapse-vertical-xs",
+        "lg": "lg:vy-collapse-vertical-xs",
+        "xl": "xl:vy-collapse-vertical-xs"
+      },
+      "sm": {
+        "xs": "vy-collapse-vertical-sm",
+        "sm": "sm:vy-collapse-vertical-sm",
+        "md": "md:vy-collapse-vertical-sm",
+        "lg": "lg:vy-collapse-vertical-sm",
+        "xl": "xl:vy-collapse-vertical-sm"
+      },
+      "md": {
+        "xs": "vy-collapse-vertical-md",
+        "sm": "sm:vy-collapse-vertical-md",
+        "md": "md:vy-collapse-vertical-md",
+        "lg": "lg:vy-collapse-vertical-md",
+        "xl": "xl:vy-collapse-vertical-md"
+      },
+      "lg": {
+        "xs": "vy-collapse-vertical-lg",
+        "sm": "sm:vy-collapse-vertical-lg",
+        "md": "md:vy-collapse-vertical-lg",
+        "lg": "lg:vy-collapse-vertical-lg",
+        "xl": "xl:vy-collapse-vertical-lg"
+      },
+      "xl": {
+        "xs": "vy-collapse-vertical-xl",
+        "sm": "sm:vy-collapse-vertical-xl",
+        "md": "md:vy-collapse-vertical-xl",
+        "lg": "lg:vy-collapse-vertical-xl",
+        "xl": "xl:vy-collapse-vertical-xl"
+      },
+      "2xl": {
+        "xs": "vy-collapse-vertical-2xl",
+        "sm": "sm:vy-collapse-vertical-2xl",
+        "md": "md:vy-collapse-vertical-2xl",
+        "lg": "lg:vy-collapse-vertical-2xl",
+        "xl": "xl:vy-collapse-vertical-2xl"
+      },
+      "3xl": {
+        "xs": "vy-collapse-vertical-3xl",
+        "sm": "sm:vy-collapse-vertical-3xl",
+        "md": "md:vy-collapse-vertical-3xl",
+        "lg": "lg:vy-collapse-vertical-3xl",
+        "xl": "xl:vy-collapse-vertical-3xl"
       }
     },
     "horizontal": {
-      "primary": {
-        "none": {
-          "xs": "vy-collapse-none",
-          "sm": "sm:vy-collapse-none",
-          "md": "md:vy-collapse-none",
-          "lg": "lg:vy-collapse-none",
-          "xl": "xl:vy-collapse-none"
-        },
-        "2xs": {
-          "xs": "vy-collapse-horizontal-primary-2xs",
-          "sm": "sm:vy-collapse-horizontal-primary-2xs",
-          "md": "md:vy-collapse-horizontal-primary-2xs",
-          "lg": "lg:vy-collapse-horizontal-primary-2xs",
-          "xl": "xl:vy-collapse-horizontal-primary-2xs"
-        },
-        "xs": {
-          "xs": "vy-collapse-horizontal-primary-xs",
-          "sm": "sm:vy-collapse-horizontal-primary-xs",
-          "md": "md:vy-collapse-horizontal-primary-xs",
-          "lg": "lg:vy-collapse-horizontal-primary-xs",
-          "xl": "xl:vy-collapse-horizontal-primary-xs"
-        },
-        "sm": {
-          "xs": "vy-collapse-horizontal-primary-sm",
-          "sm": "sm:vy-collapse-horizontal-primary-sm",
-          "md": "md:vy-collapse-horizontal-primary-sm",
-          "lg": "lg:vy-collapse-horizontal-primary-sm",
-          "xl": "xl:vy-collapse-horizontal-primary-sm"
-        },
-        "md": {
-          "xs": "vy-collapse-horizontal-primary-md",
-          "sm": "sm:vy-collapse-horizontal-primary-md",
-          "md": "md:vy-collapse-horizontal-primary-md",
-          "lg": "lg:vy-collapse-horizontal-primary-md",
-          "xl": "xl:vy-collapse-horizontal-primary-md"
-        },
-        "lg": {
-          "xs": "vy-collapse-horizontal-primary-lg",
-          "sm": "sm:vy-collapse-horizontal-primary-lg",
-          "md": "md:vy-collapse-horizontal-primary-lg",
-          "lg": "lg:vy-collapse-horizontal-primary-lg",
-          "xl": "xl:vy-collapse-horizontal-primary-lg"
-        },
-        "xl": {
-          "xs": "vy-collapse-horizontal-primary-xl",
-          "sm": "sm:vy-collapse-horizontal-primary-xl",
-          "md": "md:vy-collapse-horizontal-primary-xl",
-          "lg": "lg:vy-collapse-horizontal-primary-xl",
-          "xl": "xl:vy-collapse-horizontal-primary-xl"
-        },
-        "2xl": {
-          "xs": "vy-collapse-horizontal-primary-2xl",
-          "sm": "sm:vy-collapse-horizontal-primary-2xl",
-          "md": "md:vy-collapse-horizontal-primary-2xl",
-          "lg": "lg:vy-collapse-horizontal-primary-2xl",
-          "xl": "xl:vy-collapse-horizontal-primary-2xl"
-        },
-        "3xl": {
-          "xs": "vy-collapse-horizontal-primary-3xl",
-          "sm": "sm:vy-collapse-horizontal-primary-3xl",
-          "md": "md:vy-collapse-horizontal-primary-3xl",
-          "lg": "lg:vy-collapse-horizontal-primary-3xl",
-          "xl": "xl:vy-collapse-horizontal-primary-3xl"
-        }
+      "none": {
+        "xs": "vy-collapse-horizontal-none",
+        "sm": "sm:vy-collapse-horizontal-none",
+        "md": "md:vy-collapse-horizontal-none",
+        "lg": "lg:vy-collapse-horizontal-none",
+        "xl": "xl:vy-collapse-horizontal-none"
+      },
+      "2xs": {
+        "xs": "vy-collapse-horizontal-2xs",
+        "sm": "sm:vy-collapse-horizontal-2xs",
+        "md": "md:vy-collapse-horizontal-2xs",
+        "lg": "lg:vy-collapse-horizontal-2xs",
+        "xl": "xl:vy-collapse-horizontal-2xs"
+      },
+      "xs": {
+        "xs": "vy-collapse-horizontal-xs",
+        "sm": "sm:vy-collapse-horizontal-xs",
+        "md": "md:vy-collapse-horizontal-xs",
+        "lg": "lg:vy-collapse-horizontal-xs",
+        "xl": "xl:vy-collapse-horizontal-xs"
+      },
+      "sm": {
+        "xs": "vy-collapse-horizontal-sm",
+        "sm": "sm:vy-collapse-horizontal-sm",
+        "md": "md:vy-collapse-horizontal-sm",
+        "lg": "lg:vy-collapse-horizontal-sm",
+        "xl": "xl:vy-collapse-horizontal-sm"
+      },
+      "md": {
+        "xs": "vy-collapse-horizontal-md",
+        "sm": "sm:vy-collapse-horizontal-md",
+        "md": "md:vy-collapse-horizontal-md",
+        "lg": "lg:vy-collapse-horizontal-md",
+        "xl": "xl:vy-collapse-horizontal-md"
+      },
+      "lg": {
+        "xs": "vy-collapse-horizontal-lg",
+        "sm": "sm:vy-collapse-horizontal-lg",
+        "md": "md:vy-collapse-horizontal-lg",
+        "lg": "lg:vy-collapse-horizontal-lg",
+        "xl": "xl:vy-collapse-horizontal-lg"
+      },
+      "xl": {
+        "xs": "vy-collapse-horizontal-xl",
+        "sm": "sm:vy-collapse-horizontal-xl",
+        "md": "md:vy-collapse-horizontal-xl",
+        "lg": "lg:vy-collapse-horizontal-xl",
+        "xl": "xl:vy-collapse-horizontal-xl"
+      },
+      "2xl": {
+        "xs": "vy-collapse-horizontal-2xl",
+        "sm": "sm:vy-collapse-horizontal-2xl",
+        "md": "md:vy-collapse-horizontal-2xl",
+        "lg": "lg:vy-collapse-horizontal-2xl",
+        "xl": "xl:vy-collapse-horizontal-2xl"
+      },
+      "3xl": {
+        "xs": "vy-collapse-horizontal-3xl",
+        "sm": "sm:vy-collapse-horizontal-3xl",
+        "md": "md:vy-collapse-horizontal-3xl",
+        "lg": "lg:vy-collapse-horizontal-3xl",
+        "xl": "xl:vy-collapse-horizontal-3xl"
       }
     }
   },
@@ -3204,8 +2132,6 @@ export const collapse = {
 export const sidebar = {
   "slots": {
     "root": "vy-sidebar-root",
-    "item": "vy-sidebar-item",
-    "icon": "vy-sidebar-icon",
     "panel": "vy-sidebar-panel",
     "header": "vy-sidebar-header",
     "content": "vy-sidebar-content",
@@ -3219,61 +2145,15 @@ export const sidebar = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "md": {
-          "xs": "vy-sidebar-md",
-          "sm": "sm:vy-sidebar-md",
-          "md": "md:vy-sidebar-md",
-          "lg": "lg:vy-sidebar-md",
-          "xl": "xl:vy-sidebar-md"
-        }
-      },
-      "secondary": {
-        "md": {
-          "xs": "vy-sidebar-md",
-          "sm": "sm:vy-sidebar-md",
-          "md": "md:vy-sidebar-md",
-          "lg": "lg:vy-sidebar-md",
-          "xl": "xl:vy-sidebar-md"
-        }
-      },
-      "neutral": {
-        "md": {
-          "xs": "vy-sidebar-md",
-          "sm": "sm:vy-sidebar-md",
-          "md": "md:vy-sidebar-md",
-          "lg": "lg:vy-sidebar-md",
-          "xl": "xl:vy-sidebar-md"
-        }
-      }
+    "md": {
+      "xs": "vy-sidebar-md",
+      "sm": "sm:vy-sidebar-md",
+      "md": "md:vy-sidebar-md",
+      "lg": "lg:vy-sidebar-md",
+      "xl": "xl:vy-sidebar-md"
     }
   },
-  "childProps": {
-    "standard": {
-      "primary": {
-        "md": {
-          "item": {
-            "size": "md"
-          }
-        }
-      },
-      "secondary": {
-        "md": {
-          "item": {
-            "size": "md"
-          }
-        }
-      },
-      "neutral": {
-        "md": {
-          "item": {
-            "size": "md"
-          }
-        }
-      }
-    }
-  }
+  "childProps": {}
 } as const satisfies ComponentMap;
 export const breadcrumbs = {
   "slots": {
@@ -3308,104 +2188,119 @@ export const skeleton = {
     }
   },
   "sizes": {
+    "sm": {
+      "xs": "vy-skeleton-sm",
+      "sm": "sm:vy-skeleton-sm",
+      "md": "md:vy-skeleton-sm",
+      "lg": "lg:vy-skeleton-sm",
+      "xl": "xl:vy-skeleton-sm"
+    },
+    "md": {
+      "xs": "vy-skeleton-md",
+      "sm": "sm:vy-skeleton-md",
+      "md": "md:vy-skeleton-md",
+      "lg": "lg:vy-skeleton-md",
+      "xl": "xl:vy-skeleton-md"
+    },
+    "lg": {
+      "xs": "vy-skeleton-lg",
+      "sm": "sm:vy-skeleton-lg",
+      "md": "md:vy-skeleton-lg",
+      "lg": "lg:vy-skeleton-lg",
+      "xl": "xl:vy-skeleton-lg"
+    }
+  },
+  "styleSizes": {
     "text": {
-      "primary": {
-        "sm": {
-          "xs": "vy-skeleton-text-primary-sm",
-          "sm": "sm:vy-skeleton-text-primary-sm",
-          "md": "md:vy-skeleton-text-primary-sm",
-          "lg": "lg:vy-skeleton-text-primary-sm",
-          "xl": "xl:vy-skeleton-text-primary-sm"
-        },
-        "md": {
-          "xs": "vy-skeleton-text-primary-md",
-          "sm": "sm:vy-skeleton-text-primary-md",
-          "md": "md:vy-skeleton-text-primary-md",
-          "lg": "lg:vy-skeleton-text-primary-md",
-          "xl": "xl:vy-skeleton-text-primary-md"
-        },
-        "lg": {
-          "xs": "vy-skeleton-text-primary-lg",
-          "sm": "sm:vy-skeleton-text-primary-lg",
-          "md": "md:vy-skeleton-text-primary-lg",
-          "lg": "lg:vy-skeleton-text-primary-lg",
-          "xl": "xl:vy-skeleton-text-primary-lg"
-        }
+      "sm": {
+        "xs": "vy-skeleton-text-sm",
+        "sm": "sm:vy-skeleton-text-sm",
+        "md": "md:vy-skeleton-text-sm",
+        "lg": "lg:vy-skeleton-text-sm",
+        "xl": "xl:vy-skeleton-text-sm"
+      },
+      "md": {
+        "xs": "vy-skeleton-text-md",
+        "sm": "sm:vy-skeleton-text-md",
+        "md": "md:vy-skeleton-text-md",
+        "lg": "lg:vy-skeleton-text-md",
+        "xl": "xl:vy-skeleton-text-md"
+      },
+      "lg": {
+        "xs": "vy-skeleton-text-lg",
+        "sm": "sm:vy-skeleton-text-lg",
+        "md": "md:vy-skeleton-text-lg",
+        "lg": "lg:vy-skeleton-text-lg",
+        "xl": "xl:vy-skeleton-text-lg"
       }
     },
     "rectangular": {
-      "primary": {
-        "sm": {
-          "xs": "vy-skeleton-rectangular-primary-sm",
-          "sm": "sm:vy-skeleton-rectangular-primary-sm",
-          "md": "md:vy-skeleton-rectangular-primary-sm",
-          "lg": "lg:vy-skeleton-rectangular-primary-sm",
-          "xl": "xl:vy-skeleton-rectangular-primary-sm"
-        },
-        "md": {
-          "xs": "vy-skeleton-rectangular-primary-md",
-          "sm": "sm:vy-skeleton-rectangular-primary-md",
-          "md": "md:vy-skeleton-rectangular-primary-md",
-          "lg": "lg:vy-skeleton-rectangular-primary-md",
-          "xl": "xl:vy-skeleton-rectangular-primary-md"
-        },
-        "lg": {
-          "xs": "vy-skeleton-rectangular-primary-lg",
-          "sm": "sm:vy-skeleton-rectangular-primary-lg",
-          "md": "md:vy-skeleton-rectangular-primary-lg",
-          "lg": "lg:vy-skeleton-rectangular-primary-lg",
-          "xl": "xl:vy-skeleton-rectangular-primary-lg"
-        }
+      "sm": {
+        "xs": "vy-skeleton-rectangular-sm",
+        "sm": "sm:vy-skeleton-rectangular-sm",
+        "md": "md:vy-skeleton-rectangular-sm",
+        "lg": "lg:vy-skeleton-rectangular-sm",
+        "xl": "xl:vy-skeleton-rectangular-sm"
+      },
+      "md": {
+        "xs": "vy-skeleton-rectangular-md",
+        "sm": "sm:vy-skeleton-rectangular-md",
+        "md": "md:vy-skeleton-rectangular-md",
+        "lg": "lg:vy-skeleton-rectangular-md",
+        "xl": "xl:vy-skeleton-rectangular-md"
+      },
+      "lg": {
+        "xs": "vy-skeleton-rectangular-lg",
+        "sm": "sm:vy-skeleton-rectangular-lg",
+        "md": "md:vy-skeleton-rectangular-lg",
+        "lg": "lg:vy-skeleton-rectangular-lg",
+        "xl": "xl:vy-skeleton-rectangular-lg"
       }
     },
     "rounded": {
-      "primary": {
-        "sm": {
-          "xs": "vy-skeleton-rounded-primary-sm",
-          "sm": "sm:vy-skeleton-rounded-primary-sm",
-          "md": "md:vy-skeleton-rounded-primary-sm",
-          "lg": "lg:vy-skeleton-rounded-primary-sm",
-          "xl": "xl:vy-skeleton-rounded-primary-sm"
-        },
-        "md": {
-          "xs": "vy-skeleton-rounded-primary-md",
-          "sm": "sm:vy-skeleton-rounded-primary-md",
-          "md": "md:vy-skeleton-rounded-primary-md",
-          "lg": "lg:vy-skeleton-rounded-primary-md",
-          "xl": "xl:vy-skeleton-rounded-primary-md"
-        },
-        "lg": {
-          "xs": "vy-skeleton-rounded-primary-lg",
-          "sm": "sm:vy-skeleton-rounded-primary-lg",
-          "md": "md:vy-skeleton-rounded-primary-lg",
-          "lg": "lg:vy-skeleton-rounded-primary-lg",
-          "xl": "xl:vy-skeleton-rounded-primary-lg"
-        }
+      "sm": {
+        "xs": "vy-skeleton-rounded-sm",
+        "sm": "sm:vy-skeleton-rounded-sm",
+        "md": "md:vy-skeleton-rounded-sm",
+        "lg": "lg:vy-skeleton-rounded-sm",
+        "xl": "xl:vy-skeleton-rounded-sm"
+      },
+      "md": {
+        "xs": "vy-skeleton-rounded-md",
+        "sm": "sm:vy-skeleton-rounded-md",
+        "md": "md:vy-skeleton-rounded-md",
+        "lg": "lg:vy-skeleton-rounded-md",
+        "xl": "xl:vy-skeleton-rounded-md"
+      },
+      "lg": {
+        "xs": "vy-skeleton-rounded-lg",
+        "sm": "sm:vy-skeleton-rounded-lg",
+        "md": "md:vy-skeleton-rounded-lg",
+        "lg": "lg:vy-skeleton-rounded-lg",
+        "xl": "xl:vy-skeleton-rounded-lg"
       }
     },
     "circular": {
-      "primary": {
-        "sm": {
-          "xs": "vy-skeleton-circular-primary-sm",
-          "sm": "sm:vy-skeleton-circular-primary-sm",
-          "md": "md:vy-skeleton-circular-primary-sm",
-          "lg": "lg:vy-skeleton-circular-primary-sm",
-          "xl": "xl:vy-skeleton-circular-primary-sm"
-        },
-        "md": {
-          "xs": "vy-skeleton-circular-primary-md",
-          "sm": "sm:vy-skeleton-circular-primary-md",
-          "md": "md:vy-skeleton-circular-primary-md",
-          "lg": "lg:vy-skeleton-circular-primary-md",
-          "xl": "xl:vy-skeleton-circular-primary-md"
-        },
-        "lg": {
-          "xs": "vy-skeleton-circular-primary-lg",
-          "sm": "sm:vy-skeleton-circular-primary-lg",
-          "md": "md:vy-skeleton-circular-primary-lg",
-          "lg": "lg:vy-skeleton-circular-primary-lg",
-          "xl": "xl:vy-skeleton-circular-primary-lg"
-        }
+      "sm": {
+        "xs": "vy-skeleton-circular-sm",
+        "sm": "sm:vy-skeleton-circular-sm",
+        "md": "md:vy-skeleton-circular-sm",
+        "lg": "lg:vy-skeleton-circular-sm",
+        "xl": "xl:vy-skeleton-circular-sm"
+      },
+      "md": {
+        "xs": "vy-skeleton-circular-md",
+        "sm": "sm:vy-skeleton-circular-md",
+        "md": "md:vy-skeleton-circular-md",
+        "lg": "lg:vy-skeleton-circular-md",
+        "xl": "xl:vy-skeleton-circular-md"
+      },
+      "lg": {
+        "xs": "vy-skeleton-circular-lg",
+        "sm": "sm:vy-skeleton-circular-lg",
+        "md": "md:vy-skeleton-circular-lg",
+        "lg": "lg:vy-skeleton-circular-lg",
+        "xl": "xl:vy-skeleton-circular-lg"
       }
     }
   },
@@ -3461,858 +2356,90 @@ export const avatar = {
     }
   },
   "sizes": {
-    "circular": {
-      "primary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      }
+    "2xs": {
+      "xs": "vy-avatar-2xs",
+      "sm": "sm:vy-avatar-2xs",
+      "md": "md:vy-avatar-2xs",
+      "lg": "lg:vy-avatar-2xs",
+      "xl": "xl:vy-avatar-2xs"
     },
-    "rounded": {
-      "primary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-avatar-xs",
+      "sm": "sm:vy-avatar-xs",
+      "md": "md:vy-avatar-xs",
+      "lg": "lg:vy-avatar-xs",
+      "xl": "xl:vy-avatar-xs"
     },
-    "square": {
-      "primary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-avatar-sm",
-          "sm": "sm:vy-avatar-sm",
-          "md": "md:vy-avatar-sm",
-          "lg": "lg:vy-avatar-sm",
-          "xl": "xl:vy-avatar-sm"
-        },
-        "md": {
-          "xs": "vy-avatar-md",
-          "sm": "sm:vy-avatar-md",
-          "md": "md:vy-avatar-md",
-          "lg": "lg:vy-avatar-md",
-          "xl": "xl:vy-avatar-md"
-        },
-        "lg": {
-          "xs": "vy-avatar-lg",
-          "sm": "sm:vy-avatar-lg",
-          "md": "md:vy-avatar-lg",
-          "lg": "lg:vy-avatar-lg",
-          "xl": "xl:vy-avatar-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-avatar-sm",
+      "sm": "sm:vy-avatar-sm",
+      "md": "md:vy-avatar-sm",
+      "lg": "lg:vy-avatar-sm",
+      "xl": "xl:vy-avatar-sm"
+    },
+    "md": {
+      "xs": "vy-avatar-md",
+      "sm": "sm:vy-avatar-md",
+      "md": "md:vy-avatar-md",
+      "lg": "lg:vy-avatar-md",
+      "xl": "xl:vy-avatar-md"
+    },
+    "lg": {
+      "xs": "vy-avatar-lg",
+      "sm": "sm:vy-avatar-lg",
+      "md": "md:vy-avatar-lg",
+      "lg": "lg:vy-avatar-lg",
+      "xl": "xl:vy-avatar-lg"
+    },
+    "xl": {
+      "xs": "vy-avatar-xl",
+      "sm": "sm:vy-avatar-xl",
+      "md": "md:vy-avatar-xl",
+      "lg": "lg:vy-avatar-xl",
+      "xl": "xl:vy-avatar-xl"
+    },
+    "2xl": {
+      "xs": "vy-avatar-2xl",
+      "sm": "sm:vy-avatar-2xl",
+      "md": "md:vy-avatar-2xl",
+      "lg": "lg:vy-avatar-2xl",
+      "xl": "xl:vy-avatar-2xl"
     }
   },
   "childProps": {
-    "circular": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "2xs": {
+      "icon": {
+        "size": "xs"
       }
     },
-    "rounded": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "icon": {
+        "size": "xs"
       }
     },
-    "square": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "md": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "xl": {
+      "icon": {
+        "size": "lg"
+      }
+    },
+    "2xl": {
+      "icon": {
+        "size": "lg"
       }
     }
   }
@@ -4320,7 +2447,11 @@ export const avatar = {
 export const chip = {
   "slots": {
     "root": "vy-chip-root",
-    "content": "vy-chip-content"
+    "content": "vy-chip-content",
+    "addonStart": "vy-chip-addon-start",
+    "addonEnd": "vy-chip-addon-end",
+    "addonInsetStart": "vy-chip-addon-inset-start",
+    "addonInsetEnd": "vy-chip-addon-inset-end"
   },
   "variants": {
     "filled": {
@@ -4343,574 +2474,66 @@ export const chip = {
     }
   },
   "sizes": {
-    "filled": {
-      "primary": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-chip-xs",
+      "sm": "sm:vy-chip-xs",
+      "md": "md:vy-chip-xs",
+      "lg": "lg:vy-chip-xs",
+      "xl": "xl:vy-chip-xs"
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-chip-sm",
-          "sm": "sm:vy-chip-sm",
-          "md": "md:vy-chip-sm",
-          "lg": "lg:vy-chip-sm",
-          "xl": "xl:vy-chip-sm"
-        },
-        "md": {
-          "xs": "vy-chip-md",
-          "sm": "sm:vy-chip-md",
-          "md": "md:vy-chip-md",
-          "lg": "lg:vy-chip-md",
-          "xl": "xl:vy-chip-md"
-        },
-        "lg": {
-          "xs": "vy-chip-lg",
-          "sm": "sm:vy-chip-lg",
-          "md": "md:vy-chip-lg",
-          "lg": "lg:vy-chip-lg",
-          "xl": "xl:vy-chip-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-chip-sm",
+      "sm": "sm:vy-chip-sm",
+      "md": "md:vy-chip-sm",
+      "lg": "lg:vy-chip-sm",
+      "xl": "xl:vy-chip-sm"
+    },
+    "md": {
+      "xs": "vy-chip-md",
+      "sm": "sm:vy-chip-md",
+      "md": "md:vy-chip-md",
+      "lg": "lg:vy-chip-md",
+      "xl": "xl:vy-chip-md"
+    },
+    "lg": {
+      "xs": "vy-chip-lg",
+      "sm": "sm:vy-chip-lg",
+      "md": "md:vy-chip-lg",
+      "lg": "lg:vy-chip-lg",
+      "xl": "xl:vy-chip-lg"
     }
   },
   "childProps": {
-    "filled": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "icon": {
+        "size": "xs"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "2xs"
       }
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "icon": {
+        "size": "sm"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "xs"
+      }
+    },
+    "md": {
+      "icon": {
+        "size": "sm"
       },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "sm"
       },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+      "addon": {
+        "size": "md"
       }
     }
   }
@@ -4932,145 +2555,26 @@ export const checkbox = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-checkbox-sm",
-          "sm": "sm:vy-checkbox-sm",
-          "md": "md:vy-checkbox-sm",
-          "lg": "lg:vy-checkbox-sm",
-          "xl": "xl:vy-checkbox-sm"
-        },
-        "md": {
-          "xs": "vy-checkbox-md",
-          "sm": "sm:vy-checkbox-md",
-          "md": "md:vy-checkbox-md",
-          "lg": "lg:vy-checkbox-md",
-          "xl": "xl:vy-checkbox-md"
-        },
-        "lg": {
-          "xs": "vy-checkbox-lg",
-          "sm": "sm:vy-checkbox-lg",
-          "md": "md:vy-checkbox-lg",
-          "lg": "lg:vy-checkbox-lg",
-          "xl": "xl:vy-checkbox-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-checkbox-sm",
+      "sm": "sm:vy-checkbox-sm",
+      "md": "md:vy-checkbox-sm",
+      "lg": "lg:vy-checkbox-sm",
+      "xl": "xl:vy-checkbox-sm"
+    },
+    "md": {
+      "xs": "vy-checkbox-md",
+      "sm": "sm:vy-checkbox-md",
+      "md": "md:vy-checkbox-md",
+      "lg": "lg:vy-checkbox-md",
+      "xl": "xl:vy-checkbox-md"
+    },
+    "lg": {
+      "xs": "vy-checkbox-lg",
+      "sm": "sm:vy-checkbox-lg",
+      "md": "md:vy-checkbox-lg",
+      "lg": "lg:vy-checkbox-lg",
+      "xl": "xl:vy-checkbox-lg"
     }
   },
   "childProps": {}
@@ -5093,145 +2597,26 @@ export const switchTokens = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-switch-sm",
-          "sm": "sm:vy-switch-sm",
-          "md": "md:vy-switch-sm",
-          "lg": "lg:vy-switch-sm",
-          "xl": "xl:vy-switch-sm"
-        },
-        "md": {
-          "xs": "vy-switch-md",
-          "sm": "sm:vy-switch-md",
-          "md": "md:vy-switch-md",
-          "lg": "lg:vy-switch-md",
-          "xl": "xl:vy-switch-md"
-        },
-        "lg": {
-          "xs": "vy-switch-lg",
-          "sm": "sm:vy-switch-lg",
-          "md": "md:vy-switch-lg",
-          "lg": "lg:vy-switch-lg",
-          "xl": "xl:vy-switch-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-switch-sm",
+      "sm": "sm:vy-switch-sm",
+      "md": "md:vy-switch-sm",
+      "lg": "lg:vy-switch-sm",
+      "xl": "xl:vy-switch-sm"
+    },
+    "md": {
+      "xs": "vy-switch-md",
+      "sm": "sm:vy-switch-md",
+      "md": "md:vy-switch-md",
+      "lg": "lg:vy-switch-md",
+      "xl": "xl:vy-switch-md"
+    },
+    "lg": {
+      "xs": "vy-switch-lg",
+      "sm": "sm:vy-switch-lg",
+      "md": "md:vy-switch-lg",
+      "lg": "lg:vy-switch-lg",
+      "xl": "xl:vy-switch-lg"
     }
   },
   "childProps": {}
@@ -5251,50 +2636,42 @@ export const table = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "xs": "vy-table-sm",
-          "sm": "sm:vy-table-sm",
-          "md": "md:vy-table-sm",
-          "lg": "lg:vy-table-sm",
-          "xl": "xl:vy-table-sm"
-        },
-        "md": {
-          "xs": "vy-table-md",
-          "sm": "sm:vy-table-md",
-          "md": "md:vy-table-md",
-          "lg": "lg:vy-table-md",
-          "xl": "xl:vy-table-md"
-        },
-        "lg": {
-          "xs": "vy-table-lg",
-          "sm": "sm:vy-table-lg",
-          "md": "md:vy-table-lg",
-          "lg": "lg:vy-table-lg",
-          "xl": "xl:vy-table-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-table-sm",
+      "sm": "sm:vy-table-sm",
+      "md": "md:vy-table-sm",
+      "lg": "lg:vy-table-sm",
+      "xl": "xl:vy-table-sm"
+    },
+    "md": {
+      "xs": "vy-table-md",
+      "sm": "sm:vy-table-md",
+      "md": "md:vy-table-md",
+      "lg": "lg:vy-table-md",
+      "xl": "xl:vy-table-md"
+    },
+    "lg": {
+      "xs": "vy-table-lg",
+      "sm": "sm:vy-table-lg",
+      "md": "md:vy-table-lg",
+      "lg": "lg:vy-table-lg",
+      "xl": "xl:vy-table-lg"
     }
   },
   "childProps": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "sortIcon": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "sortIcon": {
-            "size": "sm"
-          }
-        },
-        "lg": {
-          "sortIcon": {
-            "size": "md"
-          }
-        }
+    "sm": {
+      "sortIcon": {
+        "size": "sm"
+      }
+    },
+    "md": {
+      "sortIcon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "sortIcon": {
+        "size": "md"
       }
     }
   }
@@ -5324,26 +2701,18 @@ export const menu = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "md": {
-          "xs": "vy-menu-md",
-          "sm": "sm:vy-menu-md",
-          "md": "md:vy-menu-md",
-          "lg": "lg:vy-menu-md",
-          "xl": "xl:vy-menu-md"
-        }
-      }
+    "md": {
+      "xs": "vy-menu-md",
+      "sm": "sm:vy-menu-md",
+      "md": "md:vy-menu-md",
+      "lg": "lg:vy-menu-md",
+      "xl": "xl:vy-menu-md"
     }
   },
   "childProps": {
-    "standard": {
-      "primary": {
-        "md": {
-          "item": {
-            "size": "sm"
-          }
-        }
+    "md": {
+      "item": {
+        "size": "sm"
       }
     }
   }
@@ -5363,94 +2732,54 @@ export const select = {
     }
   },
   "sizes": {
-    "outlined": {
-      "primary": {
-        "sm": {
-          "xs": "vy-select-sm",
-          "sm": "sm:vy-select-sm",
-          "md": "md:vy-select-sm",
-          "lg": "lg:vy-select-sm",
-          "xl": "xl:vy-select-sm"
-        },
-        "md": {
-          "xs": "vy-select-md",
-          "sm": "sm:vy-select-md",
-          "md": "md:vy-select-md",
-          "lg": "lg:vy-select-md",
-          "xl": "xl:vy-select-md"
-        },
-        "lg": {
-          "xs": "vy-select-lg",
-          "sm": "sm:vy-select-lg",
-          "md": "md:vy-select-lg",
-          "lg": "lg:vy-select-lg",
-          "xl": "xl:vy-select-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-select-xs",
+      "sm": "sm:vy-select-xs",
+      "md": "md:vy-select-xs",
+      "lg": "lg:vy-select-xs",
+      "xl": "xl:vy-select-xs"
     },
-    "filled": {
-      "primary": {
-        "sm": {
-          "xs": "vy-select-sm",
-          "sm": "sm:vy-select-sm",
-          "md": "md:vy-select-sm",
-          "lg": "lg:vy-select-sm",
-          "xl": "xl:vy-select-sm"
-        },
-        "md": {
-          "xs": "vy-select-md",
-          "sm": "sm:vy-select-md",
-          "md": "md:vy-select-md",
-          "lg": "lg:vy-select-md",
-          "xl": "xl:vy-select-md"
-        },
-        "lg": {
-          "xs": "vy-select-lg",
-          "sm": "sm:vy-select-lg",
-          "md": "md:vy-select-lg",
-          "lg": "lg:vy-select-lg",
-          "xl": "xl:vy-select-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-select-sm",
+      "sm": "sm:vy-select-sm",
+      "md": "md:vy-select-sm",
+      "lg": "lg:vy-select-sm",
+      "xl": "xl:vy-select-sm"
+    },
+    "md": {
+      "xs": "vy-select-md",
+      "sm": "sm:vy-select-md",
+      "md": "md:vy-select-md",
+      "lg": "lg:vy-select-md",
+      "xl": "xl:vy-select-md"
+    },
+    "lg": {
+      "xs": "vy-select-lg",
+      "sm": "sm:vy-select-lg",
+      "md": "md:vy-select-lg",
+      "lg": "lg:vy-select-lg",
+      "xl": "xl:vy-select-lg"
     }
   },
   "childProps": {
-    "outlined": {
-      "primary": {
-        "sm": {
-          "indicator": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "indicator": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "indicator": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "indicator": {
+        "size": "xs"
       }
     },
-    "filled": {
-      "primary": {
-        "sm": {
-          "indicator": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "indicator": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "indicator": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "indicator": {
+        "size": "sm"
+      }
+    },
+    "md": {
+      "indicator": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "indicator": {
+        "size": "sm"
       }
     }
   }
@@ -5467,61 +2796,46 @@ export const tabs = {
       "primary": "vy-tabs-standard-primary",
       "secondary": "vy-tabs-standard-secondary",
       "neutral": "vy-tabs-standard-neutral"
+    },
+    "segmented": {
+      "primary": "vy-tabs-segmented-primary",
+      "secondary": "vy-tabs-segmented-secondary",
+      "neutral": "vy-tabs-segmented-neutral"
     }
   },
   "sizes": {
+    "md": {
+      "xs": "vy-tabs-md",
+      "sm": "sm:vy-tabs-md",
+      "md": "md:vy-tabs-md",
+      "lg": "lg:vy-tabs-md",
+      "xl": "xl:vy-tabs-md"
+    }
+  },
+  "styleSizes": {
     "standard": {
-      "primary": {
-        "md": {
-          "xs": "vy-tabs-md",
-          "sm": "sm:vy-tabs-md",
-          "md": "md:vy-tabs-md",
-          "lg": "lg:vy-tabs-md",
-          "xl": "xl:vy-tabs-md"
-        }
-      },
-      "secondary": {
-        "md": {
-          "xs": "vy-tabs-md",
-          "sm": "sm:vy-tabs-md",
-          "md": "md:vy-tabs-md",
-          "lg": "lg:vy-tabs-md",
-          "xl": "xl:vy-tabs-md"
-        }
-      },
-      "neutral": {
-        "md": {
-          "xs": "vy-tabs-md",
-          "sm": "sm:vy-tabs-md",
-          "md": "md:vy-tabs-md",
-          "lg": "lg:vy-tabs-md",
-          "xl": "xl:vy-tabs-md"
-        }
+      "md": {
+        "xs": "vy-tabs-standard-md",
+        "sm": "sm:vy-tabs-standard-md",
+        "md": "md:vy-tabs-standard-md",
+        "lg": "lg:vy-tabs-standard-md",
+        "xl": "xl:vy-tabs-standard-md"
+      }
+    },
+    "segmented": {
+      "md": {
+        "xs": "vy-tabs-segmented-md",
+        "sm": "sm:vy-tabs-segmented-md",
+        "md": "md:vy-tabs-segmented-md",
+        "lg": "lg:vy-tabs-segmented-md",
+        "xl": "xl:vy-tabs-segmented-md"
       }
     }
   },
   "childProps": {
-    "standard": {
-      "primary": {
-        "md": {
-          "tab": {
-            "size": "sm"
-          }
-        }
-      },
-      "secondary": {
-        "md": {
-          "tab": {
-            "size": "sm"
-          }
-        }
-      },
-      "neutral": {
-        "md": {
-          "tab": {
-            "size": "sm"
-          }
-        }
+    "md": {
+      "tab": {
+        "size": "sm"
       }
     }
   }
@@ -5539,16 +2853,12 @@ export const snackbar = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "md": {
-          "xs": "vy-snackbar-md",
-          "sm": "sm:vy-snackbar-md",
-          "md": "md:vy-snackbar-md",
-          "lg": "lg:vy-snackbar-md",
-          "xl": "xl:vy-snackbar-md"
-        }
-      }
+    "md": {
+      "xs": "vy-snackbar-md",
+      "sm": "sm:vy-snackbar-md",
+      "md": "md:vy-snackbar-md",
+      "lg": "lg:vy-snackbar-md",
+      "xl": "xl:vy-snackbar-md"
     }
   },
   "childProps": {}
@@ -5572,290 +2882,42 @@ export const dropzone = {
     }
   },
   "sizes": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-dropzone-sm",
-          "sm": "sm:vy-dropzone-sm",
-          "md": "md:vy-dropzone-sm",
-          "lg": "lg:vy-dropzone-sm",
-          "xl": "xl:vy-dropzone-sm"
-        },
-        "md": {
-          "xs": "vy-dropzone-md",
-          "sm": "sm:vy-dropzone-md",
-          "md": "md:vy-dropzone-md",
-          "lg": "lg:vy-dropzone-md",
-          "xl": "xl:vy-dropzone-md"
-        },
-        "lg": {
-          "xs": "vy-dropzone-lg",
-          "sm": "sm:vy-dropzone-lg",
-          "md": "md:vy-dropzone-lg",
-          "lg": "lg:vy-dropzone-lg",
-          "xl": "xl:vy-dropzone-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-dropzone-sm",
+      "sm": "sm:vy-dropzone-sm",
+      "md": "md:vy-dropzone-sm",
+      "lg": "lg:vy-dropzone-sm",
+      "xl": "xl:vy-dropzone-sm"
+    },
+    "md": {
+      "xs": "vy-dropzone-md",
+      "sm": "sm:vy-dropzone-md",
+      "md": "md:vy-dropzone-md",
+      "lg": "lg:vy-dropzone-md",
+      "xl": "xl:vy-dropzone-md"
+    },
+    "lg": {
+      "xs": "vy-dropzone-lg",
+      "sm": "sm:vy-dropzone-lg",
+      "md": "md:vy-dropzone-lg",
+      "lg": "lg:vy-dropzone-lg",
+      "xl": "xl:vy-dropzone-lg"
     }
   },
   "childProps": {
-    "standard": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "md"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "lg"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "icon": {
+        "size": "md"
+      }
+    },
+    "md": {
+      "icon": {
+        "size": "lg"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "lg"
       }
     }
   }
@@ -5894,1051 +2956,208 @@ export const iconButton = {
     }
   },
   "sizes": {
-    "contained": {
-      "primary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      }
+    "2xs": {
+      "xs": "vy-icon-button-2xs",
+      "sm": "sm:vy-icon-button-2xs",
+      "md": "md:vy-icon-button-2xs",
+      "lg": "lg:vy-icon-button-2xs",
+      "xl": "xl:vy-icon-button-2xs"
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      }
+    "xs": {
+      "xs": "vy-icon-button-xs",
+      "sm": "sm:vy-icon-button-xs",
+      "md": "md:vy-icon-button-xs",
+      "lg": "lg:vy-icon-button-xs",
+      "xl": "xl:vy-icon-button-xs"
     },
-    "text": {
-      "primary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "secondary": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "error": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "warning": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "info": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "success": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      },
-      "neutral": {
-        "sm": {
-          "xs": "vy-icon-button-sm",
-          "sm": "sm:vy-icon-button-sm",
-          "md": "md:vy-icon-button-sm",
-          "lg": "lg:vy-icon-button-sm",
-          "xl": "xl:vy-icon-button-sm"
-        },
-        "md": {
-          "xs": "vy-icon-button-md",
-          "sm": "sm:vy-icon-button-md",
-          "md": "md:vy-icon-button-md",
-          "lg": "lg:vy-icon-button-md",
-          "xl": "xl:vy-icon-button-md"
-        },
-        "lg": {
-          "xs": "vy-icon-button-lg",
-          "sm": "sm:vy-icon-button-lg",
-          "md": "md:vy-icon-button-lg",
-          "lg": "lg:vy-icon-button-lg",
-          "xl": "xl:vy-icon-button-lg"
-        }
-      }
+    "sm": {
+      "xs": "vy-icon-button-sm",
+      "sm": "sm:vy-icon-button-sm",
+      "md": "md:vy-icon-button-sm",
+      "lg": "lg:vy-icon-button-sm",
+      "xl": "xl:vy-icon-button-sm"
+    },
+    "md": {
+      "xs": "vy-icon-button-md",
+      "sm": "sm:vy-icon-button-md",
+      "md": "md:vy-icon-button-md",
+      "lg": "lg:vy-icon-button-md",
+      "xl": "xl:vy-icon-button-md"
+    },
+    "lg": {
+      "xs": "vy-icon-button-lg",
+      "sm": "sm:vy-icon-button-lg",
+      "md": "md:vy-icon-button-lg",
+      "lg": "lg:vy-icon-button-lg",
+      "xl": "xl:vy-icon-button-lg"
     }
   },
   "childProps": {
-    "contained": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "2xs": {
+      "icon": {
+        "size": "xs"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       }
     },
-    "outlined": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "xs": {
+      "icon": {
+        "size": "xs"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       }
     },
-    "text": {
-      "primary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+    "sm": {
+      "icon": {
+        "size": "sm"
       },
-      "secondary": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
+      }
+    },
+    "md": {
+      "icon": {
+        "size": "sm"
       },
-      "error": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "sm"
       },
-      "warning": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "info": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "success": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
-      },
-      "neutral": {
-        "sm": {
-          "icon": {
-            "size": "sm"
-          },
-          "progress": {
-            "size": "sm"
-          }
-        },
-        "md": {
-          "icon": {
-            "size": "md"
-          },
-          "progress": {
-            "size": "md"
-          }
-        },
-        "lg": {
-          "icon": {
-            "size": "lg"
-          },
-          "progress": {
-            "size": "lg"
-          }
-        }
+      "progress": {
+        "size": "sm"
       }
     }
   }
 } as const satisfies ComponentMap;
-export const componentTokens = { button, textField, circularProgress, divider, tooltip, backdrop, dialog, drawer, paper, collapse, sidebar, breadcrumbs, skeleton, card, avatar, chip, checkbox, switch: switchTokens, table, popover, menu, select, tabs, snackbar, dropzone, iconButton } as const;
+export const list = {
+  "slots": {
+    "item": "vy-list-item",
+    "icon": "vy-list-icon",
+    "secondary": "vy-list-secondary",
+    "row": "vy-list-row",
+    "end": "vy-list-end",
+    "subheader": "vy-list-subheader",
+    "sticky": "vy-list-sticky",
+    "divider": "vy-list-divider",
+    "guide": "vy-list-guide",
+    "marker": "vy-list-marker",
+    "root": "vy-list-root",
+    "padding": "vy-list-padding",
+    "indent": "vy-list-indent",
+    "nestedPadding": "vy-list-nested-padding",
+    "subheaderInset": "vy-list-subheader-inset",
+    "gutterStart": "vy-list-gutter-start",
+    "gutterEnd": "vy-list-gutter-end",
+    "reserve": "vy-list-reserve",
+    "rowPadding": "vy-list-row-padding",
+    "avatar": "vy-list-avatar",
+    "text": "vy-list-text",
+    "textInset": "vy-list-text-inset",
+    "primary": "vy-list-primary",
+    "markerRow": "vy-list-marker-row"
+  },
+  "variants": {
+    "standard": {
+      "neutral": "vy-list-standard-neutral",
+      "primary": "vy-list-standard-primary",
+      "secondary": "vy-list-standard-secondary"
+    }
+  },
+  "sizes": {
+    "xs": {
+      "xs": "vy-list-xs",
+      "sm": "sm:vy-list-xs",
+      "md": "md:vy-list-xs",
+      "lg": "lg:vy-list-xs",
+      "xl": "xl:vy-list-xs"
+    },
+    "sm": {
+      "xs": "vy-list-sm",
+      "sm": "sm:vy-list-sm",
+      "md": "md:vy-list-sm",
+      "lg": "lg:vy-list-sm",
+      "xl": "xl:vy-list-sm"
+    },
+    "md": {
+      "xs": "vy-list-md",
+      "sm": "sm:vy-list-md",
+      "md": "md:vy-list-md",
+      "lg": "lg:vy-list-md",
+      "xl": "xl:vy-list-md"
+    },
+    "lg": {
+      "xs": "vy-list-lg",
+      "sm": "sm:vy-list-lg",
+      "md": "md:vy-list-lg",
+      "lg": "lg:vy-list-lg",
+      "xl": "xl:vy-list-lg"
+    }
+  },
+  "childProps": {
+    "xs": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "sm": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "md": {
+      "icon": {
+        "size": "sm"
+      }
+    },
+    "lg": {
+      "icon": {
+        "size": "md"
+      }
+    }
+  }
+} as const satisfies ComponentMap;
+export const link = {
+  "slots": {
+    "root": "vy-link-root"
+  },
+  "variants": {
+    "always": {
+      "primary": "vy-link-always-primary",
+      "secondary": "vy-link-always-secondary",
+      "error": "vy-link-always-error",
+      "warning": "vy-link-always-warning",
+      "info": "vy-link-always-info",
+      "success": "vy-link-always-success",
+      "neutral": "vy-link-always-neutral"
+    },
+    "hover": {
+      "primary": "vy-link-hover-primary",
+      "secondary": "vy-link-hover-secondary",
+      "error": "vy-link-hover-error",
+      "warning": "vy-link-hover-warning",
+      "info": "vy-link-hover-info",
+      "success": "vy-link-hover-success",
+      "neutral": "vy-link-hover-neutral"
+    },
+    "none": {
+      "primary": "vy-link-none-primary",
+      "secondary": "vy-link-none-secondary",
+      "error": "vy-link-none-error",
+      "warning": "vy-link-none-warning",
+      "info": "vy-link-none-info",
+      "success": "vy-link-none-success",
+      "neutral": "vy-link-none-neutral"
+    }
+  },
+  "sizes": {},
+  "childProps": {}
+} as const satisfies ComponentMap;
+export const componentTokens = { button, textField, circularProgress, linearProgress, divider, tooltip, backdrop, dialog, drawer, paper, collapse, sidebar, breadcrumbs, skeleton, card, avatar, chip, checkbox, switch: switchTokens, table, popover, menu, select, tabs, snackbar, dropzone, iconButton, list, link } as const;
 export type ComponentTokens = typeof componentTokens;
 export type ComponentName = keyof ComponentTokens;

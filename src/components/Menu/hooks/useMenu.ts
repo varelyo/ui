@@ -1,10 +1,17 @@
 import { useDismiss, useInteractions, useListNavigation, useTypeahead } from '@floating-ui/react';
 import { useLayoutEffect, useRef, useState } from 'react';
+import { componentTokens } from '../../../generated/maps';
 import { usePopper } from '../../Popper';
-import { MENU_ICON_SIZE, MENU_ITEM_SELECTOR, MENU_SELECTED_ITEM_SELECTOR } from '../Menu.constants';
+import {
+  MENU_COMPONENT_NAME_KEY,
+  MENU_ITEM_SELECTOR,
+  MENU_SELECTED_ITEM_SELECTOR,
+  MENU_SIZE,
+} from '../Menu.constants';
 import type { UseMenuParams, UseMenuResult } from '../Menu.types';
 
 export function useMenu({
+  variant,
   open,
   onClose,
   anchorEl,
@@ -48,8 +55,9 @@ export function useMenu({
     elementsRef,
     labelsRef,
     context: {
+      variant,
       activeIndex,
-      iconSize: MENU_ICON_SIZE,
+      iconSize: componentTokens[MENU_COMPONENT_NAME_KEY].childProps[MENU_SIZE].item.size,
       getItemProps: (props) => interactions.getItemProps(props),
     },
   };

@@ -1,7 +1,7 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Divider } from './Divider';
 import type { DividerVariant } from './Divider.types';
 

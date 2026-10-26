@@ -1,6 +1,6 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Icon } from '../../foundation/Icon';
+import { Icon } from '../Icon';
 import { TabList } from '../TabList';
 import { Tabs } from '../Tabs';
 import { Tab } from './Tab';

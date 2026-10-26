@@ -1,12 +1,12 @@
-import type { Breakpoint, GapStep, PaddingStep } from '../generated/maps';
+import type { Breakpoint, SpaceStep } from '../generated/maps';
 
 export type Responsive<T> = T | { readonly [K in Breakpoint]?: T };
 
-export type Spacing = GapStep | readonly [row: GapStep, column: GapStep];
+export type Spacing = SpaceStep | readonly [row: SpaceStep, column: SpaceStep];
 
 export type Padding =
-  | PaddingStep
-  | readonly [all: PaddingStep]
-  | readonly [vertical: PaddingStep, horizontal: PaddingStep]
-  | readonly [top: PaddingStep, horizontal: PaddingStep, bottom: PaddingStep]
-  | readonly [top: PaddingStep, right: PaddingStep, bottom: PaddingStep, left: PaddingStep];
+  | SpaceStep
+  | readonly [all: SpaceStep]
+  | readonly [vertical: SpaceStep, horizontal: SpaceStep]
+  | readonly [top: SpaceStep, horizontal: SpaceStep, bottom: SpaceStep]
+  | readonly [top: SpaceStep, right: SpaceStep, bottom: SpaceStep, left: SpaceStep];

@@ -15,7 +15,7 @@ export function Avatar({
   className,
   ...rest
 }: AvatarProps) {
-  const avatar = useAvatar({ src, srcSet, variant, color, size, children });
+  const avatar = useAvatar({ src, srcSet, size, children });
   return (
     <div {...rest} className={avatarClassName({ variant, color, size }, className)}>
       {avatar.showImage ? (

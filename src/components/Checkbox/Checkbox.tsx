@@ -18,6 +18,7 @@ export function Checkbox({
   value,
   size = 'md',
   color = 'primary',
+  variant = 'standard',
   label,
   inputRef,
   'aria-label': ariaLabel,
@@ -35,7 +36,7 @@ export function Checkbox({
     label,
   });
   return (
-    <label {...rest} className={checkboxClassName({ color, size }, className)}>
+    <label {...rest} className={checkboxClassName({ variant, color, size }, className)}>
       <span className={checkboxControlClassName}>
         <input
           ref={checkbox.inputRef}

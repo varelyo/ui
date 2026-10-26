@@ -1,15 +1,15 @@
 import { useState, type FormEvent } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { SelectOption } from '../SelectOption';
 import { Select } from './Select';
 import type { SelectSize, SelectValue } from './Select.types';
 
-const sizes: readonly SelectSize[] = ['sm', 'md', 'lg'];
+const sizes: readonly SelectSize[] = ['xs', 'sm', 'md', 'lg'];
 const roles = [
   { value: 'owner', label: 'Owner' },
   { value: 'editor', label: 'Editor' },

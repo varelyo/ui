@@ -29,6 +29,8 @@ const broken = {
   'icon-sharp-corner': ['fixture', wrap('<path d="M6 9L12 15L18 9"/>')],
   'icon-corner-radius': ['fixture', wrap('<path d="M6 9L11.8 14.8Q12 15 12.2 14.8L18 9"/>')],
   'icon-empty': ['fixture', wrap('')],
+  'icon-element-paint': ['fixture', wrap('<circle cx="12" cy="12" r="3" fill="#000"/>')],
+  'icon-open-fill': ['fixture', wrap('<path d="M6 12Q12 4 18 12" fill="currentColor"/>')],
 };
 for (const [code, [name, source]] of Object.entries(broken))
   test(`broken icon fixture reports ${code}`, () => {
@@ -82,4 +84,79 @@ test('directory checks reject duplicate artwork and inventory drift', async () =
   assert.ok(found.includes('icon-duplicate-artwork:second'));
   assert.ok(found.includes('icon-inventory-drift:second'));
   assert.ok(found.includes('icon-inventory-drift:third'));
+});
+
+const filledShapes = {
+  path: '<path d="M9 6H15Q18 6 18 9V15Q18 18 15 18H9Q6 18 6 15V9Q6 6 9 6Z" fill="currentColor"/>',
+  circle: '<circle cx="12" cy="12" r="3.6" fill="currentColor"/>',
+  ellipse: '<ellipse cx="12" cy="12" rx="7.2" ry="4.8" fill="currentColor"/>',
+};
+
+test('a path, circle or ellipse may be filled with the current colour', () => {
+  for (const [tag, body] of Object.entries(filledShapes)) {
+    const { findings, elements } = validateIconSource('fixture', wrap(body));
+    assert.deepEqual(findings, [], tag);
+    assert.equal(elements.length, 1, tag);
+    assert.ok(Object.hasOwn(elements[0], tag), tag);
+    assert.equal(elements[0].fill, 'currentColor', tag);
+  }
+  assert.deepEqual(
+    validateIconSource('fixture', wrap('<circle cx="12" cy="12" r="3.6"/>')).elements,
+    [{ circle: [12, 12, 3.6] }],
+  );
+});
+
+test('a fill other than the current colour is refused on every shape', () => {
+  for (const [tag, body] of Object.entries(filledShapes))
+    for (const value of ['none', '#000', 'red', 'currentcolor', 'inherit', 'url(#paint)', ''])
+      assert.deepEqual(
+        codes('fixture', wrap(body.replace('fill="currentColor"', `fill="${value}"`))),
+        ['icon-element-paint'],
+        `${tag} fill="${value}"`,
+      );
+});
+
+test('the root stays unfilled and other paint attributes stay refused on shapes', () => {
+  assert.ok(
+    codes(
+      'fixture',
+      wrap(filledShapes.circle, 'fill="currentColor" stroke="currentColor"'),
+    ).includes('icon-root-paint'),
+  );
+  for (const attribute of [
+    'stroke="none"',
+    'fill-rule="evenodd"',
+    'fill-opacity="0.5"',
+    'opacity="0.5"',
+    'color="red"',
+  ])
+    assert.deepEqual(
+      codes('fixture', wrap(filledShapes.circle.replace('/>', ` ${attribute}/>`))),
+      ['icon-forbidden-attribute'],
+      attribute,
+    );
+});
+
+test('a filled path keeps the corner rules and closes every subpath', () => {
+  assert.ok(
+    codes('fixture', wrap('<path d="M6 6H18V18H6Z" fill="currentColor"/>')).includes(
+      'icon-sharp-corner',
+    ),
+  );
+  assert.ok(
+    codes(
+      'fixture',
+      wrap('<path d="M6 9L11.8 14.8Q12 15 12.2 14.8L18 9Q12 3 6 9Z" fill="currentColor"/>'),
+    ).includes('icon-corner-radius'),
+  );
+  assert.deepEqual(codes('fixture', wrap('<path d="M6 12Q12 4 18 12"/>')), []);
+  assert.deepEqual(
+    codes(
+      'fixture',
+      wrap(
+        '<path d="M9 6H15Q18 6 18 9V15Q18 18 15 18H9Q6 18 6 15V9Q6 6 9 6ZM6 20Q12 16 18 20" fill="currentColor"/>',
+      ),
+    ),
+    ['icon-open-fill'],
+  );
 });

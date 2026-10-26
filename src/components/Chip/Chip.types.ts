@@ -1,7 +1,15 @@
 import type { ElementType, KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react';
 import type { ComponentTokens, IconSize } from '../../generated/maps';
-import type { ColorOf, PolymorphicProps, Responsive, SizeOf, VariantOf } from '../../types';
-import type { CHIP_COMPONENT_NAME_KEY } from './Chip.constants';
+import type {
+  Addon,
+  AddonProps,
+  ColorOf,
+  PolymorphicProps,
+  Responsive,
+  SizeOf,
+  VariantOf,
+} from '../../types';
+import type { CHIP_ADDON_SLOTS, CHIP_COMPONENT_NAME_KEY } from './Chip.constants';
 
 export type ChipTokens = ComponentTokens[typeof CHIP_COMPONENT_NAME_KEY];
 export type ChipVariant = VariantOf<ChipTokens>;
@@ -14,8 +22,8 @@ type ChipOwnProps = {
   color?: ChipColor;
   variant?: ChipVariant;
   size?: Responsive<ChipSize>;
-  avatar?: ReactElement;
-  icon?: ReactElement;
+  startAddon?: Addon;
+  endAddon?: Addon;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   onDelete?: (event: ChipDeleteEvent) => void;
   disabled?: boolean;
@@ -32,8 +40,6 @@ export interface ChipStyleProps {
 }
 
 export interface UseChipParams {
-  variant: ChipVariant;
-  color: ChipColor;
   size: Responsive<ChipSize>;
   label: ReactNode;
   deleteLabel: string | undefined;
@@ -51,14 +57,22 @@ export interface UseChipResult {
   deletable: boolean;
   deleteName: string;
   iconSize: Responsive<IconSize> | undefined;
+  addon: AddonProps;
   rootProps: ChipRootProps;
   onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void;
   onDeleteClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
+export interface ChipAddonProps {
+  slot: (typeof CHIP_ADDON_SLOTS)[keyof typeof CHIP_ADDON_SLOTS];
+  addon: Addon;
+  props: AddonProps;
+  iconSize: Responsive<IconSize> | undefined;
+}
+
 export interface ChipContentProps {
-  avatar: ReactElement | undefined;
-  icon: ReactElement | undefined;
+  startAddon: Addon;
+  addon: AddonProps;
   iconSize: Responsive<IconSize> | undefined;
   label: ReactNode;
 }

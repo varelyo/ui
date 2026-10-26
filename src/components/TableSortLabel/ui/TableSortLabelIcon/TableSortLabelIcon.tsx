@@ -1,4 +1,4 @@
-import { Icon, IconSizeContext } from '../../../../foundation/Icon';
+import { Icon, IconSizeContext } from '../../../Icon';
 import type { TableSortLabelIconProps } from '../../TableSortLabel.types';
 import { tableSortLabelIconClassName } from './TableSortLabelIcon.styles';
 

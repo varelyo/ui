@@ -18,8 +18,8 @@ export function TextField({
   rows,
   minRows,
   maxRows,
-  startAdornment,
-  endAdornment,
+  startAddon,
+  endAddon,
   id,
   disabled = false,
   required = false,
@@ -54,8 +54,8 @@ export function TextField({
         rows={rows}
         minRows={minRows}
         maxRows={maxRows}
-        startAdornment={startAdornment}
-        endAdornment={endAdornment}
+        startAddon={startAddon}
+        endAddon={endAddon}
         onChange={onChange}
       />
       {field.hasHelperText ? (

@@ -13,13 +13,20 @@ export function Dialog({
   maxWidth = 'sm',
   keepMounted = false,
   disableEscapeKeyDown = false,
+  variant = 'standard',
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   'aria-describedby': ariaDescribedBy,
   className,
   ...rest
 }: DialogProps) {
-  const dialog = useDialog({ maxWidth, ariaLabel, ariaLabelledBy, ariaDescribedBy });
+  const dialog = useDialog({
+    variant,
+    maxWidth,
+    ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
+  });
   return (
     <Modal
       open={open}
@@ -27,7 +34,7 @@ export function Dialog({
       keepMounted={keepMounted}
       disableEscapeKeyDown={disableEscapeKeyDown}
       {...dialog.labelProps}
-      className={dialogContainerClassName}
+      className={dialogContainerClassName(variant)}
     >
       <DialogContext value={dialog.context}>
         <Paper

@@ -1,7 +1,7 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { FormControl } from '../FormControl';
 import { InputBase } from './InputBase';
 
@@ -16,8 +16,8 @@ export function InputBaseStory() {
           <FormControl>
             <InputBase
               aria-label="With adornments"
-              startAdornment={<Icon name="search" />}
-              endAdornment={<Icon name="close" />}
+              startAddon={<Icon name="search" />}
+              endAddon={<Icon name="close" />}
             />
           </FormControl>
           <FormControl variant="filled">

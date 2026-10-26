@@ -9,7 +9,9 @@ const px = (id: string) => {
   if (!dimension) throw new Error(`Missing ${id}`);
   return dimension.unit === 'rem' ? dimension.value * 16 : dimension.value;
 };
-const sizes = ['sm', 'md', 'lg'] as const;
+const sizes = ['xs', 'sm', 'md', 'lg'] as const;
+const iconPx = (size: string) =>
+  px(`semantic.iconSize.${String(values[`semantic.controlIcon.${size}`])}`);
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/?story=icon-button');
@@ -51,8 +53,8 @@ test('every size is a centred square as tall as a Button of that size, with the 
     expect(box.height).toBe(px(`semantic.controlHeight.${size}`));
     expect((await page.getByTestId(`button-${size}`).boundingBox())!.height).toBe(box.height);
     const glyph = (await iconButton.locator('svg').boundingBox())!;
-    expect(glyph.width).toBe(px(`semantic.iconSize.${size}`));
-    expect(glyph.height).toBe(px(`semantic.iconSize.${size}`));
+    expect(glyph.width).toBe(iconPx(size));
+    expect(glyph.height).toBe(iconPx(size));
     expect(glyph.x - box.x).toBeCloseTo(box.x + box.width - (glyph.x + glyph.width), 2);
     expect(glyph.y - box.y).toBeCloseTo(box.y + box.height - (glyph.y + glyph.height), 2);
   }
@@ -62,11 +64,11 @@ test('size is responsive and the icon follows it', async ({ page }) => {
   const responsive = page.getByTestId('responsive');
   await page.setViewportSize({ width: 480, height: 900 });
   expect(await css(responsive, 'width')).toBe(`${px('semantic.controlHeight.sm')}px`);
-  expect(await css(responsive.locator('svg'), 'width')).toBe(`${px('semantic.iconSize.sm')}px`);
+  expect(await css(responsive.locator('svg'), 'width')).toBe(`${iconPx('sm')}px`);
   await page.setViewportSize({ width: 1280, height: 900 });
   expect(await css(responsive, 'width')).toBe(`${px('semantic.controlHeight.lg')}px`);
   expect(await css(responsive, 'height')).toBe(`${px('semantic.controlHeight.lg')}px`);
-  expect(await css(responsive.locator('svg'), 'width')).toBe(`${px('semantic.iconSize.lg')}px`);
+  expect(await css(responsive.locator('svg'), 'width')).toBe(`${iconPx('lg')}px`);
 });
 
 test('keyboard focus shows the shared focus ring', async ({ page }) => {
@@ -103,7 +105,7 @@ test('disabled and loading icon buttons block activation, and loading keeps the 
     expect(box.width).toBe(px(`semantic.controlHeight.${size}`));
     expect(box.height).toBe(box.width);
     const progress = (await refreshing.locator('[role="progressbar"]').boundingBox())!;
-    expect(progress.width).toBe(px(`semantic.iconSize.${size}`));
+    expect(progress.width).toBe(px('semantic.iconSize.sm'));
   }
 });
 
@@ -162,7 +164,7 @@ test('contained and outlined icon buttons keep the centred square of their size,
       expect(box.width).toBe(px(`semantic.controlHeight.${size}`));
       expect(box.height).toBe(box.width);
       const glyph = (await iconButton.locator('svg').boundingBox())!;
-      expect(glyph.width).toBe(px(`semantic.iconSize.${size}`));
+      expect(glyph.width).toBe(iconPx(size));
       expect(glyph.x - box.x).toBeCloseTo(box.x + box.width - (glyph.x + glyph.width), 2);
       expect(glyph.y - box.y).toBeCloseTo(box.y + box.height - (glyph.y + glyph.height), 2);
     }

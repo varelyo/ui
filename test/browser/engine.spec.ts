@@ -25,7 +25,7 @@ test('brand and mode attributes repaint the scope without a React render', async
   expect(await css(button, 'background-color')).toBe(
     colour('neutral.light', 'semantic.primary.default'),
   );
-  expect(await css(icon, 'stroke-width')).toBe('1.8px');
+  expect(await css(icon, 'stroke-width')).toBe('1.75px');
   expect(await css(icon, 'stroke-linecap')).toBe('round');
   for (const theme of ['slate.light', 'slate.dark', 'neutral.dark'] as const) {
     const [brand, mode] = theme.split('.') as [string, string];

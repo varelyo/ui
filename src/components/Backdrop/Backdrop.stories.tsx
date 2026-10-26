@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
+import { Stack } from '../Stack';
 import { Button } from '../Button';
 import { CircularProgress } from '../CircularProgress';
 import { Backdrop } from './Backdrop';

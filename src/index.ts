@@ -1,6 +1,6 @@
-export { ThemeScope, type ThemeScopeProps } from './foundation/ThemeScope';
-export { Typography, type TypographyAlign, type TypographyProps } from './foundation/Typography';
-export { Icon, type IconName, type IconProps } from './foundation/Icon';
+export { ThemeScope, type ThemeScopeProps } from './components/ThemeScope';
+export { Typography, type TypographyAlign, type TypographyProps } from './components/Typography';
+export { Icon, type IconName, type IconProps } from './components/Icon';
 export {
   Stack,
   type StackAlignItems,
@@ -8,16 +8,16 @@ export {
   type StackDisplay,
   type StackJustifyContent,
   type StackProps,
-} from './foundation/Stack';
+} from './components/Stack';
 export {
   Grid,
   type GridCount,
   type GridDisplay,
   type GridOffset,
   type GridProps,
-} from './foundation/Grid';
-export { Container, type ContainerDisplay, type ContainerProps } from './foundation/Container';
-export { Box, type BoxFlexGrow, type BoxMinHeight, type BoxProps } from './foundation/Box';
+} from './components/Grid';
+export { Container, type ContainerDisplay, type ContainerProps } from './components/Container';
+export { Box, type BoxFlexGrow, type BoxMinHeight, type BoxProps } from './components/Box';
 export {
   ButtonBase,
   type ButtonBaseLinkProps,
@@ -69,6 +69,13 @@ export {
   type CircularProgressVariant,
 } from './components/CircularProgress';
 export {
+  LinearProgress,
+  type LinearProgressColor,
+  type LinearProgressProps,
+  type LinearProgressSize,
+  type LinearProgressVariant,
+} from './components/LinearProgress';
+export {
   Divider,
   type DividerOrientation,
   type DividerProps,
@@ -89,14 +96,21 @@ export {
   type PopperState,
   type UsePopperParams,
 } from './components/Popper';
-export { Tooltip, type TooltipProps } from './components/Tooltip';
+export { Tooltip, type TooltipProps, type TooltipVariant } from './components/Tooltip';
 export {
   Popover,
   type PopoverClose,
   type PopoverCloseReason,
   type PopoverProps,
+  type PopoverVariant,
 } from './components/Popover';
-export { Menu, type MenuClose, type MenuCloseReason, type MenuProps } from './components/Menu';
+export {
+  Menu,
+  type MenuClose,
+  type MenuCloseReason,
+  type MenuProps,
+  type MenuVariant,
+} from './components/Menu';
 export { MenuItem, type MenuItemLinkProps, type MenuItemProps } from './components/MenuItem';
 export {
   Select,
@@ -112,6 +126,7 @@ export {
   type TabsColor,
   type TabsOrientation,
   type TabsProps,
+  type TabsVariant,
   type TabValue,
 } from './components/Tabs';
 export { TabList, type TabListProps } from './components/TabList';
@@ -124,17 +139,24 @@ export {
   type SnackbarCloseReason,
   type SnackbarProps,
   type SnackbarRole,
+  type SnackbarVariant,
 } from './components/Snackbar';
 export { Paper, type PaperElevation, type PaperProps, type PaperVariant } from './components/Paper';
-export { Backdrop, type BackdropProps } from './components/Backdrop';
+export { Backdrop, type BackdropProps, type BackdropVariant } from './components/Backdrop';
 export { Modal, type ModalClose, type ModalCloseReason, type ModalProps } from './components/Modal';
-export { Dialog, type DialogMaxWidth, type DialogProps } from './components/Dialog';
+export {
+  Dialog,
+  type DialogMaxWidth,
+  type DialogProps,
+  type DialogVariant,
+} from './components/Dialog';
 export { DialogTitle, type DialogTitleProps } from './components/DialogTitle';
 export { DialogContent, type DialogContentProps } from './components/DialogContent';
 export { DialogActions, type DialogActionsProps } from './components/DialogActions';
 export {
   Drawer,
   type DrawerAnchor,
+  type DrawerAppearance,
   type DrawerProps,
   type DrawerVariant,
 } from './components/Drawer';
@@ -145,7 +167,33 @@ export {
   type CollapseSize,
 } from './components/Collapse';
 export {
+  List,
+  type ListAlignItems,
+  type ListColor,
+  type ListProps,
+  type ListSize,
+  type ListVariant,
+} from './components/List';
+export {
+  ListSubheader,
+  type ListSubheaderColor,
+  type ListSubheaderProps,
+  type ListSubheaderVariant,
+} from './components/ListSubheader';
+export { ListItem, type ListItemMarker, type ListItemProps } from './components/ListItem';
+export {
+  ListItemButton,
+  type ListItemButtonColor,
+  type ListItemButtonLinkProps,
+  type ListItemButtonProps,
+  type ListItemButtonSize,
+} from './components/ListItemButton';
+export { ListItemIcon, type ListItemIconProps } from './components/ListItemIcon';
+export { ListItemText, type ListItemTextProps } from './components/ListItemText';
+export { ListItemAvatar, type ListItemAvatarProps } from './components/ListItemAvatar';
+export {
   Sidebar,
+  type SidebarAppearance,
   type SidebarColor,
   type SidebarProps,
   type SidebarVariant,
@@ -158,7 +206,12 @@ export {
   type SidebarItemLinkProps,
   type SidebarItemProps,
 } from './components/SidebarItem';
-export { Breadcrumbs, type BreadcrumbsProps } from './components/Breadcrumbs';
+export {
+  Breadcrumbs,
+  type BreadcrumbsProps,
+  type BreadcrumbsVariant,
+} from './components/Breadcrumbs';
+export { Link, type LinkColor, type LinkProps, type LinkUnderline } from './components/Link';
 export {
   Skeleton,
   type SkeletonAnimation,
@@ -166,7 +219,7 @@ export {
   type SkeletonSize,
   type SkeletonVariant,
 } from './components/Skeleton';
-export { Card, type CardProps, type CardVariant } from './components/Card';
+export { Card, type CardAppearance, type CardProps, type CardVariant } from './components/Card';
 export { CardHeader, type CardHeaderProps } from './components/CardHeader';
 export { CardContent, type CardContentProps } from './components/CardContent';
 export { CardActions, type CardActionsProps } from './components/CardActions';
@@ -190,13 +243,21 @@ export {
   type CheckboxColor,
   type CheckboxProps,
   type CheckboxSize,
+  type CheckboxVariant,
 } from './components/Checkbox';
-export { Switch, type SwitchColor, type SwitchProps, type SwitchSize } from './components/Switch';
+export {
+  Switch,
+  type SwitchColor,
+  type SwitchProps,
+  type SwitchSize,
+  type SwitchVariant,
+} from './components/Switch';
 export {
   Table,
   type TableProps,
   type TableSize,
   type TableSortDirection,
+  type TableVariant,
 } from './components/Table';
 export { TableContainer, type TableContainerProps } from './components/TableContainer';
 export { TableHead, type TableHeadProps } from './components/TableHead';
@@ -210,21 +271,21 @@ export {
   type DropzoneDragVerdict,
   type DropzoneProps,
   type DropzoneSize,
+  type DropzoneVariant,
   type FileRejection,
   type FileRejectionReason,
 } from './components/Dropzone';
-export type { Padding, Responsive, Spacing } from './types';
+export type { Addon, AddonProps, Padding, Responsive, Spacing } from './types';
 export type {
   Breakpoint,
   Brand,
   ContainerWidth,
   DwellStep,
-  GapStep,
   IconSize,
   MotionStep,
   Mode,
-  PaddingStep,
   ScopeMode,
+  SpaceStep,
   TextColor,
   TypographyVariant,
 } from './generated/maps';

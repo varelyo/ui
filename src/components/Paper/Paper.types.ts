@@ -11,6 +11,7 @@ type PaperOwnProps = {
   variant?: PaperVariant;
   elevation?: Responsive<PaperElevation>;
   square?: boolean;
+  selected?: boolean;
   children?: ReactNode;
 };
 
@@ -20,4 +21,14 @@ export interface PaperStyleProps {
   variant: PaperVariant;
   elevation: Responsive<PaperElevation>;
   square: boolean;
+}
+
+export interface UsePaperParams {
+  selected: boolean;
+}
+
+export interface UsePaperResult {
+  rootProps: {
+    'data-selected': '' | undefined;
+  };
 }

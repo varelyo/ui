@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Avatar } from '../Avatar';
 import { Chip } from './Chip';
 import type { ChipColor, ChipSize, ChipVariant } from './Chip.types';
@@ -18,7 +18,7 @@ const colors: readonly ChipColor[] = [
   'success',
 ];
 const variants: readonly ChipVariant[] = ['filled', 'outlined'];
-const sizes: readonly ChipSize[] = ['sm', 'md', 'lg'];
+const sizes: readonly ChipSize[] = ['xs', 'sm', 'md', 'lg'];
 
 export function ChipStory() {
   const [tags, setTags] = useState(['Design', 'Research', 'Billing']);
@@ -49,17 +49,31 @@ export function ChipStory() {
           ))}
         </Stack>
       </Example>
-      <Example title="Sizes with an icon and an avatar">
-        <Stack direction="row" spacing="sm" alignItems="center">
+      <Example title="Sizes with an icon and an avatar addon">
+        <Stack spacing="sm">
           {sizes.map((size) => (
-            <Chip key={size} size={size} icon={<Icon name="star" />} label={`Starred ${size}`} />
+            <Stack key={size} direction="row" spacing="sm" alignItems="center">
+              <Chip
+                size={size}
+                startAddon={<Icon name="star" />}
+                label={`Starred ${size}`}
+                data-testid={`chip-icon-${size}`}
+              />
+              <Chip
+                size={size}
+                variant="outlined"
+                startAddon={(addon) => <Avatar {...addon.avatar}>MH</Avatar>}
+                label="Mira Holt"
+                data-testid={`chip-avatar-${size}`}
+              />
+              <Chip
+                size={size}
+                endAddon={<Icon name="chevron-down" />}
+                label="Status"
+                data-testid={`chip-end-${size}`}
+              />
+            </Stack>
           ))}
-          <Chip
-            avatar={<Avatar size="sm">MH</Avatar>}
-            label="Mira Holt"
-            variant="outlined"
-            data-testid="chip-avatar"
-          />
         </Stack>
       </Example>
       <Example title="Clickable and deletable chips keep their actions separate">

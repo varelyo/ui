@@ -1,6 +1,6 @@
 import type { ChangeEvent, ComponentPropsWithRef, MutableRefObject, ReactNode, Ref } from 'react';
 import type { ComponentTokens, IconSize } from '../../generated/maps';
-import type { Responsive, SizeOf, VariantOf } from '../../types';
+import type { Addon, Responsive, SizeOf, VariantOf } from '../../types';
 import type { FormControlSlots } from '../FormControl';
 import type { PopperFocusManager, PopperState } from '../Popper';
 import type { SELECT_COMPONENT_NAME_KEY } from './Select.constants';
@@ -26,6 +26,8 @@ type SelectFieldProps = {
   size?: Responsive<SelectSize>;
   variant?: SelectVariant;
   fullWidth?: boolean;
+  startAddon?: Addon;
+  endAddon?: Addon;
   children?: ReactNode;
 };
 
@@ -142,6 +144,8 @@ export interface SelectTriggerProps {
   required: boolean;
   disabled: boolean;
   autofill: (event: ChangeEvent<HTMLInputElement>) => void;
+  startAddon: Addon;
+  endAddon: Addon;
 }
 
 export interface UseSelectTriggerResult {

@@ -1,11 +1,12 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 import type { ComponentTokens } from '../../generated/maps';
-import type { ColorOf } from '../../types';
+import type { ColorOf, VariantOf } from '../../types';
 import type { SIDEBAR_COMPONENT_NAME_KEY } from './Sidebar.constants';
 
 export type SidebarTokens = ComponentTokens[typeof SIDEBAR_COMPONENT_NAME_KEY];
 export type SidebarColor = ColorOf<SidebarTokens>;
 export type SidebarVariant = 'docked' | 'responsive';
+export type SidebarAppearance = VariantOf<SidebarTokens>;
 
 type SidebarOwnProps = {
   label: string;
@@ -14,6 +15,7 @@ type SidebarOwnProps = {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   variant?: SidebarVariant;
+  appearance?: SidebarAppearance;
   color?: SidebarColor;
   children?: ReactNode;
 };
@@ -22,11 +24,13 @@ export type SidebarProps = SidebarOwnProps &
   Omit<ComponentPropsWithRef<'nav'>, keyof SidebarOwnProps | 'style' | 'aria-label'>;
 
 export interface SidebarContextValue {
+  appearance: SidebarAppearance;
   collapsed: boolean;
   color: SidebarColor;
 }
 
 export interface SidebarDockStyleProps {
+  appearance: SidebarAppearance;
   variant: SidebarVariant;
   color: SidebarColor;
 }
@@ -37,6 +41,7 @@ export interface UseSidebarParams {
   defaultOpen: boolean;
   onOpenChange: ((open: boolean) => void) | undefined;
   variant: SidebarVariant;
+  appearance: SidebarAppearance;
   color: SidebarColor;
 }
 

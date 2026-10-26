@@ -1,4 +1,4 @@
-import { layout, type PaddingStep } from '../generated/maps';
+import { layout, type SpaceStep } from '../generated/maps';
 import type { Padding, Responsive, Spacing } from '../types';
 import { atBreakpoints } from './responsive';
 
@@ -22,7 +22,7 @@ const paddingFamilies = [
 export function paddingClasses(value: Responsive<Padding> | undefined): string {
   return atBreakpoints(value)
     .map(([breakpoint, padding]) => {
-      const sides: readonly PaddingStep[] = typeof padding === 'string' ? [padding] : padding;
+      const sides: readonly SpaceStep[] = typeof padding === 'string' ? [padding] : padding;
       const families = paddingFamilies[sides.length - 1] ?? [];
       return families
         .map((family, index) => {

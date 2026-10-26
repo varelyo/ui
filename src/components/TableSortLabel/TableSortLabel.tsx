@@ -17,7 +17,7 @@ export function TableSortLabel({
       {...rest}
       {...label.rootProps}
       type={type}
-      className={tableSortLabelClassName(className)}
+      className={tableSortLabelClassName(label.variant, className)}
     >
       {children}
       <TableSortLabelIcon name={label.iconName} size={label.iconSize} />

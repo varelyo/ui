@@ -1,4 +1,4 @@
-import type { IconName } from '../../foundation/Icon';
+import type { IconName } from '../Icon';
 
 export const SELECT_COMPONENT_NAME_KEY = 'select' as const;
 

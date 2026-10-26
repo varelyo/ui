@@ -11,8 +11,9 @@ export const paperClassName = (
 ) =>
   cx(
     paper.slots.root,
+    paper.slots.selection,
     paper.variants[variant].primary,
-    responsiveClasses(elevation, paper.sizes[variant].primary, 'xs'),
+    responsiveClasses(elevation, paper.styleSizes[variant], 'xs'),
     square && 'rounded-none',
     className,
   );

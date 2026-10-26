@@ -1,2 +1,3 @@
 export { Card } from './Card';
-export type { CardProps, CardVariant } from './Card.types';
+export { CardContext } from './context';
+export type { CardAppearance, CardContextValue, CardProps, CardVariant } from './Card.types';

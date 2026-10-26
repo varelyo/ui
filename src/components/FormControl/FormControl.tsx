@@ -14,7 +14,7 @@ export function FormControl({
   children,
   ...rest
 }: FormControlProps) {
-  const { context, rootProps } = useFormControlState({ variant, size, disabled, error, required });
+  const { context, rootProps } = useFormControlState({ size, disabled, error, required });
   return (
     <div
       {...rest}

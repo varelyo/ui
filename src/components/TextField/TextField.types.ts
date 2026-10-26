@@ -1,6 +1,6 @@
 import type { ChangeEvent, ComponentPropsWithRef, ReactNode, Ref } from 'react';
 import type { ComponentTokens } from '../../generated/maps';
-import type { Responsive, SizeOf, VariantOf } from '../../types';
+import type { Addon, Responsive, SizeOf, VariantOf } from '../../types';
 import type { TEXT_FIELD_COMPONENT_NAME_KEY } from './TextField.constants';
 
 export type TextFieldTokens = ComponentTokens[typeof TEXT_FIELD_COMPONENT_NAME_KEY];
@@ -25,8 +25,8 @@ export type TextFieldProps = NativeInputProps & {
   rows?: number;
   minRows?: number;
   maxRows?: number;
-  startAdornment?: ReactNode;
-  endAdornment?: ReactNode;
+  startAddon?: Addon;
+  endAddon?: Addon;
   value?: string | number;
   defaultValue?: string | number;
   onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;

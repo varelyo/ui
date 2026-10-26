@@ -1,5 +1,6 @@
 import type { ComponentPropsWithRef } from 'react';
 import type { ComponentTokens } from '../../generated/maps';
+import type { UseProgressValueResult } from '../../hooks';
 import type { ColorOf, Responsive, SizeOf, VariantOf } from '../../types';
 import type { CIRCULAR_PROGRESS_COMPONENT_NAME_KEY } from './CircularProgress.constants';
 
@@ -31,10 +32,6 @@ export interface UseCircularProgressParams {
 
 export interface UseCircularProgressResult {
   determinate: boolean;
-  valueProps: {
-    'aria-valuenow': number | undefined;
-    'aria-valuemin': number | undefined;
-    'aria-valuemax': number | undefined;
-  };
+  valueProps: UseProgressValueResult['valueProps'];
   dashArray: string | undefined;
 }

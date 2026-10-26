@@ -22,7 +22,10 @@ export function Tab({
       {...tab.tabProps}
       ref={tab.ref}
       disabled={disabled}
-      className={tabClassName(tab.orientation, tab.color, className)}
+      className={tabClassName(
+        { orientation: tab.orientation, variant: tab.variant, color: tab.color },
+        className,
+      )}
     >
       {icon ? <TabIcon size={tab.iconSize}>{icon}</TabIcon> : null}
       <TabLabel>{label}</TabLabel>

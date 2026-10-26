@@ -1,5 +1,4 @@
 import type { ElementType, ReactNode } from 'react';
-import type { IconSize } from '../../generated/maps';
 import type { PolymorphicProps } from '../../types';
 import type { SidebarColor } from '../Sidebar';
 
@@ -7,6 +6,7 @@ type SidebarItemOwnProps = {
   icon?: ReactNode;
   selected?: boolean;
   disabled?: boolean;
+  end?: ReactNode;
   children?: ReactNode;
 };
 
@@ -24,25 +24,13 @@ export type SidebarItemInternalProps = SidebarItemOwnProps & {
 };
 
 export interface UseSidebarItemParams {
-  selected: boolean;
-}
-
-export interface SidebarItemCurrentProps {
-  'aria-current'?: 'page';
+  icon: ReactNode;
+  end: ReactNode;
 }
 
 export interface UseSidebarItemResult {
   collapsed: boolean;
   color: SidebarColor;
-  iconSize: IconSize;
-  currentProps: SidebarItemCurrentProps;
-}
-
-export interface SidebarItemIconProps {
-  size: IconSize;
-  children: ReactNode;
-}
-
-export interface SidebarItemLabelProps {
-  children: ReactNode;
+  iconShown: boolean;
+  end: ReactNode;
 }

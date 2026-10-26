@@ -96,3 +96,13 @@ declare global {
     vyDrops?: DropRecord[];
   }
 }
+
+export const settled = (locator: Locator) =>
+  locator.evaluate((element) =>
+    Promise.all(
+      element.ownerDocument
+        .getAnimations()
+        .filter((animation) => animation instanceof CSSTransition)
+        .map((animation) => animation.finished.catch(() => undefined)),
+    ),
+  );

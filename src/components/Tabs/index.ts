@@ -6,6 +6,7 @@ export type {
   TabsContextValue,
   TabsOrientation,
   TabsProps,
+  TabsVariant,
   TabValue,
 } from './Tabs.types';
 export { panelId, tabId } from './utils';

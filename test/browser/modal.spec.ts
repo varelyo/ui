@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { css, rem } from './helpers';
+import { css, rem, settled } from './helpers';
 
 const visibleShadow = (value: string) =>
   value !== 'none' &&
@@ -131,6 +131,7 @@ test('long dialog content scrolls inside the paper, which stays in the viewport'
   await page.getByTestId('dialog-long-open').click();
   const paper = page.getByTestId('dialog-long');
   await expect(paper).toBeVisible();
+  await settled(paper);
   const box = await paper.boundingBox();
   expect(box!.y).toBeGreaterThanOrEqual(24);
   expect(box!.y + box!.height).toBeLessThanOrEqual(900 - 24);

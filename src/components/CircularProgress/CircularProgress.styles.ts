@@ -14,7 +14,7 @@ export const circularProgressRootClassName = (
     'inline-flex shrink-0',
     progress.slots.root,
     color === 'inherit' ? null : progress.variants[variant][intent],
-    responsiveClasses(size, progress.sizes[variant][intent]),
+    responsiveClasses(size, progress.sizes),
     className,
   );
 };

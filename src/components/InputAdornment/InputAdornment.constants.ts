@@ -1,4 +1,4 @@
 export const INPUT_ADORNMENT_SLOTS = {
-  start: 'start-adornment',
-  end: 'end-adornment',
+  start: 'start-addon',
+  end: 'end-addon',
 } as const;

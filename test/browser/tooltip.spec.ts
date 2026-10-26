@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import neutralDark from '../../src/generated/raw/neutral.dark';
 import neutralLight from '../../src/generated/raw/neutral.light';
-import { css, rem, rgb, type DtcgColor } from './helpers';
+import { css, rem, rgb, settled, type DtcgColor } from './helpers';
 
 const themes = { 'neutral.light': neutralLight, 'neutral.dark': neutralDark } as const;
 const colour = (theme: keyof typeof themes, id: string) =>
@@ -20,6 +20,7 @@ test('hover opens a tooltip that describes its trigger and leaving removes it', 
   await expect(tooltip).toBeVisible();
   await expect(trigger).toHaveAttribute('aria-describedby', (await tooltip.getAttribute('id'))!);
   await expect(trigger).not.toHaveAttribute('title');
+  await settled(tooltip);
   const [triggerBox, tooltipBox] = await Promise.all([
     trigger.boundingBox(),
     tooltip.boundingBox(),
@@ -37,6 +38,7 @@ test('keyboard focus opens a tooltip and Escape closes it', async ({ page }) => 
   await page.keyboard.press('Tab');
   const tooltip = page.getByRole('tooltip', { name: 'Opens right' });
   await expect(tooltip).toBeVisible();
+  await settled(tooltip);
   const [triggerBox, tooltipBox] = await Promise.all([
     page.getByTestId('trigger-right').boundingBox(),
     tooltip.boundingBox(),

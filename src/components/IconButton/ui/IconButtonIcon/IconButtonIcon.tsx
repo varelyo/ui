@@ -1,4 +1,4 @@
-import { IconSizeContext } from '../../../../foundation/Icon';
+import { IconSizeContext } from '../../../Icon';
 import type { IconButtonIconProps } from '../../IconButton.types';
 import { iconButtonIconClassName } from './IconButtonIcon.styles';
 

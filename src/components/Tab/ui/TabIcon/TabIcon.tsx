@@ -1,4 +1,4 @@
-import { IconSizeContext } from '../../../../foundation/Icon';
+import { IconSizeContext } from '../../../Icon';
 import type { TabIconProps } from '../../Tab.types';
 import { tabIconClassName } from './TabIcon.styles';
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Container } from '../../foundation/Container';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Container } from '../Container';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { Paper } from '../Paper';
 import { Collapse } from './Collapse';

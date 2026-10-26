@@ -1,8 +1,8 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react';
-import type { IconName } from '../../foundation/Icon';
+import type { IconName } from '../Icon';
 import type { IconSize } from '../../generated/maps';
 import type { Responsive } from '../../types';
-import type { TableSortDirection } from '../Table';
+import type { TableSortDirection, TableVariant } from '../Table';
 
 export type TableSortLabelProps = Omit<ComponentPropsWithRef<'button'>, 'style'> & {
   active?: boolean;
@@ -20,6 +20,7 @@ export interface TableSortLabelRootProps {
 }
 
 export interface UseTableSortLabelResult {
+  variant: TableVariant;
   rootProps: TableSortLabelRootProps;
   iconName: IconName;
   iconSize: Responsive<IconSize> | undefined;

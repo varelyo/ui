@@ -1,17 +1,15 @@
-import { use } from 'react';
-import { componentTokens } from '../../../generated/maps';
-import { SIDEBAR_SIZE, SidebarContext } from '../../Sidebar';
-import { SIDEBAR_ITEM_COMPONENT_NAME_KEY } from '../SidebarItem.constants';
+import { use, type ReactNode } from 'react';
+import { SidebarContext } from '../../Sidebar';
 import type { UseSidebarItemParams, UseSidebarItemResult } from '../SidebarItem.types';
 
-export function useSidebarItem({ selected }: UseSidebarItemParams): UseSidebarItemResult {
+const present = (node: ReactNode) => node !== undefined && node !== null && node !== false;
+
+export function useSidebarItem({ icon, end }: UseSidebarItemParams): UseSidebarItemResult {
   const { collapsed, color } = use(SidebarContext);
-  const childProps =
-    componentTokens[SIDEBAR_ITEM_COMPONENT_NAME_KEY].childProps.standard[color][SIDEBAR_SIZE];
   return {
     collapsed,
     color,
-    iconSize: childProps.item.size,
-    currentProps: selected ? { 'aria-current': 'page' } : {},
+    iconShown: present(icon),
+    end: collapsed ? undefined : end,
   };
 }

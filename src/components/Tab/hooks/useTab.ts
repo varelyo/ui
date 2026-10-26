@@ -1,7 +1,8 @@
 import { useListItem, useMergeRefs } from '@floating-ui/react';
 import { use, useLayoutEffect } from 'react';
+import { componentTokens } from '../../../generated/maps';
 import { TabListContext } from '../../TabList';
-import { panelId, TABS_ICON_SIZE, tabId, TabsContext } from '../../Tabs';
+import { panelId, TABS_COMPONENT_NAME_KEY, TABS_SIZE, tabId, TabsContext } from '../../Tabs';
 import type { UseTabParams, UseTabResult } from '../Tab.types';
 
 export function useTab({ value, disabled, ref, onClick, onFocus }: UseTabParams): UseTabResult {
@@ -19,8 +20,9 @@ export function useTab({ value, disabled, ref, onClick, onFocus }: UseTabParams)
   return {
     ref: (node) => merged?.(node),
     orientation: tabs.orientation,
+    variant: tabs.variant,
     color: tabs.color,
-    iconSize: TABS_ICON_SIZE,
+    iconSize: componentTokens[TABS_COMPONENT_NAME_KEY].childProps[TABS_SIZE].tab.size,
     tabProps: {
       role: 'tab',
       id,

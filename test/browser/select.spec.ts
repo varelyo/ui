@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { css, rem } from './helpers';
+import { css, rem, settled } from './helpers';
 
 const combobox = (page: Page, name: string) => page.getByRole('combobox', { name, exact: true });
 const option = (page: Page, name: string) => page.getByRole('option', { name, exact: true });
@@ -66,6 +66,7 @@ test('a pointer picks an option from a listbox anchored under the field and as w
   const role = combobox(page, 'Role');
   await role.click();
   const listbox = page.getByRole('listbox', { name: 'Role' });
+  await settled(listbox);
   const [field, popup] = await Promise.all([role.boundingBox(), listbox.boundingBox()]);
   expect(Math.round(popup!.y - (field!.y + field!.height))).toBe(4);
   expect(Math.round(popup!.x)).toBe(Math.round(field!.x));
@@ -167,9 +168,10 @@ test('a select is as wide as its widest option and truncates in a narrow viewpor
 test('option size and field size follow the select tokens', async ({ page }) => {
   await page.goto('/?story=select');
   for (const [size, height, icon] of [
-    ['sm', 2, 16],
-    ['md', 2.5, 20],
-    ['lg', 3, 24],
+    ['xs', 1.5, 12],
+    ['sm', 1.75, 16],
+    ['md', 2, 16],
+    ['lg', 2.25, 16],
   ] as const) {
     const field = combobox(page, `outlined ${size}`);
     expect(await css(field, 'min-height')).toBe(rem(height));

@@ -1,11 +1,10 @@
-import { useRef, type ChangeEvent, type MouseEvent, type ReactNode } from 'react';
+import { useRef, type ChangeEvent, type MouseEvent } from 'react';
 import { useMergedRefs } from '../../../hooks';
+import { hasAddon } from '../../../utils';
 import { useFormControl } from '../../FormControl';
 import { INPUT_BASE_DEFAULT_ROWS, INPUT_BASE_FILE_TYPE } from '../InputBase.constants';
 import type { InputBaseControl, UseInputBaseParams, UseInputBaseResult } from '../InputBase.types';
 import { useAutosize } from './useAutosize';
-
-const present = (node: ReactNode) => node !== undefined && node !== null;
 
 export function useInputBase({
   inputRef,
@@ -17,8 +16,8 @@ export function useInputBase({
   disabled,
   required,
   invalid,
-  startAdornment,
-  endAdornment,
+  startAddon,
+  endAddon,
   onChange,
 }: UseInputBaseParams): UseInputBaseResult {
   const formControl = useFormControl();
@@ -35,8 +34,8 @@ export function useInputBase({
   return {
     slots: formControl.slots,
     styleProps: { multiline, file },
-    hasStartAdornment: present(startAdornment),
-    hasEndAdornment: present(endAdornment),
+    hasStartAddon: hasAddon(startAddon),
+    hasEndAddon: hasAddon(endAddon),
     textareaRows: rows ?? minRows ?? INPUT_BASE_DEFAULT_ROWS,
     boxProps: {
       onMouseDown: (event: MouseEvent<HTMLDivElement>) => {

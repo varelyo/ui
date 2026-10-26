@@ -11,38 +11,13 @@ export const vars = {
       "2xl": "var(--vy-space-2xl)",
       "3xl": "var(--vy-space-3xl)"
     },
-    "padding": {
-      "none": "var(--vy-padding-none)",
-      "2xs": "var(--vy-padding-2xs)",
-      "xs": "var(--vy-padding-xs)",
-      "sm": "var(--vy-padding-sm)",
-      "md": "var(--vy-padding-md)",
-      "lg": "var(--vy-padding-lg)",
-      "xl": "var(--vy-padding-xl)",
-      "2xl": "var(--vy-padding-2xl)",
-      "3xl": "var(--vy-padding-3xl)"
-    },
-    "gap": {
-      "none": "var(--vy-gap-none)",
-      "2xs": "var(--vy-gap-2xs)",
-      "xs": "var(--vy-gap-xs)",
-      "sm": "var(--vy-gap-sm)",
-      "md": "var(--vy-gap-md)",
-      "lg": "var(--vy-gap-lg)",
-      "xl": "var(--vy-gap-xl)",
-      "2xl": "var(--vy-gap-2xl)",
-      "3xl": "var(--vy-gap-3xl)"
-    },
     "radius": {
       "none": "var(--vy-radius-none)",
-      "2xs": "var(--vy-radius-2xs)",
       "xs": "var(--vy-radius-xs)",
       "sm": "var(--vy-radius-sm)",
       "md": "var(--vy-radius-md)",
       "lg": "var(--vy-radius-lg)",
       "xl": "var(--vy-radius-xl)",
-      "2xl": "var(--vy-radius-2xl)",
-      "3xl": "var(--vy-radius-3xl)",
       "full": "var(--vy-radius-full)"
     },
     "iconSize": {
@@ -92,16 +67,58 @@ export const vars = {
       "wide": "var(--vy-measure-wide)"
     },
     "controlHeight": {
+      "2xs": "var(--vy-control-height-2xs)",
+      "xs": "var(--vy-control-height-xs)",
       "sm": "var(--vy-control-height-sm)",
       "md": "var(--vy-control-height-md)",
       "lg": "var(--vy-control-height-lg)"
     },
+    "controlPaddingHorizontal": {
+      "xs": "var(--vy-control-padding-horizontal-xs)",
+      "sm": "var(--vy-control-padding-horizontal-sm)",
+      "md": "var(--vy-control-padding-horizontal-md)",
+      "lg": "var(--vy-control-padding-horizontal-lg)"
+    },
+    "controlGap": {
+      "xs": "var(--vy-control-gap-xs)",
+      "sm": "var(--vy-control-gap-sm)",
+      "md": "var(--vy-control-gap-md)",
+      "lg": "var(--vy-control-gap-lg)"
+    },
+    "controlIcon": {
+      "2xs": "xs",
+      "xs": "xs",
+      "sm": "sm",
+      "md": "sm",
+      "lg": "sm"
+    },
+    "controlPaddingAddon": {
+      "xs": "var(--vy-control-padding-addon-xs)",
+      "sm": "var(--vy-control-padding-addon-sm)",
+      "md": "var(--vy-control-padding-addon-md)",
+      "lg": "var(--vy-control-padding-addon-lg)"
+    },
+    "controlInner": {
+      "xs": "2xs",
+      "sm": "xs",
+      "md": "sm",
+      "lg": "md"
+    },
+    "controlPaddingInset": {
+      "xs": "var(--vy-control-padding-inset-xs)",
+      "sm": "var(--vy-control-padding-inset-sm)",
+      "md": "var(--vy-control-padding-inset-md)",
+      "lg": "var(--vy-control-padding-inset-lg)"
+    },
+    "controlRadius": {
+      "default": "var(--vy-control-radius-default)"
+    },
     "avatarSize": {
-      "sm": "var(--vy-avatar-size-sm)",
-      "md": "var(--vy-avatar-size-md)",
-      "lg": "var(--vy-avatar-size-lg)"
+      "xl": "var(--vy-avatar-size-xl)",
+      "2xl": "var(--vy-avatar-size-2xl)"
     },
     "borderWidth": {
+      "none": "var(--vy-border-width-none)",
       "sm": "var(--vy-border-width-sm)",
       "md": "var(--vy-border-width-md)",
       "lg": "var(--vy-border-width-lg)"
@@ -128,6 +145,13 @@ export const vars = {
       "standard": "var(--vy-motion-easing-standard)",
       "enter": "var(--vy-motion-easing-enter)",
       "exit": "var(--vy-motion-easing-exit)"
+    },
+    "motionScale": {
+      "enter": "var(--vy-motion-scale-enter)"
+    },
+    "motionOffset": {
+      "sm": "var(--vy-motion-offset-sm)",
+      "md": "var(--vy-motion-offset-md)"
     },
     "font": {
       "product": "var(--vy-font-product)",
@@ -166,7 +190,8 @@ export const vars = {
     "primaryContainer": {
       "low": "var(--vy-color-primary-container-low)",
       "default": "var(--vy-color-primary-container-default)",
-      "hover": "var(--vy-color-primary-container-hover)"
+      "hover": "var(--vy-color-primary-container-hover)",
+      "active": "var(--vy-color-primary-container-active)"
     },
     "onPrimaryContainer": {
       "default": "var(--vy-color-on-primary-container-default)"
@@ -181,7 +206,8 @@ export const vars = {
     "secondaryContainer": {
       "low": "var(--vy-color-secondary-container-low)",
       "default": "var(--vy-color-secondary-container-default)",
-      "hover": "var(--vy-color-secondary-container-hover)"
+      "hover": "var(--vy-color-secondary-container-hover)",
+      "active": "var(--vy-color-secondary-container-active)"
     },
     "onSecondaryContainer": {
       "default": "var(--vy-color-on-secondary-container-default)"
@@ -261,6 +287,7 @@ export const vars = {
     "surface": {
       "default": "var(--vy-color-surface-default)",
       "hover": "var(--vy-color-surface-hover)",
+      "active": "var(--vy-color-surface-active)",
       "disabled": "var(--vy-color-surface-disabled)"
     },
     "surfaceContainerLowest": {
@@ -276,7 +303,9 @@ export const vars = {
       "default": "var(--vy-color-surface-container-high-default)"
     },
     "surfaceContainerHighest": {
-      "default": "var(--vy-color-surface-container-highest-default)"
+      "default": "var(--vy-color-surface-container-highest-default)",
+      "hover": "var(--vy-color-surface-container-highest-hover)",
+      "active": "var(--vy-color-surface-container-highest-active)"
     },
     "onSurface": {
       "default": "var(--vy-color-on-surface-default)",
@@ -493,72 +522,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -595,72 +558,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -699,72 +596,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -801,72 +632,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -905,72 +670,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -1007,72 +706,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         }
@@ -1113,72 +746,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -1215,72 +782,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -1319,72 +820,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -1421,72 +856,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -1525,72 +894,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -1627,72 +930,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         }
@@ -1733,72 +970,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -1835,72 +1006,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -1939,72 +1044,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -2041,72 +1080,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -2145,72 +1118,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -2248,72 +1155,156 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "root": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-xs)",
+            "gap": "var(--vy-control-gap-xs)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
+          "icon": {
+            "size": "xs"
+          },
+          "progress": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "2xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-xs)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-xs)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-xs)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-xs)"
+          }
+        },
+        "sm": {
+          "root": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-sm)",
+            "gap": "var(--vy-control-gap-sm)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-sm)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-sm)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-sm)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-sm)"
+          }
+        },
+        "md": {
+          "root": {
+            "height": "var(--vy-control-height-md)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-md)",
+            "gap": "var(--vy-control-gap-md)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
             }
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "sm"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-md)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-md)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-md)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-md)"
+          }
+        },
+        "lg": {
+          "root": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-lg)",
+            "gap": "var(--vy-control-gap-lg)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "md"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-lg)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-lg)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-lg)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-lg)"
           }
         }
       }
@@ -2435,171 +1426,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "sm"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "md"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "lg"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            }
           }
         }
       },
@@ -2719,171 +1545,300 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)"
             }
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "root": {
+            "gap": "var(--vy-space-xs)"
           },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "sm"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
+          "input": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-xs)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-control-gap-xs)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "htmlInput": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "md"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "input": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "htmlInput": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "adornment": {
-              "size": "lg"
-            },
-            "fileSelectorButton": {
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-none)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
+          },
+          "adornment": {
+            "size": "xs"
+          },
+          "fileSelectorButton": {
+            "paddingStart": "var(--vy-space-none)",
+            "paddingEnd": "var(--vy-space-xs)",
+            "paddingVertical": "var(--vy-space-none)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "addon": {
+            "size": "2xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-xs)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-xs)"
+          },
+          "multiline": {
+            "paddingVertical": "var(--vy-space-xs)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-xs)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-xs)"
+          }
+        },
+        "sm": {
+          "root": {
+            "gap": "var(--vy-space-xs)"
+          },
+          "input": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-sm)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-control-gap-sm)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "htmlInput": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "adornment": {
+            "size": "sm"
+          },
+          "fileSelectorButton": {
+            "paddingStart": "var(--vy-space-none)",
+            "paddingEnd": "var(--vy-space-xs)",
+            "paddingVertical": "var(--vy-space-none)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "addon": {
+            "size": "xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-sm)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-sm)"
+          },
+          "multiline": {
+            "paddingVertical": "var(--vy-space-xs)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-sm)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-sm)"
+          }
+        },
+        "md": {
+          "root": {
+            "gap": "var(--vy-space-xs)"
+          },
+          "input": {
+            "height": "var(--vy-control-height-md)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-md)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-control-gap-md)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "htmlInput": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "adornment": {
+            "size": "sm"
+          },
+          "fileSelectorButton": {
+            "paddingStart": "var(--vy-space-none)",
+            "paddingEnd": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-none)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "addon": {
+            "size": "sm"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-md)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-md)"
+          },
+          "multiline": {
+            "paddingVertical": "var(--vy-space-sm)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-md)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-md)"
+          }
+        },
+        "lg": {
+          "root": {
+            "gap": "var(--vy-space-sm)"
+          },
+          "input": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-lg)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-control-gap-lg)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "htmlInput": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
+            }
+          },
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
+            }
+          },
+          "adornment": {
+            "size": "sm"
+          },
+          "fileSelectorButton": {
+            "paddingStart": "var(--vy-space-none)",
+            "paddingEnd": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-none)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "addon": {
+            "size": "md"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-lg)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-lg)"
+          },
+          "multiline": {
+            "paddingVertical": "var(--vy-space-sm)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-lg)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-lg)"
           }
         }
       }
@@ -2895,76 +1850,12 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-primary-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "secondary": {
           "normal": {
             "indicator": {
               "iconColor": "var(--vy-color-secondary-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
             }
           }
         },
@@ -2973,76 +1864,12 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-error-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "warning": {
           "normal": {
             "indicator": {
               "iconColor": "var(--vy-color-warning-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
             }
           }
         },
@@ -3051,76 +1878,12 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-info-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "success": {
           "normal": {
             "indicator": {
               "iconColor": "var(--vy-color-success-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
             }
           }
         }
@@ -3131,76 +1894,12 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-primary-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "secondary": {
           "normal": {
             "indicator": {
               "iconColor": "var(--vy-color-secondary-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
             }
           }
         },
@@ -3209,76 +1908,12 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-error-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "warning": {
           "normal": {
             "indicator": {
               "iconColor": "var(--vy-color-warning-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
             }
           }
         },
@@ -3287,38 +1922,6 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-info-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-icon-size-sm)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-icon-size-md)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-icon-size-lg)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
-          },
-          "xl": {
-            "root": {
-              "size": "var(--vy-icon-size-2xl)"
-            },
-            "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
-            }
           }
         },
         "success": {
@@ -3326,38 +1929,204 @@ export const vars = {
             "indicator": {
               "iconColor": "var(--vy-color-success-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "size": "var(--vy-icon-size-sm)"
           },
-          "sm": {
+          "indicator": {
+            "thickness": "var(--vy-icon-stroke-width)"
+          }
+        },
+        "md": {
+          "root": {
+            "size": "var(--vy-icon-size-md)"
+          },
+          "indicator": {
+            "thickness": "var(--vy-icon-stroke-width)"
+          }
+        },
+        "lg": {
+          "root": {
+            "size": "var(--vy-icon-size-lg)"
+          },
+          "indicator": {
+            "thickness": "var(--vy-icon-stroke-width)"
+          }
+        },
+        "xl": {
+          "root": {
+            "size": "var(--vy-icon-size-2xl)"
+          },
+          "indicator": {
+            "thickness": "var(--vy-icon-stroke-width)"
+          }
+        }
+      }
+    },
+    "linearProgress": {
+      "indeterminate": {
+        "primary": {
+          "normal": {
             "root": {
-              "size": "var(--vy-icon-size-sm)"
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
             },
             "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
+              "backgroundColor": "var(--vy-color-primary-default)"
             }
-          },
-          "md": {
+          }
+        },
+        "secondary": {
+          "normal": {
             "root": {
-              "size": "var(--vy-icon-size-md)"
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
             },
             "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
+              "backgroundColor": "var(--vy-color-secondary-default)"
             }
-          },
-          "lg": {
+          }
+        },
+        "error": {
+          "normal": {
             "root": {
-              "size": "var(--vy-icon-size-lg)"
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
             },
             "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
+              "backgroundColor": "var(--vy-color-error-default)"
             }
-          },
-          "xl": {
+          }
+        },
+        "warning": {
+          "normal": {
             "root": {
-              "size": "var(--vy-icon-size-2xl)"
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
             },
             "indicator": {
-              "thickness": "var(--vy-icon-stroke-width)"
+              "backgroundColor": "var(--vy-color-warning-default)"
             }
+          }
+        },
+        "info": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-info-default)"
+            }
+          }
+        },
+        "success": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-success-default)"
+            }
+          }
+        }
+      },
+      "determinate": {
+        "primary": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-primary-default)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-secondary-default)"
+            }
+          }
+        },
+        "error": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-error-default)"
+            }
+          }
+        },
+        "warning": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-warning-default)"
+            }
+          }
+        },
+        "info": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-info-default)"
+            }
+          }
+        },
+        "success": {
+          "normal": {
+            "root": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)"
+            },
+            "indicator": {
+              "backgroundColor": "var(--vy-color-success-default)"
+            }
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "height": "var(--vy-space-2xs)",
+            "borderRadius": "var(--vy-radius-full)"
+          },
+          "indicator": {
+            "borderRadius": "var(--vy-radius-full)"
+          }
+        },
+        "md": {
+          "root": {
+            "height": "var(--vy-space-xs)",
+            "borderRadius": "var(--vy-radius-full)"
+          },
+          "indicator": {
+            "borderRadius": "var(--vy-radius-full)"
+          }
+        },
+        "lg": {
+          "root": {
+            "height": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-full)"
+          },
+          "indicator": {
+            "borderRadius": "var(--vy-radius-full)"
+          }
+        },
+        "xl": {
+          "root": {
+            "height": "var(--vy-space-md)",
+            "borderRadius": "var(--vy-radius-full)"
+          },
+          "indicator": {
+            "borderRadius": "var(--vy-radius-full)"
           }
         }
       }
@@ -3367,9 +2136,9 @@ export const vars = {
         "primary": {
           "normal": {
             "root": {
-              "gap": "var(--vy-gap-sm)",
-              "paddingStart": "var(--vy-padding-none)",
-              "paddingEnd": "var(--vy-padding-none)"
+              "gap": "var(--vy-space-sm)",
+              "paddingStart": "var(--vy-space-none)",
+              "paddingEnd": "var(--vy-space-none)"
             },
             "line": {
               "borderColor": "var(--vy-color-outline-variant-default)",
@@ -3392,9 +2161,9 @@ export const vars = {
         "primary": {
           "normal": {
             "root": {
-              "gap": "var(--vy-gap-sm)",
-              "paddingStart": "var(--vy-padding-3xl)",
-              "paddingEnd": "var(--vy-padding-none)"
+              "gap": "var(--vy-space-sm)",
+              "paddingStart": "var(--vy-space-3xl)",
+              "paddingEnd": "var(--vy-space-none)"
             },
             "line": {
               "borderColor": "var(--vy-color-outline-variant-default)",
@@ -3417,9 +2186,9 @@ export const vars = {
         "primary": {
           "normal": {
             "root": {
-              "gap": "var(--vy-gap-sm)",
-              "paddingStart": "var(--vy-padding-lg)",
-              "paddingEnd": "var(--vy-padding-lg)"
+              "gap": "var(--vy-space-sm)",
+              "paddingStart": "var(--vy-space-lg)",
+              "paddingEnd": "var(--vy-space-lg)"
             },
             "line": {
               "borderColor": "var(--vy-color-outline-variant-default)",
@@ -3446,8 +2215,8 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "textColor": "var(--vy-color-on-surface-default)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-xs)",
+              "paddingHorizontal": "var(--vy-space-sm)",
+              "paddingVertical": "var(--vy-space-xs)",
               "borderRadius": "var(--vy-radius-sm)",
               "font": {
                 "fontFamily": "var(--vy-typography-body-sm-font-family)",
@@ -3470,9 +2239,16 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-default)",
               "borderColor": "var(--vy-color-transparent-default)",
               "borderWidth": "var(--vy-border-width-sm)",
-              "borderRadius": "var(--vy-radius-md)"
+              "borderRadius": "var(--vy-radius-lg)"
+            },
+            "selection": {
+              "backgroundColor": "var(--vy-color-primary-container-low)",
+              "borderColor": "var(--vy-color-primary-default)",
+              "borderWidth": "var(--vy-border-width-sm)"
             }
-          },
+          }
+        },
+        "size": {
           "none": {
             "root": {
               "backgroundColor": "var(--vy-color-surface-container-low-default)",
@@ -3536,9 +2312,16 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-default)",
               "borderColor": "var(--vy-color-outline-variant-default)",
               "borderWidth": "var(--vy-border-width-sm)",
-              "borderRadius": "var(--vy-radius-md)"
+              "borderRadius": "var(--vy-radius-lg)"
+            },
+            "selection": {
+              "backgroundColor": "var(--vy-color-primary-container-low)",
+              "borderColor": "var(--vy-color-primary-default)",
+              "borderWidth": "var(--vy-border-width-sm)"
             }
-          },
+          }
+        },
+        "size": {
           "none": {
             "root": {
               "backgroundColor": "var(--vy-color-surface-default)",
@@ -3612,8 +2395,8 @@ export const vars = {
         "primary": {
           "normal": {
             "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-xl)"
+              "paddingHorizontal": "var(--vy-space-lg)",
+              "paddingVertical": "var(--vy-space-xl)"
             },
             "title": {
               "textColor": "var(--vy-color-on-surface-default)",
@@ -3624,8 +2407,8 @@ export const vars = {
                 "lineHeight": "var(--vy-typography-title-lg-line-height)",
                 "letterSpacing": "var(--vy-typography-title-lg-letter-spacing)"
               },
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-lg)"
+              "paddingHorizontal": "var(--vy-space-xl)",
+              "paddingVertical": "var(--vy-space-lg)"
             },
             "content": {
               "textColor": "var(--vy-color-on-surface-variant-default)",
@@ -3636,13 +2419,13 @@ export const vars = {
                 "lineHeight": "var(--vy-typography-body-md-line-height)",
                 "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
               },
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xs)"
+              "paddingHorizontal": "var(--vy-space-xl)",
+              "paddingVertical": "var(--vy-space-xs)"
             },
             "actions": {
-              "gap": "var(--vy-gap-sm)",
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)"
+              "gap": "var(--vy-space-sm)",
+              "paddingHorizontal": "var(--vy-space-lg)",
+              "paddingVertical": "var(--vy-space-lg)"
             }
           }
         }
@@ -3661,7 +2444,7 @@ export const vars = {
     },
     "collapse": {
       "vertical": {
-        "primary": {
+        "size": {
           "none": {
             "content": {
               "minHeight": "var(--vy-space-none)",
@@ -3719,7 +2502,7 @@ export const vars = {
         }
       },
       "horizontal": {
-        "primary": {
+        "size": {
           "none": {
             "content": {
               "minHeight": "var(--vy-space-none)",
@@ -3784,115 +2567,6 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-surface-default)",
               "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-variant-default)"
-            }
-          },
-          "hover": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "active": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "focus": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "disabled": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "selected": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-primary-container-default)",
-              "textColor": "var(--vy-color-on-primary-container-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-primary-container-default)"
-            }
-          },
-          "md": {
-            "root": {
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "panel": {
-              "width": "var(--vy-measure-compact)"
-            },
-            "header": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "content": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "footer": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "item": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "md"
             }
           }
         },
@@ -3901,115 +2575,6 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-surface-default)",
               "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-variant-default)"
-            }
-          },
-          "hover": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "active": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "focus": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "disabled": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "selected": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-secondary-container-default)",
-              "textColor": "var(--vy-color-on-secondary-container-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-secondary-container-default)"
-            }
-          },
-          "md": {
-            "root": {
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "panel": {
-              "width": "var(--vy-measure-compact)"
-            },
-            "header": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "content": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "footer": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "item": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "md"
             }
           }
         },
@@ -4018,116 +2583,31 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-surface-default)",
               "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-variant-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "md": {
+          "root": {
+            "borderWidth": "var(--vy-border-width-sm)"
           },
-          "hover": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
+          "panel": {
+            "width": "var(--vy-measure-compact)"
           },
-          "active": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
+          "header": {
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-2xs)"
           },
-          "focus": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
+          "content": {
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-sm)"
           },
-          "disabled": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "selected": {
-            "root": {
-              "backgroundColor": "var(--vy-color-surface-default)",
-              "borderColor": "var(--vy-color-outline-variant-default)"
-            },
-            "item": {
-              "backgroundColor": "var(--vy-color-surface-container-highest-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
-            },
-            "icon": {
-              "iconColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "md": {
-            "root": {
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "panel": {
-              "width": "var(--vy-measure-compact)"
-            },
-            "header": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "content": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "footer": {
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "item": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "md"
-            }
+          "footer": {
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-2xs)"
           }
         }
       }
@@ -4138,7 +2618,7 @@ export const vars = {
           "normal": {
             "root": {
               "textColor": "var(--vy-color-on-surface-variant-default)",
-              "gap": "var(--vy-gap-xs)",
+              "gap": "var(--vy-space-xs)",
               "font": {
                 "fontFamily": "var(--vy-typography-body-sm-font-family)",
                 "fontSize": "var(--vy-typography-body-sm-font-size)",
@@ -4154,13 +2634,13 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-variant-default)",
               "borderRadius": "var(--vy-radius-sm)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
+              "paddingHorizontal": "var(--vy-space-xs)"
             }
           },
           "hover": {
             "root": {
               "textColor": "var(--vy-color-on-surface-variant-default)",
-              "gap": "var(--vy-gap-xs)",
+              "gap": "var(--vy-space-xs)",
               "font": {
                 "fontFamily": "var(--vy-typography-body-sm-font-family)",
                 "fontSize": "var(--vy-typography-body-sm-font-size)",
@@ -4176,13 +2656,13 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-hover)",
               "iconColor": "var(--vy-color-on-surface-default)",
               "borderRadius": "var(--vy-radius-sm)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
+              "paddingHorizontal": "var(--vy-space-xs)"
             }
           },
           "focus": {
             "root": {
               "textColor": "var(--vy-color-on-surface-variant-default)",
-              "gap": "var(--vy-gap-xs)",
+              "gap": "var(--vy-space-xs)",
               "font": {
                 "fontFamily": "var(--vy-typography-body-sm-font-family)",
                 "fontSize": "var(--vy-typography-body-sm-font-size)",
@@ -4198,7 +2678,7 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-variant-default)",
               "borderRadius": "var(--vy-radius-sm)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
+              "paddingHorizontal": "var(--vy-space-xs)"
             }
           }
         }
@@ -4212,23 +2692,22 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "borderRadius": "var(--vy-radius-xs)"
             }
-          },
+          }
+        },
+        "size": {
           "sm": {
             "root": {
-              "height": "var(--vy-space-sm)",
-              "width": "var(--vy-avatar-size-sm)"
+              "height": "var(--vy-space-sm)"
             }
           },
           "md": {
             "root": {
-              "height": "var(--vy-space-md)",
-              "width": "var(--vy-avatar-size-md)"
+              "height": "var(--vy-space-md)"
             }
           },
           "lg": {
             "root": {
-              "height": "var(--vy-space-lg)",
-              "width": "var(--vy-avatar-size-lg)"
+              "height": "var(--vy-space-lg)"
             }
           }
         }
@@ -4240,23 +2719,22 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "borderRadius": "var(--vy-radius-none)"
             }
-          },
+          }
+        },
+        "size": {
           "sm": {
             "root": {
-              "height": "var(--vy-control-height-sm)",
-              "width": "var(--vy-avatar-size-sm)"
+              "height": "var(--vy-control-height-sm)"
             }
           },
           "md": {
             "root": {
-              "height": "var(--vy-control-height-md)",
-              "width": "var(--vy-avatar-size-md)"
+              "height": "var(--vy-control-height-md)"
             }
           },
           "lg": {
             "root": {
-              "height": "var(--vy-control-height-lg)",
-              "width": "var(--vy-avatar-size-lg)"
+              "height": "var(--vy-control-height-lg)"
             }
           }
         }
@@ -4266,25 +2744,24 @@ export const vars = {
           "normal": {
             "root": {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
-              "borderRadius": "var(--vy-radius-md)"
+              "borderRadius": "var(--vy-radius-lg)"
             }
-          },
+          }
+        },
+        "size": {
           "sm": {
             "root": {
-              "height": "var(--vy-control-height-sm)",
-              "width": "var(--vy-avatar-size-sm)"
+              "height": "var(--vy-control-height-sm)"
             }
           },
           "md": {
             "root": {
-              "height": "var(--vy-control-height-md)",
-              "width": "var(--vy-avatar-size-md)"
+              "height": "var(--vy-control-height-md)"
             }
           },
           "lg": {
             "root": {
-              "height": "var(--vy-control-height-lg)",
-              "width": "var(--vy-avatar-size-lg)"
+              "height": "var(--vy-control-height-lg)"
             }
           }
         }
@@ -4296,24 +2773,40 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "borderRadius": "var(--vy-radius-full)"
             }
-          },
+          }
+        },
+        "size": {
           "sm": {
             "root": {
-              "height": "var(--vy-avatar-size-sm)",
-              "width": "var(--vy-avatar-size-sm)"
+              "height": "var(--vy-control-height-sm)"
             }
           },
           "md": {
             "root": {
-              "height": "var(--vy-avatar-size-md)",
-              "width": "var(--vy-avatar-size-md)"
+              "height": "var(--vy-control-height-md)"
             }
           },
           "lg": {
             "root": {
-              "height": "var(--vy-avatar-size-lg)",
-              "width": "var(--vy-avatar-size-lg)"
+              "height": "var(--vy-control-height-lg)"
             }
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "width": "var(--vy-control-height-sm)"
+          }
+        },
+        "md": {
+          "root": {
+            "width": "var(--vy-control-height-md)"
+          }
+        },
+        "lg": {
+          "root": {
+            "width": "var(--vy-control-height-lg)"
           }
         }
       }
@@ -4323,9 +2816,9 @@ export const vars = {
         "primary": {
           "normal": {
             "header": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-md)"
+              "paddingHorizontal": "var(--vy-space-lg)",
+              "paddingVertical": "var(--vy-space-lg)",
+              "gap": "var(--vy-space-md)"
             },
             "title": {
               "font": {
@@ -4348,8 +2841,8 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-variant-default)"
             },
             "content": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
+              "paddingHorizontal": "var(--vy-space-lg)",
+              "paddingVertical": "var(--vy-space-lg)",
               "font": {
                 "fontFamily": "var(--vy-typography-body-md-font-family)",
                 "fontSize": "var(--vy-typography-body-md-font-size)",
@@ -4360,9 +2853,9 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-variant-default)"
             },
             "actions": {
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)"
+              "paddingHorizontal": "var(--vy-space-sm)",
+              "paddingVertical": "var(--vy-space-sm)",
+              "gap": "var(--vy-space-sm)"
             }
           }
         }
@@ -4377,51 +2870,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-primary-container-default)",
               "borderRadius": "var(--vy-radius-full)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -4430,51 +2878,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-secondary-container-default)",
               "textColor": "var(--vy-color-on-secondary-container-default)",
               "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -4485,51 +2888,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-error-container-default)",
               "borderRadius": "var(--vy-radius-full)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -4538,51 +2896,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-warning-container-default)",
               "textColor": "var(--vy-color-on-warning-container-default)",
               "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -4593,51 +2906,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-info-container-default)",
               "borderRadius": "var(--vy-radius-full)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -4647,51 +2915,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-success-container-default)",
               "borderRadius": "var(--vy-radius-full)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "neutral": {
@@ -4700,51 +2923,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "textColor": "var(--vy-color-on-surface-default)",
               "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         }
@@ -4755,52 +2933,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-primary-container-default)",
               "textColor": "var(--vy-color-on-primary-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -4809,52 +2942,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-secondary-container-default)",
               "textColor": "var(--vy-color-on-secondary-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -4863,52 +2951,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-error-container-default)",
               "textColor": "var(--vy-color-on-error-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -4917,52 +2960,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-warning-container-default)",
               "textColor": "var(--vy-color-on-warning-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -4971,52 +2969,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-info-container-default)",
               "textColor": "var(--vy-color-on-info-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -5025,52 +2978,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-success-container-default)",
               "textColor": "var(--vy-color-on-success-container-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         },
@@ -5079,52 +2987,7 @@ export const vars = {
             "root": {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "textColor": "var(--vy-color-on-surface-default)",
-              "borderRadius": "var(--vy-radius-md)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+              "borderRadius": "var(--vy-radius-lg)"
             }
           }
         }
@@ -5137,51 +3000,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-primary-container-default)",
               "borderRadius": "var(--vy-radius-none)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -5190,51 +3008,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-secondary-container-default)",
               "textColor": "var(--vy-color-on-secondary-container-default)",
               "borderRadius": "var(--vy-radius-none)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -5245,51 +3018,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-error-container-default)",
               "borderRadius": "var(--vy-radius-none)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -5298,51 +3026,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-warning-container-default)",
               "textColor": "var(--vy-color-on-warning-container-default)",
               "borderRadius": "var(--vy-radius-none)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -5353,51 +3036,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-info-container-default)",
               "borderRadius": "var(--vy-radius-none)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -5406,51 +3044,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-success-container-default)",
               "textColor": "var(--vy-color-on-success-container-default)",
               "borderRadius": "var(--vy-radius-none)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -5461,51 +3054,113 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-default)",
               "borderRadius": "var(--vy-radius-none)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-avatar-size-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "sm"
+          }
+        }
+      },
+      "size": {
+        "2xs": {
+          "root": {
+            "size": "var(--vy-control-height-2xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "size": "var(--vy-avatar-size-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
+          "icon": {
+            "size": "xs"
+          }
+        },
+        "xs": {
+          "root": {
+            "size": "var(--vy-control-height-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "size": "var(--vy-avatar-size-lg)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+          "icon": {
+            "size": "xs"
+          }
+        },
+        "sm": {
+          "root": {
+            "size": "var(--vy-control-height-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
+          },
+          "icon": {
+            "size": "sm"
+          }
+        },
+        "md": {
+          "root": {
+            "size": "var(--vy-control-height-md)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "sm"
+          }
+        },
+        "lg": {
+          "root": {
+            "size": "var(--vy-control-height-lg)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "sm"
+          }
+        },
+        "xl": {
+          "root": {
+            "size": "var(--vy-avatar-size-xl)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "lg"
+          }
+        },
+        "2xl": {
+          "root": {
+            "size": "var(--vy-avatar-size-2xl)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "lg"
           }
         }
       }
@@ -5547,72 +3202,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -5649,72 +3238,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -5753,72 +3276,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -5855,72 +3312,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -5959,72 +3350,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -6062,72 +3387,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "neutral": {
@@ -6164,72 +3423,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         }
@@ -6270,72 +3463,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -6372,72 +3499,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -6476,72 +3537,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -6578,72 +3573,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -6682,72 +3611,6 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -6784,72 +3647,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -6888,72 +3685,156 @@ export const vars = {
               "textColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "height": "var(--vy-space-xl)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "icon": {
-              "size": "sm"
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "root": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-xs)",
+            "gap": "var(--vy-control-gap-xs)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "icon": {
-              "size": "md"
+          "content": {
+            "gap": "var(--vy-control-gap-xs)"
+          },
+          "icon": {
+            "size": "xs"
+          },
+          "addon": {
+            "size": "2xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-xs)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-xs)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-xs)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-xs)"
+          }
+        },
+        "sm": {
+          "root": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-sm)",
+            "gap": "var(--vy-control-gap-sm)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "content": {
-              "gap": "var(--vy-gap-sm)"
-            },
-            "icon": {
-              "size": "lg"
+          "content": {
+            "gap": "var(--vy-control-gap-sm)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "xs"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-sm)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-sm)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-sm)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-sm)"
+          }
+        },
+        "md": {
+          "root": {
+            "height": "var(--vy-control-height-md)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-md)",
+            "gap": "var(--vy-control-gap-md)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
             }
+          },
+          "content": {
+            "gap": "var(--vy-control-gap-md)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "sm"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-md)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-md)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-md)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-md)"
+          }
+        },
+        "lg": {
+          "root": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-lg)",
+            "gap": "var(--vy-control-gap-lg)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "content": {
+            "gap": "var(--vy-control-gap-lg)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "addon": {
+            "size": "md"
+          },
+          "addonStart": {
+            "paddingStart": "var(--vy-control-padding-addon-lg)"
+          },
+          "addonEnd": {
+            "paddingEnd": "var(--vy-control-padding-addon-lg)"
+          },
+          "addonInsetStart": {
+            "paddingStart": "var(--vy-control-padding-inset-lg)"
+          },
+          "addonInsetEnd": {
+            "paddingEnd": "var(--vy-control-padding-inset-lg)"
           }
         }
       }
@@ -7020,63 +3901,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
           }
         },
         "secondary": {
@@ -7138,63 +3962,6 @@ export const vars = {
             },
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
             }
           }
         },
@@ -7258,63 +4025,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
           }
         },
         "warning": {
@@ -7376,63 +4086,6 @@ export const vars = {
             },
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
             }
           }
         },
@@ -7496,63 +4149,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
-            }
           }
         },
         "success": {
@@ -7615,63 +4211,65 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "gap": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
+          "indicator": {
+            "size": "var(--vy-icon-size-sm)",
+            "borderRadius": "var(--vy-radius-xs)",
+            "borderWidth": "var(--vy-border-width-md)",
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)"
+          }
+        },
+        "md": {
+          "root": {
+            "gap": "var(--vy-space-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "indicator": {
-              "size": "var(--vy-icon-size-lg)",
-              "borderRadius": "var(--vy-radius-xs)",
-              "borderWidth": "var(--vy-border-width-md)",
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)"
+          "indicator": {
+            "size": "var(--vy-icon-size-md)",
+            "borderRadius": "var(--vy-radius-xs)",
+            "borderWidth": "var(--vy-border-width-md)",
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)"
+          }
+        },
+        "lg": {
+          "root": {
+            "gap": "var(--vy-space-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-lg-font-family)",
+              "fontSize": "var(--vy-typography-body-lg-font-size)",
+              "fontWeight": "var(--vy-typography-body-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-body-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
             }
+          },
+          "indicator": {
+            "size": "var(--vy-icon-size-lg)",
+            "borderRadius": "var(--vy-radius-xs)",
+            "borderWidth": "var(--vy-border-width-md)",
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)"
           }
         }
       }
@@ -7750,72 +4348,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
           }
         },
         "secondary": {
@@ -7889,72 +4421,6 @@ export const vars = {
             },
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
             }
           }
         },
@@ -8030,72 +4496,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
           }
         },
         "warning": {
@@ -8169,72 +4569,6 @@ export const vars = {
             },
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
             }
           }
         },
@@ -8310,72 +4644,6 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
-          },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
-            }
           }
         },
         "success": {
@@ -8450,72 +4718,74 @@ export const vars = {
             "label": {
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "gap": "var(--vy-gap-xs)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-xs)",
-              "borderRadius": "var(--vy-radius-full)"
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "gap": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-sm)",
-              "borderRadius": "var(--vy-radius-full)"
+          "track": {
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "thumb": {
+            "size": "var(--vy-icon-size-xs)",
+            "borderRadius": "var(--vy-radius-full)"
+          }
+        },
+        "md": {
+          "root": {
+            "gap": "var(--vy-space-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "gap": "var(--vy-gap-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            },
-            "track": {
-              "paddingHorizontal": "var(--vy-padding-2xs)",
-              "paddingVertical": "var(--vy-padding-2xs)",
-              "borderRadius": "var(--vy-radius-full)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "thumb": {
-              "size": "var(--vy-icon-size-md)",
-              "borderRadius": "var(--vy-radius-full)"
+          "track": {
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "thumb": {
+            "size": "var(--vy-icon-size-sm)",
+            "borderRadius": "var(--vy-radius-full)"
+          }
+        },
+        "lg": {
+          "root": {
+            "gap": "var(--vy-space-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-lg-font-family)",
+              "fontSize": "var(--vy-typography-body-lg-font-size)",
+              "fontWeight": "var(--vy-typography-body-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-body-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
             }
+          },
+          "track": {
+            "paddingHorizontal": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "borderRadius": "var(--vy-radius-full)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "thumb": {
+            "size": "var(--vy-icon-size-md)",
+            "borderRadius": "var(--vy-radius-full)"
           }
         }
       }
@@ -8594,99 +4864,101 @@ export const vars = {
             "sortIcon": {
               "iconColor": "var(--vy-color-on-surface-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "cell": {
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "paddingVertical": "var(--vy-space-xs)",
+            "borderWidth": "var(--vy-border-width-sm)"
           },
-          "sm": {
-            "cell": {
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "paddingVertical": "var(--vy-padding-xs)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "body": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "head": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "sortLabel": {
-              "gap": "var(--vy-gap-2xs)"
-            },
-            "sortIcon": {
-              "size": "sm"
+          "body": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
           },
-          "md": {
-            "cell": {
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "paddingVertical": "var(--vy-padding-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "body": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "head": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "sortLabel": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "sortIcon": {
-              "size": "sm"
+          "head": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "cell": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "body": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "head": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "sortLabel": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "sortIcon": {
-              "size": "md"
+          "sortLabel": {
+            "gap": "var(--vy-space-2xs)"
+          },
+          "sortIcon": {
+            "size": "sm"
+          }
+        },
+        "md": {
+          "cell": {
+            "paddingHorizontal": "var(--vy-space-md)",
+            "paddingVertical": "var(--vy-space-sm)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "body": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
             }
+          },
+          "head": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "sortLabel": {
+            "gap": "var(--vy-space-xs)"
+          },
+          "sortIcon": {
+            "size": "sm"
+          }
+        },
+        "lg": {
+          "cell": {
+            "paddingHorizontal": "var(--vy-space-lg)",
+            "paddingVertical": "var(--vy-space-md)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "body": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
+            }
+          },
+          "head": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "sortLabel": {
+            "gap": "var(--vy-space-xs)"
+          },
+          "sortIcon": {
+            "size": "md"
           }
         }
       }
@@ -8758,29 +5030,31 @@ export const vars = {
             "icon": {
               "iconColor": "var(--vy-color-on-secondary-container-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "md": {
+          "root": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
           },
-          "md": {
-            "root": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
+          "item": {
+            "height": "var(--vy-control-height-md)",
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             },
-            "item": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              },
-              "size": "sm"
-            },
-            "separator": {
-              "paddingVertical": "var(--vy-padding-xs)"
-            }
+            "size": "sm"
+          },
+          "separator": {
+            "paddingVertical": "var(--vy-space-xs)"
           }
         }
       }
@@ -8850,72 +5124,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-default)"
             }
-          },
-          "sm": {
-            "indicator": {
-              "size": "sm"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            }
-          },
-          "md": {
-            "indicator": {
-              "size": "md"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            }
-          },
-          "lg": {
-            "indicator": {
-              "size": "lg"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
-            }
           }
         }
       },
@@ -8983,71 +5191,95 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "textColor": "var(--vy-color-on-surface-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "indicator": {
+            "size": "xs"
           },
-          "sm": {
-            "indicator": {
-              "size": "sm"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-sm)",
-              "paddingHorizontal": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
+          "popup": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "option": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)",
+            "gap": "var(--vy-space-xs)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
+          }
+        },
+        "sm": {
+          "indicator": {
+            "size": "sm"
           },
-          "md": {
-            "indicator": {
-              "size": "md"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-sm)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
+          "popup": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "option": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingHorizontal": "var(--vy-space-xs)",
+            "gap": "var(--vy-space-xs)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
+          }
+        },
+        "md": {
+          "indicator": {
+            "size": "sm"
           },
-          "lg": {
-            "indicator": {
-              "size": "lg"
-            },
-            "popup": {
-              "paddingVertical": "var(--vy-padding-xs)",
-              "paddingHorizontal": "var(--vy-padding-xs)"
-            },
-            "option": {
-              "height": "var(--vy-control-height-lg)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-lg-font-family)",
-                "fontSize": "var(--vy-typography-body-lg-font-size)",
-                "fontWeight": "var(--vy-typography-body-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-body-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
-              }
+          "popup": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "option": {
+            "height": "var(--vy-control-height-md)",
+            "paddingHorizontal": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          }
+        },
+        "lg": {
+          "indicator": {
+            "size": "sm"
+          },
+          "popup": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "option": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingHorizontal": "var(--vy-space-md)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
             }
           }
         }
@@ -9059,7 +5291,8 @@ export const vars = {
           "normal": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9068,7 +5301,8 @@ export const vars = {
           "hover": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9077,7 +5311,8 @@ export const vars = {
           "active": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9086,7 +5321,8 @@ export const vars = {
           "focus": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9095,7 +5331,8 @@ export const vars = {
           "disabled": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9104,36 +5341,11 @@ export const vars = {
           "selected": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-primary-default)"
+              "textColor": "var(--vy-color-primary-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-primary-default)"
-            }
-          },
-          "md": {
-            "list": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "tab": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "sm"
-            },
-            "indicator": {
-              "borderWidth": "var(--vy-border-width-md)"
-            },
-            "panel": {
-              "paddingVertical": "var(--vy-padding-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)"
             }
           }
         },
@@ -9141,7 +5353,8 @@ export const vars = {
           "normal": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9150,7 +5363,8 @@ export const vars = {
           "hover": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9159,7 +5373,8 @@ export const vars = {
           "active": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9168,7 +5383,8 @@ export const vars = {
           "focus": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9177,7 +5393,8 @@ export const vars = {
           "disabled": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9186,36 +5403,11 @@ export const vars = {
           "selected": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-secondary-default)"
+              "textColor": "var(--vy-color-secondary-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-secondary-default)"
-            }
-          },
-          "md": {
-            "list": {
-              "gap": "var(--vy-gap-xs)"
-            },
-            "tab": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "sm"
-            },
-            "indicator": {
-              "borderWidth": "var(--vy-border-width-md)"
-            },
-            "panel": {
-              "paddingVertical": "var(--vy-padding-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)"
             }
           }
         },
@@ -9223,7 +5415,8 @@ export const vars = {
           "normal": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-variant-default)"
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9232,7 +5425,8 @@ export const vars = {
           "hover": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9241,7 +5435,8 @@ export const vars = {
           "active": {
             "tab": {
               "backgroundColor": "var(--vy-color-surface-hover)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9250,7 +5445,8 @@ export const vars = {
           "focus": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9259,7 +5455,8 @@ export const vars = {
           "disabled": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-disabled)"
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-transparent-default)"
@@ -9268,37 +5465,256 @@ export const vars = {
           "selected": {
             "tab": {
               "backgroundColor": "var(--vy-color-transparent-default)",
-              "textColor": "var(--vy-color-on-surface-default)"
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
             },
             "indicator": {
               "borderColor": "var(--vy-color-on-surface-default)"
             }
-          },
+          }
+        },
+        "size": {
           "md": {
             "list": {
-              "gap": "var(--vy-gap-xs)"
+              "gap": "var(--vy-space-xs)",
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "paddingHorizontal": "var(--vy-space-none)",
+              "paddingVertical": "var(--vy-space-none)",
+              "borderRadius": "var(--vy-radius-none)"
             },
             "tab": {
-              "height": "var(--vy-control-height-md)",
-              "paddingHorizontal": "var(--vy-padding-md)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              },
-              "size": "sm"
-            },
-            "indicator": {
-              "borderWidth": "var(--vy-border-width-md)"
+              "height": "var(--vy-control-height-lg)"
             },
             "panel": {
-              "paddingVertical": "var(--vy-padding-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)"
+              "paddingVertical": "var(--vy-space-lg)",
+              "paddingHorizontal": "var(--vy-space-lg)"
             }
+          }
+        }
+      },
+      "segmented": {
+        "primary": {
+          "normal": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "hover": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "active": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "focus": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "disabled": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "selected": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-default)",
+              "textColor": "var(--vy-color-primary-default)",
+              "boxShadow": "var(--vy-elevation-xs)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "hover": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "active": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "focus": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "disabled": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "selected": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-default)",
+              "textColor": "var(--vy-color-secondary-default)",
+              "boxShadow": "var(--vy-elevation-xs)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          }
+        },
+        "neutral": {
+          "normal": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "hover": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "active": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "focus": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "disabled": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "boxShadow": "var(--vy-elevation-none)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          },
+          "selected": {
+            "tab": {
+              "backgroundColor": "var(--vy-color-surface-default)",
+              "textColor": "var(--vy-color-on-surface-default)",
+              "boxShadow": "var(--vy-elevation-xs)"
+            },
+            "indicator": {
+              "borderColor": "var(--vy-color-transparent-default)"
+            }
+          }
+        },
+        "size": {
+          "md": {
+            "list": {
+              "gap": "var(--vy-space-2xs)",
+              "backgroundColor": "var(--vy-color-surface-container-high-default)",
+              "paddingHorizontal": "var(--vy-space-2xs)",
+              "paddingVertical": "var(--vy-space-2xs)",
+              "borderRadius": "var(--vy-radius-lg)"
+            },
+            "tab": {
+              "height": "var(--vy-control-height-md)"
+            },
+            "panel": {
+              "paddingVertical": "var(--vy-space-none)",
+              "paddingHorizontal": "var(--vy-space-none)"
+            }
+          }
+        }
+      },
+      "size": {
+        "md": {
+          "tab": {
+            "paddingHorizontal": "var(--vy-control-padding-horizontal-md)",
+            "gap": "var(--vy-control-gap-md)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            },
+            "size": "sm"
+          },
+          "indicator": {
+            "borderWidth": "var(--vy-border-width-md)"
           }
         }
       }
@@ -9311,34 +5727,36 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-container-highest-default)",
               "textColor": "var(--vy-color-on-surface-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "md": {
+          "viewport": {
+            "paddingVertical": "var(--vy-space-lg)",
+            "paddingHorizontal": "var(--vy-space-lg)"
           },
-          "md": {
-            "viewport": {
-              "paddingVertical": "var(--vy-padding-lg)",
-              "paddingHorizontal": "var(--vy-padding-lg)"
+          "root": {
+            "paddingHorizontal": "var(--vy-space-lg)",
+            "paddingVertical": "var(--vy-space-xs)",
+            "gap": "var(--vy-space-md)",
+            "borderRadius": "var(--vy-radius-lg)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             },
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-xs)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              },
-              "boxShadow": "var(--vy-elevation-lg)",
-              "minWidth": "var(--vy-measure-compact)",
-              "maxWidth": "var(--vy-measure-reading)"
-            },
-            "message": {
-              "paddingVertical": "var(--vy-padding-sm)"
-            },
-            "action": {
-              "gap": "var(--vy-gap-xs)"
-            }
+            "boxShadow": "var(--vy-elevation-lg)",
+            "minWidth": "var(--vy-measure-compact)",
+            "maxWidth": "var(--vy-measure-reading)"
+          },
+          "message": {
+            "paddingVertical": "var(--vy-space-sm)"
+          },
+          "action": {
+            "gap": "var(--vy-space-xs)"
           }
         }
       }
@@ -9435,99 +5853,6 @@ export const vars = {
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -9619,99 +5944,6 @@ export const vars = {
             },
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -9805,99 +6037,6 @@ export const vars = {
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -9989,99 +6128,6 @@ export const vars = {
             },
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -10175,99 +6221,6 @@ export const vars = {
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -10359,99 +6312,6 @@ export const vars = {
             },
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
-            }
-          },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
-            }
-          },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
             }
           }
         },
@@ -10545,99 +6405,101 @@ export const vars = {
             "icon": {
               "iconColor": "var(--vy-color-on-surface-disabled)"
             }
+          }
+        }
+      },
+      "size": {
+        "sm": {
+          "root": {
+            "paddingHorizontal": "var(--vy-space-lg)",
+            "paddingVertical": "var(--vy-space-lg)",
+            "gap": "var(--vy-space-xs)",
+            "borderRadius": "var(--vy-radius-lg)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "borderStyle": "var(--vy-border-style-dashed)"
           },
-          "sm": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-lg)",
-              "paddingVertical": "var(--vy-padding-lg)",
-              "gap": "var(--vy-gap-xs)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-sm-font-family)",
-                "fontSize": "var(--vy-typography-label-sm-font-size)",
-                "fontWeight": "var(--vy-typography-label-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-label-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "md"
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
             }
           },
-          "md": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-xl)",
-              "paddingVertical": "var(--vy-padding-xl)",
-              "gap": "var(--vy-gap-sm)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-md-font-family)",
-                "fontSize": "var(--vy-typography-label-md-font-size)",
-                "fontWeight": "var(--vy-typography-label-md-font-weight)",
-                "lineHeight": "var(--vy-typography-label-md-line-height)",
-                "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-sm-font-family)",
-                "fontSize": "var(--vy-typography-body-sm-font-size)",
-                "fontWeight": "var(--vy-typography-body-sm-font-weight)",
-                "lineHeight": "var(--vy-typography-body-sm-line-height)",
-                "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
             }
           },
-          "lg": {
-            "root": {
-              "paddingHorizontal": "var(--vy-padding-2xl)",
-              "paddingVertical": "var(--vy-padding-2xl)",
-              "gap": "var(--vy-gap-md)",
-              "borderRadius": "var(--vy-radius-xl)",
-              "borderWidth": "var(--vy-border-width-sm)",
-              "borderStyle": "var(--vy-border-style-dashed)"
-            },
-            "label": {
-              "font": {
-                "fontFamily": "var(--vy-typography-label-lg-font-family)",
-                "fontSize": "var(--vy-typography-label-lg-font-size)",
-                "fontWeight": "var(--vy-typography-label-lg-font-weight)",
-                "lineHeight": "var(--vy-typography-label-lg-line-height)",
-                "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
-              }
-            },
-            "helperText": {
-              "font": {
-                "fontFamily": "var(--vy-typography-body-md-font-family)",
-                "fontSize": "var(--vy-typography-body-md-font-size)",
-                "fontWeight": "var(--vy-typography-body-md-font-weight)",
-                "lineHeight": "var(--vy-typography-body-md-line-height)",
-                "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
-              }
-            },
-            "icon": {
-              "size": "lg"
+          "icon": {
+            "size": "md"
+          }
+        },
+        "md": {
+          "root": {
+            "paddingHorizontal": "var(--vy-space-xl)",
+            "paddingVertical": "var(--vy-space-xl)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-xl)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "borderStyle": "var(--vy-border-style-dashed)"
+          },
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
             }
+          },
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "lg"
+          }
+        },
+        "lg": {
+          "root": {
+            "paddingHorizontal": "var(--vy-space-2xl)",
+            "paddingVertical": "var(--vy-space-2xl)",
+            "gap": "var(--vy-space-md)",
+            "borderRadius": "var(--vy-radius-xl)",
+            "borderWidth": "var(--vy-border-width-sm)",
+            "borderStyle": "var(--vy-border-style-dashed)"
+          },
+          "label": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "helperText": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
+            }
+          },
+          "icon": {
+            "size": "lg"
           }
         }
       }
@@ -10679,45 +6541,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -10754,45 +6577,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -10831,45 +6615,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -10906,45 +6651,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -10983,45 +6689,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -11059,45 +6726,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "neutral": {
@@ -11134,45 +6762,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-surface-disabled)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         }
@@ -11213,45 +6802,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -11288,45 +6838,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -11365,45 +6876,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -11440,45 +6912,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -11517,45 +6950,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -11593,45 +6987,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "neutral": {
@@ -11668,45 +7023,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-outline-disabled)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         }
@@ -11747,45 +7063,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "secondary": {
@@ -11822,45 +7099,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -11899,45 +7137,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "warning": {
@@ -11974,45 +7173,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -12051,45 +7211,6 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
-            }
           }
         },
         "success": {
@@ -12126,45 +7247,6 @@ export const vars = {
               "backgroundColor": "var(--vy-color-transparent-default)",
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
-            }
-          },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "sm"
-            },
-            "progress": {
-              "size": "sm"
-            }
-          },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "md"
-            },
-            "progress": {
-              "size": "md"
-            }
-          },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
-            },
-            "icon": {
-              "size": "lg"
-            },
-            "progress": {
-              "size": "lg"
             }
           }
         },
@@ -12203,44 +7285,2254 @@ export const vars = {
               "iconColor": "var(--vy-color-on-surface-disabled)",
               "borderColor": "var(--vy-color-transparent-default)"
             }
+          }
+        }
+      },
+      "size": {
+        "2xs": {
+          "root": {
+            "size": "var(--vy-control-height-2xs)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
           },
-          "sm": {
-            "root": {
-              "size": "var(--vy-control-height-sm)",
-              "borderRadius": "var(--vy-radius-sm)",
-              "borderWidth": "var(--vy-border-width-sm)"
+          "icon": {
+            "size": "xs"
+          },
+          "progress": {
+            "size": "sm"
+          }
+        },
+        "xs": {
+          "root": {
+            "size": "var(--vy-control-height-xs)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "icon": {
+            "size": "xs"
+          },
+          "progress": {
+            "size": "sm"
+          }
+        },
+        "sm": {
+          "root": {
+            "size": "var(--vy-control-height-sm)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          }
+        },
+        "md": {
+          "root": {
+            "size": "var(--vy-control-height-md)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          }
+        },
+        "lg": {
+          "root": {
+            "size": "var(--vy-control-height-lg)",
+            "borderRadius": "var(--vy-control-radius-default)",
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "icon": {
+            "size": "sm"
+          },
+          "progress": {
+            "size": "sm"
+          }
+        }
+      }
+    },
+    "list": {
+      "standard": {
+        "neutral": {
+          "normal": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)"
             },
             "icon": {
-              "size": "sm"
+              "iconColor": "var(--vy-color-on-surface-variant-default)"
             },
-            "progress": {
-              "size": "sm"
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
             }
           },
-          "md": {
-            "root": {
-              "size": "var(--vy-control-height-md)",
-              "borderRadius": "var(--vy-radius-md)",
-              "borderWidth": "var(--vy-border-width-sm)"
+          "hover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
             },
             "icon": {
-              "size": "md"
+              "iconColor": "var(--vy-color-on-surface-default)"
             },
-            "progress": {
-              "size": "md"
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
             }
           },
-          "lg": {
-            "root": {
-              "size": "var(--vy-control-height-lg)",
-              "borderRadius": "var(--vy-radius-lg)",
-              "borderWidth": "var(--vy-border-width-sm)"
+          "active": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)"
             },
             "icon": {
-              "size": "lg"
+              "iconColor": "var(--vy-color-on-surface-default)"
             },
-            "progress": {
-              "size": "lg"
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            }
+          },
+          "focus": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            }
+          },
+          "disabled": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            }
+          },
+          "selected": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-default)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            }
+          },
+          "selectedhover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            }
+          },
+          "selectedactive": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-container-highest-active)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            }
+          }
+        },
+        "primary": {
+          "normal": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "hover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "active": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "focus": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "disabled": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            }
+          },
+          "selected": {
+            "item": {
+              "backgroundColor": "var(--vy-color-primary-container-default)",
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "selectedhover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-primary-container-hover)",
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          },
+          "selectedactive": {
+            "item": {
+              "backgroundColor": "var(--vy-color-primary-container-active)",
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-primary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-primary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-primary-default)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "hover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "active": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-active)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "focus": {
+            "item": {
+              "backgroundColor": "var(--vy-color-surface-hover)",
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-variant-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "disabled": {
+            "item": {
+              "backgroundColor": "var(--vy-color-transparent-default)",
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-on-surface-disabled)"
+            }
+          },
+          "selected": {
+            "item": {
+              "backgroundColor": "var(--vy-color-secondary-container-default)",
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "selectedhover": {
+            "item": {
+              "backgroundColor": "var(--vy-color-secondary-container-hover)",
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          },
+          "selectedactive": {
+            "item": {
+              "backgroundColor": "var(--vy-color-secondary-container-active)",
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "icon": {
+              "iconColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "secondary": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "row": {
+              "textColor": "var(--vy-color-on-surface-default)"
+            },
+            "end": {
+              "textColor": "var(--vy-color-on-secondary-container-default)"
+            },
+            "subheader": {
+              "textColor": "var(--vy-color-secondary-default)"
+            },
+            "sticky": {
+              "backgroundColor": "var(--vy-color-surface-default)"
+            },
+            "divider": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "guide": {
+              "borderColor": "var(--vy-color-outline-variant-default)"
+            },
+            "marker": {
+              "textColor": "var(--vy-color-secondary-default)"
+            }
+          }
+        }
+      },
+      "size": {
+        "xs": {
+          "root": {
+            "gap": "var(--vy-space-2xs)"
+          },
+          "padding": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "indent": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "nestedPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "guide": {
+            "borderWidth": "var(--vy-border-width-none)",
+            "insetInlineStart": "var(--vy-space-lg)"
+          },
+          "subheader": {
+            "height": "var(--vy-control-height-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "subheaderInset": {
+            "paddingStart": "var(--vy-space-2xl)"
+          },
+          "item": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "gutterStart": {
+            "paddingStart": "var(--vy-space-sm)"
+          },
+          "gutterEnd": {
+            "paddingEnd": "var(--vy-space-sm)"
+          },
+          "reserve": {
+            "paddingEnd": "var(--vy-space-2xl)"
+          },
+          "row": {
+            "height": "var(--vy-control-height-xs)",
+            "gap": "var(--vy-space-sm)"
+          },
+          "rowPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "divider": {
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "end": {
+            "height": "var(--vy-control-height-xs)",
+            "paddingEnd": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "icon": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "size": "sm"
+          },
+          "avatar": {
+            "minWidth": "var(--vy-control-height-xs)"
+          },
+          "text": {
+            "gap": "var(--vy-space-none)",
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "textInset": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "primary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "secondary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "marker": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "markerRow": {
+            "gap": "var(--vy-space-xs)"
+          }
+        },
+        "sm": {
+          "root": {
+            "gap": "var(--vy-space-2xs)"
+          },
+          "padding": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-xs)"
+          },
+          "indent": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "nestedPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "guide": {
+            "borderWidth": "var(--vy-border-width-none)",
+            "insetInlineStart": "var(--vy-space-lg)"
+          },
+          "subheader": {
+            "height": "var(--vy-control-height-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "subheaderInset": {
+            "paddingStart": "var(--vy-space-2xl)"
+          },
+          "item": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "gutterStart": {
+            "paddingStart": "var(--vy-space-sm)"
+          },
+          "gutterEnd": {
+            "paddingEnd": "var(--vy-space-sm)"
+          },
+          "reserve": {
+            "paddingEnd": "var(--vy-space-2xl)"
+          },
+          "row": {
+            "height": "var(--vy-control-height-sm)",
+            "gap": "var(--vy-space-sm)"
+          },
+          "rowPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "divider": {
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "end": {
+            "height": "var(--vy-control-height-sm)",
+            "paddingEnd": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "icon": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "size": "sm"
+          },
+          "avatar": {
+            "minWidth": "var(--vy-control-height-sm)"
+          },
+          "text": {
+            "gap": "var(--vy-space-none)",
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "textInset": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "primary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "secondary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "marker": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "markerRow": {
+            "gap": "var(--vy-space-xs)"
+          }
+        },
+        "md": {
+          "root": {
+            "gap": "var(--vy-space-2xs)"
+          },
+          "padding": {
+            "paddingVertical": "var(--vy-space-xs)",
+            "paddingHorizontal": "var(--vy-space-sm)"
+          },
+          "indent": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "nestedPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "guide": {
+            "borderWidth": "var(--vy-border-width-none)",
+            "insetInlineStart": "var(--vy-space-lg)"
+          },
+          "subheader": {
+            "height": "var(--vy-control-height-md)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "subheaderInset": {
+            "paddingStart": "var(--vy-space-2xl)"
+          },
+          "item": {
+            "height": "var(--vy-control-height-md)",
+            "paddingVertical": "var(--vy-space-none)",
+            "gap": "var(--vy-space-sm)",
+            "borderRadius": "var(--vy-radius-lg)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "gutterStart": {
+            "paddingStart": "var(--vy-space-sm)"
+          },
+          "gutterEnd": {
+            "paddingEnd": "var(--vy-space-sm)"
+          },
+          "reserve": {
+            "paddingEnd": "var(--vy-space-3xl)"
+          },
+          "row": {
+            "height": "var(--vy-control-height-md)",
+            "gap": "var(--vy-space-sm)"
+          },
+          "rowPadding": {
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "divider": {
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "end": {
+            "height": "var(--vy-control-height-md)",
+            "paddingEnd": "var(--vy-space-sm)",
+            "gap": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-sm-font-family)",
+              "fontSize": "var(--vy-typography-label-sm-font-size)",
+              "fontWeight": "var(--vy-typography-label-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-label-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-label-sm-letter-spacing)"
+            }
+          },
+          "icon": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "size": "sm"
+          },
+          "avatar": {
+            "minWidth": "var(--vy-control-height-md)"
+          },
+          "text": {
+            "gap": "var(--vy-space-none)",
+            "paddingVertical": "var(--vy-space-2xs)"
+          },
+          "textInset": {
+            "paddingStart": "var(--vy-space-xl)"
+          },
+          "primary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "secondary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "marker": {
+            "minWidth": "var(--vy-icon-size-sm)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-md-font-family)",
+              "fontSize": "var(--vy-typography-body-md-font-size)",
+              "fontWeight": "var(--vy-typography-body-md-font-weight)",
+              "lineHeight": "var(--vy-typography-body-md-line-height)",
+              "letterSpacing": "var(--vy-typography-body-md-letter-spacing)"
+            }
+          },
+          "markerRow": {
+            "gap": "var(--vy-space-xs)"
+          }
+        },
+        "lg": {
+          "root": {
+            "gap": "var(--vy-space-xs)"
+          },
+          "padding": {
+            "paddingVertical": "var(--vy-space-sm)",
+            "paddingHorizontal": "var(--vy-space-sm)"
+          },
+          "indent": {
+            "paddingStart": "var(--vy-space-2xl)"
+          },
+          "nestedPadding": {
+            "paddingVertical": "var(--vy-space-xs)"
+          },
+          "guide": {
+            "borderWidth": "var(--vy-border-width-none)",
+            "insetInlineStart": "var(--vy-space-xl)"
+          },
+          "subheader": {
+            "height": "var(--vy-control-height-lg)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "subheaderInset": {
+            "paddingStart": "var(--vy-space-3xl)"
+          },
+          "item": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingVertical": "var(--vy-space-2xs)",
+            "gap": "var(--vy-space-md)",
+            "borderRadius": "var(--vy-radius-lg)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "gutterStart": {
+            "paddingStart": "var(--vy-space-lg)"
+          },
+          "gutterEnd": {
+            "paddingEnd": "var(--vy-space-lg)"
+          },
+          "reserve": {
+            "paddingEnd": "var(--vy-space-3xl)"
+          },
+          "row": {
+            "height": "var(--vy-control-height-lg)",
+            "gap": "var(--vy-space-md)"
+          },
+          "rowPadding": {
+            "paddingVertical": "var(--vy-space-xs)"
+          },
+          "divider": {
+            "borderWidth": "var(--vy-border-width-sm)"
+          },
+          "end": {
+            "height": "var(--vy-control-height-lg)",
+            "paddingEnd": "var(--vy-space-lg)",
+            "gap": "var(--vy-space-sm)",
+            "font": {
+              "fontFamily": "var(--vy-typography-label-md-font-family)",
+              "fontSize": "var(--vy-typography-label-md-font-size)",
+              "fontWeight": "var(--vy-typography-label-md-font-weight)",
+              "lineHeight": "var(--vy-typography-label-md-line-height)",
+              "letterSpacing": "var(--vy-typography-label-md-letter-spacing)"
+            }
+          },
+          "icon": {
+            "minWidth": "var(--vy-icon-size-md)",
+            "size": "md"
+          },
+          "avatar": {
+            "minWidth": "var(--vy-control-height-lg)"
+          },
+          "text": {
+            "gap": "var(--vy-space-2xs)",
+            "paddingVertical": "var(--vy-space-xs)"
+          },
+          "textInset": {
+            "paddingStart": "var(--vy-space-2xl)"
+          },
+          "primary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-label-lg-font-family)",
+              "fontSize": "var(--vy-typography-label-lg-font-size)",
+              "fontWeight": "var(--vy-typography-label-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-label-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-label-lg-letter-spacing)"
+            }
+          },
+          "secondary": {
+            "font": {
+              "fontFamily": "var(--vy-typography-body-sm-font-family)",
+              "fontSize": "var(--vy-typography-body-sm-font-size)",
+              "fontWeight": "var(--vy-typography-body-sm-font-weight)",
+              "lineHeight": "var(--vy-typography-body-sm-line-height)",
+              "letterSpacing": "var(--vy-typography-body-sm-letter-spacing)"
+            }
+          },
+          "marker": {
+            "minWidth": "var(--vy-icon-size-md)",
+            "paddingVertical": "var(--vy-space-xs)",
+            "font": {
+              "fontFamily": "var(--vy-typography-body-lg-font-family)",
+              "fontSize": "var(--vy-typography-body-lg-font-size)",
+              "fontWeight": "var(--vy-typography-body-lg-font-weight)",
+              "lineHeight": "var(--vy-typography-body-lg-line-height)",
+              "letterSpacing": "var(--vy-typography-body-lg-letter-spacing)"
+            }
+          },
+          "markerRow": {
+            "gap": "var(--vy-space-sm)"
+          }
+        }
+      }
+    },
+    "link": {
+      "always": {
+        "primary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-primary-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-primary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-primary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-primary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-secondary-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-secondary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-secondary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-secondary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "error": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-error-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-error-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-error-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-error-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "warning": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-warning-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-warning-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-warning-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-warning-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "info": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-info-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-info-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-info-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-info-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "success": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-success-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-success-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-success-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-success-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "neutral": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        }
+      },
+      "hover": {
+        "primary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-primary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-primary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-primary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-secondary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-secondary-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-secondary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "error": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-error-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-error-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-error-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "warning": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-warning-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-warning-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-warning-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "info": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-info-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-info-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-info-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "success": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-success-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-success-hover)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-success-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "neutral": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        }
+      },
+      "none": {
+        "primary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-primary-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-primary-default)",
+              "textDecorationColor": "var(--vy-color-primary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "secondary": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-secondary-default)",
+              "textDecorationColor": "var(--vy-color-secondary-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "error": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-error-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-error-default)",
+              "textDecorationColor": "var(--vy-color-error-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "warning": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-warning-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-warning-default)",
+              "textDecorationColor": "var(--vy-color-warning-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "info": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-info-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-info-default)",
+              "textDecorationColor": "var(--vy-color-info-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "success": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-success-hover)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-success-default)",
+              "textDecorationColor": "var(--vy-color-success-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          }
+        },
+        "neutral": {
+          "normal": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "hover": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "focus": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-variant-default)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "active": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-default)",
+              "textDecorationColor": "var(--vy-color-on-surface-default)",
+              "textDecorationThickness": "var(--vy-border-width-md)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
+            }
+          },
+          "disabled": {
+            "root": {
+              "textColor": "var(--vy-color-on-surface-disabled)",
+              "textDecorationColor": "var(--vy-color-transparent-default)",
+              "textDecorationThickness": "var(--vy-border-width-sm)",
+              "textUnderlineOffset": "var(--vy-space-2xs)"
             }
           }
         }

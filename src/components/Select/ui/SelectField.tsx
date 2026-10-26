@@ -10,7 +10,7 @@ import { selectLayerClassName } from '../Select.styles';
 import type { SelectFieldLayerProps } from '../Select.types';
 import { SelectTrigger } from './SelectTrigger';
 
-export function SelectField(props: SelectFieldLayerProps) {
+export function SelectField({ startAddon, endAddon, ...props }: SelectFieldLayerProps) {
   const select = useSelect(props);
   return (
     <FormControl {...select.fieldProps}>
@@ -31,6 +31,8 @@ export function SelectField(props: SelectFieldLayerProps) {
         required={select.required}
         disabled={select.disabled}
         autofill={select.autofill}
+        startAddon={startAddon}
+        endAddon={endAddon}
       />
       {select.ids.helper ? (
         <FormHelperText id={select.ids.helper}>{select.helperText}</FormHelperText>

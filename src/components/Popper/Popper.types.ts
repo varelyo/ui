@@ -5,7 +5,7 @@ import type {
   UseFloatingReturn,
 } from '@floating-ui/react';
 import type { ComponentPropsWithRef, MutableRefObject, ReactElement, ReactNode, Ref } from 'react';
-import type { GapStep } from '../../generated/maps';
+import type { SpaceStep } from '../../generated/maps';
 
 export type PopperPlacement = Placement;
 export type PopperLayer = 'dropdown' | 'tooltip';
@@ -27,7 +27,7 @@ export interface UsePopperParams {
   onClose?: PopperClose | undefined;
   anchorEl?: Element | null | undefined;
   placement?: PopperPlacement | undefined;
-  offset?: GapStep | undefined;
+  offset?: SpaceStep | undefined;
   matchWidth?: boolean | undefined;
 }
 
@@ -66,7 +66,10 @@ export interface UsePopperLayerParams {
   ref: Ref<HTMLDivElement> | undefined;
 }
 
+export type PopperSide = 'top' | 'right' | 'bottom' | 'left';
+
 export interface PopperLayerProps {
+  'data-side': PopperSide;
   'data-closed'?: '';
   hidden?: true;
 }

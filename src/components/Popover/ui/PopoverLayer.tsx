@@ -11,6 +11,7 @@ export function PopoverLayer({
   anchorEl,
   placement,
   keepMounted,
+  variant,
   className,
   children,
   ref,
@@ -28,7 +29,7 @@ export function PopoverLayer({
         elevation="md"
         ref={ref}
         {...popover.getFloatingProps(rest)}
-        className={popoverPaperClassName(className)}
+        className={popoverPaperClassName(variant, className)}
       >
         {children}
       </Paper>

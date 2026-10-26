@@ -1,4 +1,10 @@
 import type { ComponentPropsWithRef, Key, ReactNode, RefObject } from 'react';
+import type { ComponentTokens } from '../../generated/maps';
+import type { VariantOf } from '../../types';
+import type { BREADCRUMBS_COMPONENT_NAME_KEY } from './Breadcrumbs.constants';
+
+export type BreadcrumbsTokens = ComponentTokens[typeof BREADCRUMBS_COMPONENT_NAME_KEY];
+export type BreadcrumbsVariant = VariantOf<BreadcrumbsTokens>;
 
 type BreadcrumbsOwnProps = {
   children?: ReactNode;
@@ -7,6 +13,7 @@ type BreadcrumbsOwnProps = {
   itemsBeforeCollapse?: number;
   itemsAfterCollapse?: number;
   expandText?: string;
+  variant?: BreadcrumbsVariant;
 };
 
 export type BreadcrumbsProps = BreadcrumbsOwnProps &
@@ -40,6 +47,7 @@ export interface BreadcrumbsSeparatorProps {
 }
 
 export interface BreadcrumbsCollapseProps {
+  variant: BreadcrumbsVariant;
   label: string;
   onExpand: () => void;
 }

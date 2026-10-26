@@ -1,6 +1,8 @@
 import { cardActionsClassName } from './CardActions.styles';
 import type { CardActionsProps } from './CardActions.types';
+import { useCardActions } from './hooks';
 
 export function CardActions({ className, ...rest }: CardActionsProps) {
-  return <div {...rest} className={cardActionsClassName(className)} />;
+  const { appearance } = useCardActions();
+  return <div {...rest} className={cardActionsClassName(appearance, className)} />;
 }

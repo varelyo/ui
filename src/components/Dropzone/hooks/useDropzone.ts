@@ -20,6 +20,7 @@ export function useDropzone({
   error,
   size,
   color,
+  variant,
   label,
   helperText,
   icon,
@@ -67,9 +68,9 @@ export function useDropzone({
   });
   const refused = drag.verdict === 'reject' || (error && drag.verdict !== 'accept');
   const intent: DropzoneIntent = refused ? DROPZONE_ERROR_INTENT : color;
-  const childProps = componentTokens[DROPZONE_COMPONENT_NAME_KEY].childProps.standard[intent];
+  const childProps = componentTokens[DROPZONE_COMPONENT_NAME_KEY].childProps;
   return {
-    styleProps: { size, intent },
+    styleProps: { variant, size, intent },
     hasLabel: ids.hasLabel,
     hasHelperText: ids.hasHelperText,
     labelId: ids.labelId,

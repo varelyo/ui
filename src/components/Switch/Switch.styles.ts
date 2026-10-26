@@ -5,18 +5,21 @@ import type { SwitchStyleProps } from './Switch.types';
 
 const switchTokens = componentTokens[SWITCH_COMPONENT_NAME_KEY];
 
-export const switchClassName = ({ color, size }: SwitchStyleProps, className?: ClassValue) =>
+export const switchClassName = (
+  { variant, color, size }: SwitchStyleProps,
+  className?: ClassValue,
+) =>
   cx(
     switchTokens.slots.root,
-    switchTokens.variants.standard[color],
-    responsiveClasses(size, switchTokens.sizes.standard[color], 'md'),
+    switchTokens.variants[variant][color],
+    responsiveClasses(size, switchTokens.sizes, 'md'),
     'inline-flex cursor-pointer items-center has-disabled:cursor-not-allowed',
     className,
   );
 
 export const switchTrackClassName = cx(
   switchTokens.slots.track,
-  'vy-focus-ring-within relative inline-flex shrink-0 items-center transition-colors duration-xs ease-standard motion-reduce:transition-none',
+  'vy-focus-ring-within relative inline-flex shrink-0 items-center transition-colors duration-sm ease-standard motion-reduce:transition-none',
 );
 
 export const switchInputClassName = cx(
@@ -25,7 +28,7 @@ export const switchInputClassName = cx(
 
 export const switchThumbClassName = cx(
   switchTokens.slots.thumb,
-  'pointer-events-none transition-transform duration-xs ease-standard peer-checked:translate-x-full rtl:peer-checked:-translate-x-full motion-reduce:transition-none',
+  'pointer-events-none transition-transform duration-md ease-standard peer-checked:translate-x-full rtl:peer-checked:-translate-x-full motion-reduce:transition-none',
 );
 
 export const switchSpacerClassName = cx(switchTokens.slots.thumb, 'opacity-none');

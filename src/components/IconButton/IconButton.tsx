@@ -24,7 +24,7 @@ export function IconButton(props: IconButtonLinkProps | IconButtonProps<ElementT
     children,
     ...rest
   } = props as IconButtonInternalProps;
-  const iconButton = useIconButton({ variant, color, size, loading });
+  const iconButton = useIconButton({ size, loading });
   return (
     <ButtonBase
       {...(rest as ButtonBaseProps<ElementType>)}

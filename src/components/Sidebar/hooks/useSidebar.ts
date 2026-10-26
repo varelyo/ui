@@ -8,6 +8,7 @@ export function useSidebar({
   defaultOpen,
   onOpenChange,
   variant,
+  appearance,
   color,
 }: UseSidebarParams): UseSidebarResult {
   const [drawerOpen, setDrawerOpen] = useControllableState({
@@ -15,8 +16,14 @@ export function useSidebar({
     defaultValue: defaultOpen,
     onChange: onOpenChange,
   });
-  const dockedContext = useMemo(() => ({ collapsed, color }), [collapsed, color]);
-  const drawerContext = useMemo(() => ({ collapsed: false, color }), [color]);
+  const dockedContext = useMemo(
+    () => ({ appearance, collapsed, color }),
+    [appearance, collapsed, color],
+  );
+  const drawerContext = useMemo(
+    () => ({ appearance, collapsed: false, color }),
+    [appearance, color],
+  );
   return {
     responsive: variant === 'responsive',
     drawerOpen,

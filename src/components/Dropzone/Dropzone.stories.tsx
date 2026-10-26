@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Grid } from '../../foundation/Grid';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
-import { Typography } from '../../foundation/Typography';
+import { Grid } from '../Grid';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
+import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { Switch } from '../Switch';
 import { TextField } from '../TextField';

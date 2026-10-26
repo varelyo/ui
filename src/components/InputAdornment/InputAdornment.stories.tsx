@@ -1,7 +1,7 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Icon } from '../../foundation/Icon';
-import { Stack } from '../../foundation/Stack';
+import { Icon } from '../Icon';
+import { Stack } from '../Stack';
 import { FormControl } from '../FormControl';
 import { InputAdornment } from './InputAdornment';
 

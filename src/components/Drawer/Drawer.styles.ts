@@ -1,7 +1,12 @@
 import { componentTokens } from '../../generated/maps';
 import { cx, type ClassValue } from '../../utils';
 import { DRAWER_COMPONENT_NAME_KEY } from './Drawer.constants';
-import type { DrawerAnchor, DrawerDockedStyleProps, DrawerStyleProps } from './Drawer.types';
+import type {
+  DrawerAnchor,
+  DrawerAppearance,
+  DrawerDockedStyleProps,
+  DrawerStyleProps,
+} from './Drawer.types';
 
 const drawer = componentTokens[DRAWER_COMPONENT_NAME_KEY];
 
@@ -26,7 +31,8 @@ const dockedMotion: Record<DrawerAnchor, string> = {
   bottom: 'starting:translate-y-full data-closed:translate-y-full',
 };
 
-export const drawerContainerClassName = cx(drawer.variants.standard.primary);
+export const drawerContainerClassName = (appearance: DrawerAppearance) =>
+  cx(drawer.variants[appearance].primary);
 
 export const drawerTemporaryPaperClassName = (
   { anchor }: DrawerStyleProps,
@@ -34,19 +40,19 @@ export const drawerTemporaryPaperClassName = (
 ) =>
   cx(
     drawer.slots.paper,
-    'absolute flex max-h-full max-w-full flex-col overflow-y-auto transition-transform duration-md ease-standard motion-reduce:transition-none',
+    'absolute flex max-h-full max-w-full flex-col overflow-y-auto transition-transform duration-lg ease-enter group-data-closed:duration-sm group-data-closed:ease-exit data-closed:duration-sm data-closed:ease-exit motion-reduce:transition-none',
     temporaryAnchors[anchor],
     className,
   );
 
 export const drawerDockedPaperClassName = (
-  { anchor, animated }: DrawerDockedStyleProps,
+  { appearance, anchor, animated }: DrawerDockedStyleProps,
   className?: ClassValue,
 ) =>
   cx(
-    drawer.variants.standard.primary,
+    drawer.variants[appearance].primary,
     drawer.slots.paper,
-    'flex max-w-full shrink-0 flex-col overflow-y-auto transition-transform duration-md ease-standard motion-reduce:transition-none',
+    'flex max-w-full shrink-0 flex-col overflow-y-auto transition-transform duration-lg ease-enter group-data-closed:duration-sm group-data-closed:ease-exit data-closed:duration-sm data-closed:ease-exit motion-reduce:transition-none',
     dockedAnchors[anchor],
     animated && dockedMotion[anchor],
     className,

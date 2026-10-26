@@ -13,6 +13,7 @@ export function Switch({
   value,
   size = 'md',
   color = 'primary',
+  variant = 'standard',
   label,
   inputRef,
   'aria-label': ariaLabel,
@@ -23,7 +24,7 @@ export function Switch({
 }: SwitchProps) {
   const control = useSwitch({ checked, defaultChecked, onChange, inputRef, label });
   return (
-    <label {...rest} className={switchClassName({ color, size }, className)}>
+    <label {...rest} className={switchClassName({ variant, color, size }, className)}>
       <span className={switchTrackClassName}>
         <input
           ref={control.inputRef}

@@ -32,19 +32,19 @@ type Measured = Record<string, string>;
 
 function expected(kind: string, parameter: string, active: boolean): Measured {
   if (kind === 'gap') {
-    const gap = active ? px(`semantic.gap.${parameter}`) : '0px';
+    const gap = active ? px(`semantic.space.${parameter}`) : '0px';
     return { rowGap: gap, columnGap: gap };
   }
   if (kind === 'pair-row')
-    return { rowGap: active ? px(`semantic.gap.${parameter}`) : '0px', columnGap: '0px' };
+    return { rowGap: active ? px(`semantic.space.${parameter}`) : '0px', columnGap: '0px' };
   if (kind === 'pair-column')
-    return { rowGap: '0px', columnGap: active ? px(`semantic.gap.${parameter}`) : '0px' };
+    return { rowGap: '0px', columnGap: active ? px(`semantic.space.${parameter}`) : '0px' };
   if (kind.startsWith('padding-')) {
     const sides = paddingSides[kind.slice('padding-'.length)] ?? [];
     return Object.fromEntries(
       ['top', 'right', 'bottom', 'left'].map((side) => [
         `padding-${side}`,
-        active && sides.includes(side) ? px(`semantic.padding.${parameter}`) : '0px',
+        active && sides.includes(side) ? px(`semantic.space.${parameter}`) : '0px',
       ]),
     );
   }

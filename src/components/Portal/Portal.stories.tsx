@@ -1,8 +1,8 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
-import { ThemeScope } from '../../foundation/ThemeScope';
-import { Typography } from '../../foundation/Typography';
+import { Stack } from '../Stack';
+import { ThemeScope } from '../ThemeScope';
+import { Typography } from '../Typography';
 import { Portal } from './Portal';
 
 export function PortalStory() {

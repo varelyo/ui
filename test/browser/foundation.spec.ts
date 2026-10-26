@@ -81,3 +81,28 @@ test('Icon is decorative unless it has a title', async ({ page }) => {
   await expect(page.getByRole('img', { name: 'Notifications' })).toBeVisible();
   expect(await page.locator('svg[data-icon]').count()).toBeGreaterThanOrEqual(50);
 });
+
+test('A filled icon shape takes the icon colour and keeps the brand stroke', async ({ page }) => {
+  await page.goto('/?story=icon-fill');
+  const status = page.getByTestId('icon-fill-0');
+  const ring = status.locator('circle').first();
+  const disc = status.locator('circle').last();
+  await expect(ring).not.toHaveAttribute('fill');
+  await expect(disc).toHaveAttribute('fill', 'currentColor');
+  const colour = await css(status, 'color');
+  expect(await css(ring, 'fill')).toBe('none');
+  expect(await css(disc, 'fill')).toBe(colour);
+  expect(await css(disc, 'stroke')).toBe(colour);
+  expect(await css(disc, 'stroke-width')).toBe('1.75px');
+  expect(await css(ring, 'stroke-width')).toBe('1.75px');
+  for (const [testId, shape] of [
+    ['icon-fill-1', 'ellipse'],
+    ['icon-fill-2', 'path'],
+  ]) {
+    const icon = page.getByTestId(testId);
+    const filled = icon.locator(shape);
+    await expect(filled).toHaveAttribute('fill', 'currentColor');
+    expect(await css(filled, 'fill')).toBe(await css(icon, 'color'));
+    expect(await css(filled, 'stroke-width')).toBe('1.75px');
+  }
+});

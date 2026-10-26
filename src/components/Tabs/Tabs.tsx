@@ -9,6 +9,7 @@ export function Tabs({
   onChange,
   orientation = 'horizontal',
   selectionFollowsFocus = false,
+  variant = 'standard',
   color = 'neutral',
   className,
   children,
@@ -20,6 +21,7 @@ export function Tabs({
     onChange,
     orientation,
     selectionFollowsFocus,
+    variant,
     color,
   });
   return (

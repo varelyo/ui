@@ -12,8 +12,8 @@ export function InputBase({
   rows,
   minRows,
   maxRows,
-  startAdornment,
-  endAdornment,
+  startAddon,
+  endAddon,
   disabled,
   required,
   className,
@@ -30,8 +30,8 @@ export function InputBase({
     disabled,
     required,
     invalid: rest['aria-invalid'],
-    startAdornment,
-    endAdornment,
+    startAddon,
+    endAddon,
     onChange,
   });
   return (
@@ -41,9 +41,7 @@ export function InputBase({
       {...input.boxProps}
       className={inputBaseBoxClassName(input.styleProps, input.slots, className)}
     >
-      {input.hasStartAdornment ? (
-        <InputAdornment position="start">{startAdornment}</InputAdornment>
-      ) : null}
+      {input.hasStartAddon ? <InputAdornment position="start" addon={startAddon} /> : null}
       {multiline ? (
         <textarea
           {...(rest as ComponentPropsWithRef<'textarea'>)}
@@ -58,9 +56,7 @@ export function InputBase({
           className={inputBaseControlClassName(input.styleProps, input.slots)}
         />
       )}
-      {input.hasEndAdornment ? (
-        <InputAdornment position="end">{endAdornment}</InputAdornment>
-      ) : null}
+      {input.hasEndAddon ? <InputAdornment position="end" addon={endAddon} /> : null}
     </div>
   );
 }

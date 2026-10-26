@@ -14,6 +14,10 @@ export const selectTriggerClassName = (slots: FormControlSlots) =>
   cx(
     'vy-focus-ring relative flex cursor-pointer items-center transition-colors duration-sm ease-standard select-none aria-disabled:cursor-default',
     slots.input,
+    slots.addonStart,
+    slots.addonEnd,
+    slots.addonInsetStart,
+    slots.addonInsetEnd,
   );
 
 export const selectValueClassName = (slots: FormControlSlots) =>
@@ -42,7 +46,7 @@ export const selectLayerClassName = cx('flex flex-col');
 
 export const selectPopupClassName = (variant: SelectVariant, size: Responsive<SelectSize>) =>
   cx(
-    responsiveClasses(size, select.sizes[variant].primary, 'md'),
+    responsiveClasses(size, select.sizes, 'md'),
     select.slots.popup,
     'flex min-h-0 flex-col overflow-y-auto outline-none',
   );

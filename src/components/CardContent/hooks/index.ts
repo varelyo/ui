@@ -1,0 +1,1 @@
+export { useCardContent } from './useCardContent';

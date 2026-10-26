@@ -25,7 +25,8 @@ export const skeletonClassName = (
   cx(
     skeleton.slots.root,
     skeleton.variants[variant].primary,
-    responsiveClasses(size, skeleton.sizes[variant].primary, 'md'),
+    responsiveClasses(size, skeleton.sizes, 'md'),
+    responsiveClasses(size, skeleton.styleSizes[variant], 'md'),
     shapes[variant],
     motions[motion],
     fit && 'w-fit',

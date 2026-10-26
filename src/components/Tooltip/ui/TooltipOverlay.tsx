@@ -16,6 +16,7 @@ export function TooltipOverlay({
   leaveDelay,
   disableHoverListener,
   disableFocusListener,
+  variant,
   surfaceProps,
 }: TooltipOverlayProps) {
   const tooltip = useTooltip({
@@ -35,7 +36,9 @@ export function TooltipOverlay({
     <>
       <TooltipTrigger element={children} props={tooltip.triggerProps} />
       <Popper popper={tooltip.popper} layer="tooltip" {...tooltip.floatingProps}>
-        <TooltipSurface {...surfaceProps}>{title}</TooltipSurface>
+        <TooltipSurface {...surfaceProps} variant={variant}>
+          {title}
+        </TooltipSurface>
       </Popper>
     </>
   );

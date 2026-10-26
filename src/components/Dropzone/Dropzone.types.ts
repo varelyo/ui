@@ -9,10 +9,11 @@ import type {
   RefCallback,
 } from 'react';
 import type { ComponentTokens, IconSize } from '../../generated/maps';
-import type { ColorOf, Responsive, SizeOf } from '../../types';
+import type { ColorOf, Responsive, SizeOf, VariantOf } from '../../types';
 import type { DROPZONE_COMPONENT_NAME_KEY, DROPZONE_ERROR_INTENT } from './Dropzone.constants';
 
 export type DropzoneTokens = ComponentTokens[typeof DROPZONE_COMPONENT_NAME_KEY];
+export type DropzoneVariant = VariantOf<DropzoneTokens>;
 export type DropzoneSize = SizeOf<DropzoneTokens>;
 export type DropzoneIntent = ColorOf<DropzoneTokens>;
 export type DropzoneColor = Exclude<DropzoneIntent, typeof DROPZONE_ERROR_INTENT>;
@@ -43,6 +44,7 @@ type DropzoneOwnProps = {
   disabled?: boolean;
   size?: Responsive<DropzoneSize>;
   color?: DropzoneColor;
+  variant?: DropzoneVariant;
 };
 
 export type DropzoneProps = DropzoneOwnProps &
@@ -54,6 +56,7 @@ export type DropzoneProps = DropzoneOwnProps &
 type DragHandler = ((event: DragEvent<HTMLDivElement>) => void) | undefined;
 
 export interface DropzoneStyleProps {
+  variant: DropzoneVariant;
   size: Responsive<DropzoneSize>;
   intent: DropzoneIntent;
 }
@@ -111,6 +114,7 @@ export interface UseDropzoneParams {
   error: boolean;
   size: Responsive<DropzoneSize>;
   color: DropzoneColor;
+  variant: DropzoneVariant;
   label: ReactNode;
   helperText: ReactNode;
   icon: ReactNode;

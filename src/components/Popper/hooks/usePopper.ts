@@ -7,7 +7,7 @@ import {
   useFloating,
   useFloatingNodeId,
 } from '@floating-ui/react';
-import { cssLength, GAP_VARIABLES } from '../../../utils';
+import { cssLength, SPACE_VARIABLES } from '../../../utils';
 import { POPPER_CLOSE_REASONS, POPPER_COLLISION_PADDING } from '../Popper.constants';
 import type { PopperOpenChange, PopperState, UsePopperParams } from '../Popper.types';
 
@@ -33,7 +33,7 @@ export function usePopper({
     onOpenChange: onOpenChange ?? close,
     ...(anchorEl === undefined ? {} : { elements: { reference: anchorEl } }),
     middleware: [
-      offset(({ elements }) => cssLength(elements.floating, GAP_VARIABLES[step]), [step]),
+      offset(({ elements }) => cssLength(elements.floating, SPACE_VARIABLES[step]), [step]),
       flip(({ elements }) => ({ padding: cssLength(elements.floating, POPPER_COLLISION_PADDING) })),
       shift(({ elements }) => ({
         padding: cssLength(elements.floating, POPPER_COLLISION_PADDING),

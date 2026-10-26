@@ -8,7 +8,7 @@ import type {
   Ref,
 } from 'react';
 import type { IconSize } from '../../generated/maps';
-import type { TabsColor, TabsOrientation, TabValue } from '../Tabs';
+import type { TabsColor, TabsOrientation, TabsVariant, TabValue } from '../Tabs';
 
 type TabOwnProps = {
   value: TabValue;
@@ -44,6 +44,7 @@ export interface TabAccessibilityProps {
 export interface UseTabResult {
   ref: (node: HTMLButtonElement | null) => void;
   orientation: TabsOrientation;
+  variant: TabsVariant;
   color: TabsColor;
   iconSize: IconSize;
   tabProps: TabAccessibilityProps;
@@ -60,4 +61,10 @@ export interface TabLabelProps {
 
 export interface TabIndicatorProps {
   orientation: TabsOrientation;
+}
+
+export interface TabStyleProps {
+  orientation: TabsOrientation;
+  variant: TabsVariant;
+  color: TabsColor;
 }

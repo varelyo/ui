@@ -1,5 +1,5 @@
 import { use } from 'react';
-import { ThemeScopeContext } from '../../../foundation/ThemeScope';
+import { ThemeScopeContext } from '../../ThemeScope';
 import type { UsePortalParams, UsePortalResult } from '../Portal.types';
 
 export function usePortal({ container }: UsePortalParams): UsePortalResult {

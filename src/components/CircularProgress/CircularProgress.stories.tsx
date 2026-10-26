@@ -1,6 +1,6 @@
 import { Example } from '../../../playground/stories/example';
 import type { Story } from '../../../playground/story';
-import { Stack } from '../../foundation/Stack';
+import { Stack } from '../Stack';
 import { CircularProgress } from './CircularProgress';
 import type { CircularProgressColor, CircularProgressSize } from './CircularProgress.types';
 

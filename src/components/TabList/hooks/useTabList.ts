@@ -5,7 +5,7 @@ import { TAB_LIST_TAB_SELECTOR } from '../TabList.constants';
 import type { TabListItemState, UseTabListParams, UseTabListResult } from '../TabList.types';
 
 export function useTabList({ ref, onKeyDown, onBlur }: UseTabListParams): UseTabListResult {
-  const { orientation } = use(TabsContext);
+  const { orientation, variant, color } = use(TabsContext);
   const [focused, setFocused] = useState<number | null>(null);
   const [items, setItems] = useState<ReadonlyMap<string, TabListItemState>>(new Map());
   const [rtl, setRtl] = useState(false);
@@ -39,6 +39,8 @@ export function useTabList({ ref, onKeyDown, onBlur }: UseTabListParams): UseTab
     ref: merged,
     rtl,
     orientation,
+    variant,
+    color,
     activeIndex,
     navigate: setFocused,
     context: { activeIndex, navigate: setFocused, register },

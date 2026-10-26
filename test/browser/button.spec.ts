@@ -70,9 +70,9 @@ test('href renders a link and a custom element becomes a keyboard button', async
 test('size is responsive and colours come from the variant map', async ({ page }) => {
   const responsive = page.getByTestId('responsive-button');
   await page.setViewportSize({ width: 480, height: 900 });
-  expect(await css(responsive, 'min-height')).toBe(rem(2));
+  expect(await css(responsive, 'min-height')).toBe(rem(1.75));
   await page.setViewportSize({ width: 1280, height: 900 });
-  expect(await css(responsive, 'min-height')).toBe(rem(3));
+  expect(await css(responsive, 'min-height')).toBe(rem(2.25));
   const contained = page.getByRole('button', { name: 'primary' }).first();
   const outlined = page.getByRole('button', { name: 'primary' }).nth(1);
   expect(await css(contained, 'background-color')).not.toBe(

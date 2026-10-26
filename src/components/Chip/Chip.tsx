@@ -2,15 +2,17 @@ import type { ElementType } from 'react';
 import { chipClassName } from './Chip.styles';
 import type { ChipProps } from './Chip.types';
 import { useChip } from './hooks';
-import { ChipAction, ChipDelete, ChipLabelGroup } from './ui';
+import { hasAddon } from '../../utils';
+import { CHIP_ADDON_SLOTS } from './Chip.constants';
+import { ChipAction, ChipAddon, ChipDelete, ChipLabelGroup } from './ui';
 
 export function Chip<C extends ElementType = 'span'>({
   label,
   color = 'neutral',
   variant = 'filled',
   size = 'md',
-  avatar,
-  icon,
+  startAddon,
+  endAddon,
   onClick,
   onDelete,
   disabled = false,
@@ -21,7 +23,7 @@ export function Chip<C extends ElementType = 'span'>({
   ...rest
 }: ChipProps<C>) {
   const Component: ElementType = component ?? 'span';
-  const chip = useChip({ variant, color, size, label, deleteLabel, disabled, onClick, onDelete });
+  const chip = useChip({ size, label, deleteLabel, disabled, onClick, onDelete });
   return (
     <Component
       {...rest}
@@ -30,8 +32,8 @@ export function Chip<C extends ElementType = 'span'>({
     >
       {chip.clickable ? (
         <ChipAction
-          avatar={avatar}
-          icon={icon}
+          startAddon={startAddon}
+          addon={chip.addon}
           iconSize={chip.iconSize}
           label={label}
           disabled={disabled}
@@ -39,8 +41,21 @@ export function Chip<C extends ElementType = 'span'>({
           onKeyDown={chip.onKeyDown}
         />
       ) : (
-        <ChipLabelGroup avatar={avatar} icon={icon} iconSize={chip.iconSize} label={label} />
+        <ChipLabelGroup
+          startAddon={startAddon}
+          addon={chip.addon}
+          iconSize={chip.iconSize}
+          label={label}
+        />
       )}
+      {hasAddon(endAddon) ? (
+        <ChipAddon
+          slot={CHIP_ADDON_SLOTS.end}
+          addon={endAddon}
+          props={chip.addon}
+          iconSize={chip.iconSize}
+        />
+      ) : null}
       {chip.deletable ? (
         <ChipDelete
           name={chip.deleteName}

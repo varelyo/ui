@@ -9,24 +9,6 @@
     --vy-space-xl: 1.5rem;
     --vy-space-2xl: 2rem;
     --vy-space-3xl: 3rem;
-    --vy-padding-none: 0rem;
-    --vy-padding-2xs: 0.125rem;
-    --vy-padding-xs: 0.25rem;
-    --vy-padding-sm: 0.5rem;
-    --vy-padding-md: 0.75rem;
-    --vy-padding-lg: 1rem;
-    --vy-padding-xl: 1.5rem;
-    --vy-padding-2xl: 2rem;
-    --vy-padding-3xl: 3rem;
-    --vy-gap-none: 0rem;
-    --vy-gap-2xs: 0.125rem;
-    --vy-gap-xs: 0.25rem;
-    --vy-gap-sm: 0.5rem;
-    --vy-gap-md: 0.75rem;
-    --vy-gap-lg: 1rem;
-    --vy-gap-xl: 1.5rem;
-    --vy-gap-2xl: 2rem;
-    --vy-gap-3xl: 3rem;
     --vy-radius-none: 0rem;
     --vy-radius-full: 999rem;
     --vy-icon-size-none: 0rem;
@@ -58,12 +40,30 @@
     --vy-measure-compact: 20rem;
     --vy-measure-reading: 42rem;
     --vy-measure-wide: 64rem;
-    --vy-control-height-sm: 2rem;
-    --vy-control-height-md: 2.5rem;
-    --vy-control-height-lg: 3rem;
-    --vy-avatar-size-sm: 2rem;
-    --vy-avatar-size-md: 2.75rem;
-    --vy-avatar-size-lg: 3.5rem;
+    --vy-control-height-2xs: 1.25rem;
+    --vy-control-height-xs: 1.5rem;
+    --vy-control-height-sm: 1.75rem;
+    --vy-control-height-md: 2rem;
+    --vy-control-height-lg: 2.25rem;
+    --vy-control-padding-horizontal-xs: 0.5rem;
+    --vy-control-padding-horizontal-sm: 0.5rem;
+    --vy-control-padding-horizontal-md: 0.75rem;
+    --vy-control-padding-horizontal-lg: 1rem;
+    --vy-control-gap-xs: 0.25rem;
+    --vy-control-gap-sm: 0.25rem;
+    --vy-control-gap-md: 0.25rem;
+    --vy-control-gap-lg: 0.5rem;
+    --vy-control-padding-addon-xs: 0.25rem;
+    --vy-control-padding-addon-sm: 0.25rem;
+    --vy-control-padding-addon-md: 0.5rem;
+    --vy-control-padding-addon-lg: 0.75rem;
+    --vy-control-padding-inset-xs: 0.125rem;
+    --vy-control-padding-inset-sm: 0.125rem;
+    --vy-control-padding-inset-md: 0.125rem;
+    --vy-control-padding-inset-lg: 0.125rem;
+    --vy-avatar-size-xl: 3rem;
+    --vy-avatar-size-2xl: 4rem;
+    --vy-border-width-none: 0rem;
     --vy-border-width-sm: 0.0625rem;
     --vy-border-width-md: 0.125rem;
     --vy-border-width-lg: 0.1875rem;
@@ -82,6 +82,9 @@
     --vy-motion-easing-standard: cubic-bezier(0.2, 0, 0.2, 1);
     --vy-motion-easing-enter: cubic-bezier(0, 0, 0.2, 1);
     --vy-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+    --vy-motion-scale-enter: 0.96;
+    --vy-motion-offset-sm: 0.25rem;
+    --vy-motion-offset-md: 0.75rem;
     --vy-font-product: system-ui, sans-serif;
     --vy-font-monospace: ui-monospace, monospace;
     --vy-font-display: system-ui, sans-serif;
@@ -169,15 +172,13 @@
     --vy-typography-label-lg-letter-spacing: 0rem;
   }
   :root, [data-vy-brand="neutral"] {
-    --vy-radius-2xs: 0.125rem;
     --vy-radius-xs: 0.25rem;
     --vy-radius-sm: 0.375rem;
-    --vy-radius-md: 0.625rem;
-    --vy-radius-lg: 0.875rem;
-    --vy-radius-xl: 1.25rem;
-    --vy-radius-2xl: 1.75rem;
-    --vy-radius-3xl: 2.5rem;
-    --vy-icon-stroke-width: 1.8;
+    --vy-radius-md: 0.5rem;
+    --vy-radius-lg: 0.625rem;
+    --vy-radius-xl: 0.875rem;
+    --vy-control-radius-default: 0.5rem;
+    --vy-icon-stroke-width: 1.75;
     --vy-icon-line-cap: round;
     --vy-icon-line-join: round;
     --vy-color-primary-default--light: #171717;
@@ -192,6 +193,8 @@
     --vy-color-primary-container-default--dark: #3a3a3a;
     --vy-color-primary-container-hover--light: #b7b7b7;
     --vy-color-primary-container-hover--dark: #4d4d4d;
+    --vy-color-primary-container-active--light: #949494;
+    --vy-color-primary-container-active--dark: #696969;
     --vy-color-on-primary-container-default--light: #171717;
     --vy-color-on-primary-container-default--dark: #f5f5f5;
     --vy-color-secondary-default--light: #424242;
@@ -206,6 +209,8 @@
     --vy-color-secondary-container-default--dark: #3a3a3a;
     --vy-color-secondary-container-hover--light: #b7b7b7;
     --vy-color-secondary-container-hover--dark: #4d4d4d;
+    --vy-color-secondary-container-active--light: #949494;
+    --vy-color-secondary-container-active--dark: #696969;
     --vy-color-on-secondary-container-default--light: #171717;
     --vy-color-on-secondary-container-default--dark: #f5f5f5;
     --vy-color-error-default--light: #171717;
@@ -276,6 +281,8 @@
     --vy-color-surface-default--dark: #0f0f0f;
     --vy-color-surface-hover--light: #dcdcdc;
     --vy-color-surface-hover--dark: #2e2e2e;
+    --vy-color-surface-active--light: #cccccc;
+    --vy-color-surface-active--dark: #3a3a3a;
     --vy-color-surface-disabled--light: #e6e6e6;
     --vy-color-surface-disabled--dark: #252525;
     --vy-color-surface-container-lowest-default--light: #ffffff;
@@ -288,6 +295,10 @@
     --vy-color-surface-container-high-default--dark: #1e1e1e;
     --vy-color-surface-container-highest-default--light: #e6e6e6;
     --vy-color-surface-container-highest-default--dark: #252525;
+    --vy-color-surface-container-highest-hover--light: #cccccc;
+    --vy-color-surface-container-highest-hover--dark: #3a3a3a;
+    --vy-color-surface-container-highest-active--light: #b7b7b7;
+    --vy-color-surface-container-highest-active--dark: #4d4d4d;
     --vy-color-on-surface-default--light: #171717;
     --vy-color-on-surface-default--dark: #f5f5f5;
     --vy-color-on-surface-disabled--light: #949494;
@@ -322,14 +333,12 @@
     --vy-elevation-3xl--dark: 0rem 3rem 9rem 0rem rgb(0 0 0 / 0.36);
   }
   [data-vy-brand="slate"] {
-    --vy-radius-2xs: 0.08125rem;
-    --vy-radius-xs: 0.1625rem;
-    --vy-radius-sm: 0.24375000000000002rem;
-    --vy-radius-md: 0.40625rem;
-    --vy-radius-lg: 0.56875rem;
-    --vy-radius-xl: 0.8125rem;
-    --vy-radius-2xl: 1.1375rem;
-    --vy-radius-3xl: 1.625rem;
+    --vy-radius-xs: 0rem;
+    --vy-radius-sm: 0.125rem;
+    --vy-radius-md: 0.25rem;
+    --vy-radius-lg: 0.375rem;
+    --vy-radius-xl: 0.625rem;
+    --vy-control-radius-default: 0.25rem;
     --vy-icon-stroke-width: 2;
     --vy-icon-line-cap: square;
     --vy-icon-line-join: bevel;
@@ -345,6 +354,8 @@
     --vy-color-primary-container-default--dark: #353b43;
     --vy-color-primary-container-hover--light: #aeb6c0;
     --vy-color-primary-container-hover--dark: #474e57;
+    --vy-color-primary-container-active--light: #89919c;
+    --vy-color-primary-container-active--dark: #626a74;
     --vy-color-on-primary-container-default--light: #11161e;
     --vy-color-on-primary-container-default--dark: #f2f5fb;
     --vy-color-secondary-default--light: #39424d;
@@ -359,6 +370,8 @@
     --vy-color-secondary-container-default--dark: #353b43;
     --vy-color-secondary-container-hover--light: #aeb6c0;
     --vy-color-secondary-container-hover--dark: #474e57;
+    --vy-color-secondary-container-active--light: #89919c;
+    --vy-color-secondary-container-active--dark: #626a74;
     --vy-color-on-secondary-container-default--light: #11161e;
     --vy-color-on-secondary-container-default--dark: #f2f5fb;
     --vy-color-error-default--light: #11161e;
@@ -429,6 +442,8 @@
     --vy-color-surface-default--dark: #0d1014;
     --vy-color-surface-hover--light: #d4dbe3;
     --vy-color-surface-hover--dark: #282e36;
+    --vy-color-surface-active--light: #c3cbd4;
+    --vy-color-surface-active--dark: #353b43;
     --vy-color-surface-disabled--light: #dfe4ec;
     --vy-color-surface-disabled--dark: #20262d;
     --vy-color-surface-container-lowest-default--light: #fafcfe;
@@ -441,6 +456,10 @@
     --vy-color-surface-container-high-default--dark: #1a1e25;
     --vy-color-surface-container-highest-default--light: #dfe4ec;
     --vy-color-surface-container-highest-default--dark: #20262d;
+    --vy-color-surface-container-highest-hover--light: #c3cbd4;
+    --vy-color-surface-container-highest-hover--dark: #353b43;
+    --vy-color-surface-container-highest-active--light: #aeb6c0;
+    --vy-color-surface-container-highest-active--dark: #474e57;
     --vy-color-on-surface-default--light: #11161e;
     --vy-color-on-surface-default--dark: #f2f5fb;
     --vy-color-on-surface-disabled--light: #89919c;
@@ -503,6 +522,8 @@
     --vy-color-primary-container-default: var(--vy-color-primary-container-default--when-dark, var(--vy-color-primary-container-default--light));
     --vy-color-primary-container-hover--when-dark: var(--vy-when-dark) var(--vy-color-primary-container-hover--dark);
     --vy-color-primary-container-hover: var(--vy-color-primary-container-hover--when-dark, var(--vy-color-primary-container-hover--light));
+    --vy-color-primary-container-active--when-dark: var(--vy-when-dark) var(--vy-color-primary-container-active--dark);
+    --vy-color-primary-container-active: var(--vy-color-primary-container-active--when-dark, var(--vy-color-primary-container-active--light));
     --vy-color-on-primary-container-default--when-dark: var(--vy-when-dark) var(--vy-color-on-primary-container-default--dark);
     --vy-color-on-primary-container-default: var(--vy-color-on-primary-container-default--when-dark, var(--vy-color-on-primary-container-default--light));
     --vy-color-secondary-default--when-dark: var(--vy-when-dark) var(--vy-color-secondary-default--dark);
@@ -517,6 +538,8 @@
     --vy-color-secondary-container-default: var(--vy-color-secondary-container-default--when-dark, var(--vy-color-secondary-container-default--light));
     --vy-color-secondary-container-hover--when-dark: var(--vy-when-dark) var(--vy-color-secondary-container-hover--dark);
     --vy-color-secondary-container-hover: var(--vy-color-secondary-container-hover--when-dark, var(--vy-color-secondary-container-hover--light));
+    --vy-color-secondary-container-active--when-dark: var(--vy-when-dark) var(--vy-color-secondary-container-active--dark);
+    --vy-color-secondary-container-active: var(--vy-color-secondary-container-active--when-dark, var(--vy-color-secondary-container-active--light));
     --vy-color-on-secondary-container-default--when-dark: var(--vy-when-dark) var(--vy-color-on-secondary-container-default--dark);
     --vy-color-on-secondary-container-default: var(--vy-color-on-secondary-container-default--when-dark, var(--vy-color-on-secondary-container-default--light));
     --vy-color-error-default--when-dark: var(--vy-when-dark) var(--vy-color-error-default--dark);
@@ -587,6 +610,8 @@
     --vy-color-surface-default: var(--vy-color-surface-default--when-dark, var(--vy-color-surface-default--light));
     --vy-color-surface-hover--when-dark: var(--vy-when-dark) var(--vy-color-surface-hover--dark);
     --vy-color-surface-hover: var(--vy-color-surface-hover--when-dark, var(--vy-color-surface-hover--light));
+    --vy-color-surface-active--when-dark: var(--vy-when-dark) var(--vy-color-surface-active--dark);
+    --vy-color-surface-active: var(--vy-color-surface-active--when-dark, var(--vy-color-surface-active--light));
     --vy-color-surface-disabled--when-dark: var(--vy-when-dark) var(--vy-color-surface-disabled--dark);
     --vy-color-surface-disabled: var(--vy-color-surface-disabled--when-dark, var(--vy-color-surface-disabled--light));
     --vy-color-surface-container-lowest-default--when-dark: var(--vy-when-dark) var(--vy-color-surface-container-lowest-default--dark);
@@ -599,6 +624,10 @@
     --vy-color-surface-container-high-default: var(--vy-color-surface-container-high-default--when-dark, var(--vy-color-surface-container-high-default--light));
     --vy-color-surface-container-highest-default--when-dark: var(--vy-when-dark) var(--vy-color-surface-container-highest-default--dark);
     --vy-color-surface-container-highest-default: var(--vy-color-surface-container-highest-default--when-dark, var(--vy-color-surface-container-highest-default--light));
+    --vy-color-surface-container-highest-hover--when-dark: var(--vy-when-dark) var(--vy-color-surface-container-highest-hover--dark);
+    --vy-color-surface-container-highest-hover: var(--vy-color-surface-container-highest-hover--when-dark, var(--vy-color-surface-container-highest-hover--light));
+    --vy-color-surface-container-highest-active--when-dark: var(--vy-when-dark) var(--vy-color-surface-container-highest-active--dark);
+    --vy-color-surface-container-highest-active: var(--vy-color-surface-container-highest-active--when-dark, var(--vy-color-surface-container-highest-active--light));
     --vy-color-on-surface-default--when-dark: var(--vy-when-dark) var(--vy-color-on-surface-default--dark);
     --vy-color-on-surface-default: var(--vy-color-on-surface-default--when-dark, var(--vy-color-on-surface-default--light));
     --vy-color-on-surface-disabled--when-dark: var(--vy-when-dark) var(--vy-color-on-surface-disabled--dark);
@@ -641,6 +670,8 @@
   }
 }
 @keyframes vy-spin { to { transform: rotate(1turn); } }
+@keyframes vy-ring { from { outline-color: transparent; outline-offset: 0; } }
 @keyframes vy-pulse { 50% { opacity: var(--vy-opacity-md); } }
 @keyframes vy-wave { from { background-position: 200% 0; } to { background-position: -200% 0; } }
 @keyframes vy-dash { 0% { stroke-dasharray: 1 100; stroke-dashoffset: 0; } 50% { stroke-dasharray: 48 100; stroke-dashoffset: -12; } 100% { stroke-dasharray: 48 100; stroke-dashoffset: -60; } }
+@keyframes vy-slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }

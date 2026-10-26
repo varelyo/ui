@@ -1,6 +1,8 @@
 import { sidebarFooterClassName } from './SidebarFooter.styles';
 import type { SidebarFooterProps } from './SidebarFooter.types';
+import { useSidebarFooter } from './hooks';
 
 export function SidebarFooter({ className, ...rest }: SidebarFooterProps) {
-  return <div {...rest} className={sidebarFooterClassName(className)} />;
+  const { appearance } = useSidebarFooter();
+  return <div {...rest} className={sidebarFooterClassName(appearance, className)} />;
 }

@@ -9,10 +9,10 @@ export function useTableSortLabel({
   active,
   direction,
 }: UseTableSortLabelParams): UseTableSortLabelResult {
-  const { size } = use(TableContext);
-  const childProps =
-    componentTokens[TABLE_SORT_LABEL_COMPONENT_NAME_KEY].childProps.standard.primary;
+  const { variant, size } = use(TableContext);
+  const childProps = componentTokens[TABLE_SORT_LABEL_COMPONENT_NAME_KEY].childProps;
   return {
+    variant,
     rootProps: active ? { 'data-active': '' } : {},
     iconName: TABLE_SORT_ICONS[direction],
     iconSize: mapResponsive(size, (step) => childProps[step].sortIcon.size),

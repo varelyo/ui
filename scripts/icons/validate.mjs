@@ -34,6 +34,7 @@ const elementAttributes = {
   circle: ['cx', 'cy', 'r'],
   ellipse: ['cx', 'cy', 'rx', 'ry'],
 };
+const elementPaint = { fill: 'currentColor' };
 const namePattern = /^[a-z]+(?:-[a-z]+)*$/;
 const numberPattern = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?$/;
 const parser = new XMLParser({
@@ -96,13 +97,20 @@ export function validateIconSource(name, source) {
     if (child[tag].length) add('icon-forbidden-element', `${tag} must be empty`);
     const values = child[':@'] ?? {};
     for (const key of Object.keys(values))
-      if (!elementAttributes[tag].includes(key))
+      if (Object.hasOwn(elementPaint, key)) {
+        if (values[key] !== elementPaint[key])
+          add(
+            'icon-element-paint',
+            `${tag} ${key} must be "${elementPaint[key]}"; leave it out for a stroked shape`,
+          );
+      } else if (!elementAttributes[tag].includes(key))
         add('icon-forbidden-attribute', `${tag} attribute ${key} is not allowed`);
     const missing = elementAttributes[tag].filter((key) => !Object.hasOwn(values, key));
     if (missing.length) {
       add('icon-forbidden-attribute', `${tag} requires ${missing.join(', ')}`);
       continue;
     }
+    const paint = values.fill === elementPaint.fill ? { fill: elementPaint.fill } : {};
     if (tag === 'path') {
       const d = values.d;
       if (d.length > iconContract.maxPathLength)
@@ -141,8 +149,13 @@ export function validateIconSource(name, source) {
               `Join at ${before.to.map(round).join(',')} turns ${Math.round(turn)}° without a curve`,
             );
         }
+        if (paint.fill && !subpath.closed)
+          add(
+            'icon-open-fill',
+            `A filled path closes every subpath with Z; the one from ${subpath.start.map(round).join(',')} is open`,
+          );
       }
-      elements.push({ path: d });
+      elements.push({ path: d, ...paint });
     } else {
       const numbers = elementAttributes[tag].map((key) => values[key]);
       if (!numbers.every((value) => numberPattern.test(value))) {
@@ -152,7 +165,7 @@ export function validateIconSource(name, source) {
       const [cx, cy, rx, ry = rx] = numbers.map(Number);
       if (rx <= 0 || ry <= 0) add('icon-forbidden-attribute', `${tag} radius must be positive`);
       points.push([cx - rx, cy - ry], [cx + rx, cy + ry]);
-      elements.push({ [tag]: numbers.map(Number) });
+      elements.push({ [tag]: numbers.map(Number), ...paint });
     }
   }
   if (!elements.length) add('icon-empty', 'An icon needs at least one drawing element');

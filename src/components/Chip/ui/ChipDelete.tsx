@@ -1,4 +1,4 @@
-import { Icon, IconSizeContext } from '../../../foundation/Icon';
+import { Icon, IconSizeContext } from '../../Icon';
 import { CHIP_DELETE_ICON } from '../Chip.constants';
 import { chipDeleteClassName } from '../Chip.styles';
 import type { ChipDeleteProps } from '../Chip.types';

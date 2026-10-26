@@ -8,6 +8,7 @@ export function useMenuItem({ ref }: UseMenuItemParams): UseMenuItemResult {
   const listItem = useListItem();
   const merged = useMergeRefs<HTMLElement>([listItem.ref, ref]);
   return {
+    variant: menu.variant,
     ref: (node) => merged?.(node),
     tabIndex: listItem.index !== -1 && menu.activeIndex === listItem.index ? 0 : -1,
     iconSize: menu.iconSize,

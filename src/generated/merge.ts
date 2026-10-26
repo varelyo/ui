@@ -8,6 +8,7 @@ export const mergeConfig = {
         "primary-container-low",
         "primary-container-default",
         "primary-container-hover",
+        "primary-container-active",
         "on-primary-container-default",
         "secondary-default",
         "secondary-hover",
@@ -15,6 +16,7 @@ export const mergeConfig = {
         "secondary-container-low",
         "secondary-container-default",
         "secondary-container-hover",
+        "secondary-container-active",
         "on-secondary-container-default",
         "error-default",
         "error-hover",
@@ -50,12 +52,15 @@ export const mergeConfig = {
         "on-tertiary-container-default",
         "surface-default",
         "surface-hover",
+        "surface-active",
         "surface-disabled",
         "surface-container-lowest-default",
         "surface-container-low-default",
         "surface-container-default",
         "surface-container-high-default",
         "surface-container-highest-default",
+        "surface-container-highest-hover",
+        "surface-container-highest-active",
         "on-surface-default",
         "on-surface-disabled",
         "on-surface-variant-default",
@@ -79,14 +84,11 @@ export const mergeConfig = {
       ],
       "radius": [
         "none",
-        "2xs",
         "xs",
         "sm",
         "md",
         "lg",
         "xl",
-        "2xl",
-        "3xl",
         "full"
       ],
       "shadow": [
@@ -219,6 +221,7 @@ export const mergeConfig = {
         "vy-button-text-success"
       ],
       "vy-button-size": [
+        "vy-button-xs",
         "vy-button-sm",
         "vy-button-md",
         "vy-button-lg"
@@ -228,6 +231,7 @@ export const mergeConfig = {
         "vy-text-field-filled-primary"
       ],
       "vy-text-field-size": [
+        "vy-text-field-xs",
         "vy-text-field-sm",
         "vy-text-field-md",
         "vy-text-field-lg"
@@ -251,6 +255,26 @@ export const mergeConfig = {
         "vy-circular-progress-md",
         "vy-circular-progress-lg",
         "vy-circular-progress-xl"
+      ],
+      "vy-linear-progress-variant": [
+        "vy-linear-progress-indeterminate-primary",
+        "vy-linear-progress-indeterminate-secondary",
+        "vy-linear-progress-indeterminate-error",
+        "vy-linear-progress-indeterminate-warning",
+        "vy-linear-progress-indeterminate-info",
+        "vy-linear-progress-indeterminate-success",
+        "vy-linear-progress-determinate-primary",
+        "vy-linear-progress-determinate-secondary",
+        "vy-linear-progress-determinate-error",
+        "vy-linear-progress-determinate-warning",
+        "vy-linear-progress-determinate-info",
+        "vy-linear-progress-determinate-success"
+      ],
+      "vy-linear-progress-size": [
+        "vy-linear-progress-sm",
+        "vy-linear-progress-md",
+        "vy-linear-progress-lg",
+        "vy-linear-progress-xl"
       ],
       "vy-divider-variant": [
         "vy-divider-fullWidth-primary",
@@ -278,45 +302,48 @@ export const mergeConfig = {
         "vy-paper-elevation-primary",
         "vy-paper-outlined-primary"
       ],
-      "vy-paper-size": [
-        "vy-paper-elevation-primary-none",
-        "vy-paper-outlined-primary-none",
-        "vy-paper-elevation-primary-2xs",
-        "vy-paper-outlined-primary-2xs",
-        "vy-paper-elevation-primary-xs",
-        "vy-paper-outlined-primary-xs",
-        "vy-paper-elevation-primary-sm",
-        "vy-paper-outlined-primary-sm",
-        "vy-paper-elevation-primary-md",
-        "vy-paper-outlined-primary-md",
-        "vy-paper-elevation-primary-lg",
-        "vy-paper-outlined-primary-lg",
-        "vy-paper-elevation-primary-xl",
-        "vy-paper-outlined-primary-xl",
-        "vy-paper-elevation-primary-2xl",
-        "vy-paper-outlined-primary-2xl",
-        "vy-paper-elevation-primary-3xl",
-        "vy-paper-outlined-primary-3xl"
+      "vy-paper-size": [],
+      "vy-paper-style-size": [
+        "vy-paper-elevation-none",
+        "vy-paper-elevation-2xs",
+        "vy-paper-elevation-xs",
+        "vy-paper-elevation-sm",
+        "vy-paper-elevation-md",
+        "vy-paper-elevation-lg",
+        "vy-paper-elevation-xl",
+        "vy-paper-elevation-2xl",
+        "vy-paper-elevation-3xl",
+        "vy-paper-outlined-none",
+        "vy-paper-outlined-2xs",
+        "vy-paper-outlined-xs",
+        "vy-paper-outlined-sm",
+        "vy-paper-outlined-md",
+        "vy-paper-outlined-lg",
+        "vy-paper-outlined-xl",
+        "vy-paper-outlined-2xl",
+        "vy-paper-outlined-3xl"
       ],
       "vy-collapse-variant": [],
-      "vy-collapse-size": [
-        "vy-collapse-none",
-        "vy-collapse-vertical-primary-2xs",
-        "vy-collapse-horizontal-primary-2xs",
-        "vy-collapse-vertical-primary-xs",
-        "vy-collapse-horizontal-primary-xs",
-        "vy-collapse-vertical-primary-sm",
-        "vy-collapse-horizontal-primary-sm",
-        "vy-collapse-vertical-primary-md",
-        "vy-collapse-horizontal-primary-md",
-        "vy-collapse-vertical-primary-lg",
-        "vy-collapse-horizontal-primary-lg",
-        "vy-collapse-vertical-primary-xl",
-        "vy-collapse-horizontal-primary-xl",
-        "vy-collapse-vertical-primary-2xl",
-        "vy-collapse-horizontal-primary-2xl",
-        "vy-collapse-vertical-primary-3xl",
-        "vy-collapse-horizontal-primary-3xl"
+      "vy-collapse-size": [],
+      "vy-collapse-style-size": [
+        "vy-collapse-vertical-none",
+        "vy-collapse-vertical-2xs",
+        "vy-collapse-vertical-xs",
+        "vy-collapse-vertical-sm",
+        "vy-collapse-vertical-md",
+        "vy-collapse-vertical-lg",
+        "vy-collapse-vertical-xl",
+        "vy-collapse-vertical-2xl",
+        "vy-collapse-vertical-3xl",
+        "vy-collapse-horizontal-none",
+        "vy-collapse-horizontal-2xs",
+        "vy-collapse-horizontal-xs",
+        "vy-collapse-horizontal-sm",
+        "vy-collapse-horizontal-md",
+        "vy-collapse-horizontal-lg",
+        "vy-collapse-horizontal-xl",
+        "vy-collapse-horizontal-2xl",
+        "vy-collapse-horizontal-3xl"
       ],
       "vy-sidebar-variant": [
         "vy-sidebar-standard-primary",
@@ -337,18 +364,23 @@ export const mergeConfig = {
         "vy-skeleton-circular-primary"
       ],
       "vy-skeleton-size": [
-        "vy-skeleton-text-primary-sm",
-        "vy-skeleton-rectangular-primary-sm",
-        "vy-skeleton-rounded-primary-sm",
-        "vy-skeleton-circular-primary-sm",
-        "vy-skeleton-text-primary-md",
-        "vy-skeleton-rectangular-primary-md",
-        "vy-skeleton-rounded-primary-md",
-        "vy-skeleton-circular-primary-md",
-        "vy-skeleton-text-primary-lg",
-        "vy-skeleton-rectangular-primary-lg",
-        "vy-skeleton-rounded-primary-lg",
-        "vy-skeleton-circular-primary-lg"
+        "vy-skeleton-sm",
+        "vy-skeleton-md",
+        "vy-skeleton-lg"
+      ],
+      "vy-skeleton-style-size": [
+        "vy-skeleton-text-sm",
+        "vy-skeleton-text-md",
+        "vy-skeleton-text-lg",
+        "vy-skeleton-rectangular-sm",
+        "vy-skeleton-rectangular-md",
+        "vy-skeleton-rectangular-lg",
+        "vy-skeleton-rounded-sm",
+        "vy-skeleton-rounded-md",
+        "vy-skeleton-rounded-lg",
+        "vy-skeleton-circular-sm",
+        "vy-skeleton-circular-md",
+        "vy-skeleton-circular-lg"
       ],
       "vy-card-variant": [
         "vy-card-standard-primary"
@@ -378,9 +410,13 @@ export const mergeConfig = {
         "vy-avatar-square-neutral"
       ],
       "vy-avatar-size": [
+        "vy-avatar-2xs",
+        "vy-avatar-xs",
         "vy-avatar-sm",
         "vy-avatar-md",
-        "vy-avatar-lg"
+        "vy-avatar-lg",
+        "vy-avatar-xl",
+        "vy-avatar-2xl"
       ],
       "vy-chip-variant": [
         "vy-chip-filled-primary",
@@ -399,6 +435,7 @@ export const mergeConfig = {
         "vy-chip-outlined-neutral"
       ],
       "vy-chip-size": [
+        "vy-chip-xs",
         "vy-chip-sm",
         "vy-chip-md",
         "vy-chip-lg"
@@ -452,6 +489,7 @@ export const mergeConfig = {
         "vy-select-filled-primary"
       ],
       "vy-select-size": [
+        "vy-select-xs",
         "vy-select-sm",
         "vy-select-md",
         "vy-select-lg"
@@ -459,10 +497,17 @@ export const mergeConfig = {
       "vy-tabs-variant": [
         "vy-tabs-standard-primary",
         "vy-tabs-standard-secondary",
-        "vy-tabs-standard-neutral"
+        "vy-tabs-standard-neutral",
+        "vy-tabs-segmented-primary",
+        "vy-tabs-segmented-secondary",
+        "vy-tabs-segmented-neutral"
       ],
       "vy-tabs-size": [
         "vy-tabs-md"
+      ],
+      "vy-tabs-style-size": [
+        "vy-tabs-standard-md",
+        "vy-tabs-segmented-md"
       ],
       "vy-snackbar-variant": [
         "vy-snackbar-standard-primary"
@@ -508,10 +553,47 @@ export const mergeConfig = {
         "vy-icon-button-text-neutral"
       ],
       "vy-icon-button-size": [
+        "vy-icon-button-2xs",
+        "vy-icon-button-xs",
         "vy-icon-button-sm",
         "vy-icon-button-md",
         "vy-icon-button-lg"
-      ]
+      ],
+      "vy-list-variant": [
+        "vy-list-standard-neutral",
+        "vy-list-standard-primary",
+        "vy-list-standard-secondary"
+      ],
+      "vy-list-size": [
+        "vy-list-xs",
+        "vy-list-sm",
+        "vy-list-md",
+        "vy-list-lg"
+      ],
+      "vy-link-variant": [
+        "vy-link-always-primary",
+        "vy-link-always-secondary",
+        "vy-link-always-error",
+        "vy-link-always-warning",
+        "vy-link-always-info",
+        "vy-link-always-success",
+        "vy-link-always-neutral",
+        "vy-link-hover-primary",
+        "vy-link-hover-secondary",
+        "vy-link-hover-error",
+        "vy-link-hover-warning",
+        "vy-link-hover-info",
+        "vy-link-hover-success",
+        "vy-link-hover-neutral",
+        "vy-link-none-primary",
+        "vy-link-none-secondary",
+        "vy-link-none-error",
+        "vy-link-none-warning",
+        "vy-link-none-info",
+        "vy-link-none-success",
+        "vy-link-none-neutral"
+      ],
+      "vy-link-size": []
     }
   }
 } as const;

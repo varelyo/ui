@@ -5,6 +5,7 @@ import { useBackdrop } from './hooks';
 export function Backdrop({
   open,
   invisible = false,
+  variant = 'standard',
   className,
   children,
   ref,
@@ -17,7 +18,7 @@ export function Backdrop({
       {...rest}
       {...backdrop.layerProps}
       ref={backdrop.ref}
-      className={backdropClassName({ invisible }, className)}
+      className={backdropClassName({ variant, invisible }, className)}
     >
       {children}
     </div>

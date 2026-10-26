@@ -1,0 +1,1 @@
+export { usePaper } from './usePaper';

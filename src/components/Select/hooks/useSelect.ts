@@ -180,7 +180,7 @@ export function useSelect({
     formValue: values.map(String).join(SELECT_FORM_VALUE_SEPARATOR),
     indicatorSize: mapResponsive<SelectSize, IconSize>(
       size,
-      (step) => select.childProps[variant].primary[step].indicator.size,
+      (step) => select.childProps[step].indicator.size,
     ),
     triggerRef: (node) => triggerRef?.(node),
     triggerProps: interactions.getReferenceProps({

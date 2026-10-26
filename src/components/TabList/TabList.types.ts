@@ -1,5 +1,5 @@
 import type { ComponentPropsWithRef, FocusEventHandler, KeyboardEventHandler, Ref } from 'react';
-import type { TabsOrientation } from '../Tabs';
+import type { TabsColor, TabsOrientation, TabsVariant } from '../Tabs';
 
 export type TabListProps = Omit<ComponentPropsWithRef<'div'>, 'style' | 'role'>;
 
@@ -25,9 +25,16 @@ export interface UseTabListResult {
   ref: Ref<HTMLDivElement>;
   rtl: boolean;
   orientation: TabsOrientation;
+  variant: TabsVariant;
+  color: TabsColor;
   activeIndex: number;
   navigate: (index: number) => void;
   context: TabListContextValue;
   onKeyDown: KeyboardEventHandler<HTMLDivElement>;
   onBlur: FocusEventHandler<HTMLDivElement>;
+}
+
+export interface TabListStyleProps {
+  orientation: TabsOrientation;
+  variant: TabsVariant;
 }

@@ -3,13 +3,26 @@ import {
   Avatar,
   Box,
   Button,
+  Card,
+  Checkbox,
   Chip,
   CircularProgress,
   Container,
+  Drawer,
   Dropzone,
   Grid,
   Icon,
   IconButton,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+  LinearProgress,
+  Link,
+  Paper,
   Sidebar,
   SidebarItem,
   Stack,
@@ -28,8 +41,14 @@ import {
   type DropzoneColor,
   type DropzoneDragVerdict,
   type FileRejection,
+  type ListColor,
+  type ListSize,
+  type LinkColor,
+  type LinkUnderline,
   type SidebarColor,
   type TabsColor,
+  type TabsVariant,
+  type CardAppearance,
   type TableSortDirection,
 } from '../../src';
 
@@ -390,3 +409,200 @@ export const avatarDefault = <Avatar color="default" />;
 export const avatarToneByWidth = <Avatar color={{ md: 'primary' }} />;
 // @ts-expect-error avatar colours are intents, not raw colours
 export const avatarRaw = <Avatar color="#355a8c" />;
+
+const listSizes: readonly ListSize[] = ['xs', 'sm', 'md', 'lg'];
+const listColors: readonly ListColor[] = ['neutral', 'primary', 'secondary'];
+export const lists = listSizes.map((size) => (
+  <List key={size} size={size} subheader="Workspace" ref={createRef<HTMLUListElement>()}>
+    {listColors.map((color) => (
+      <ListItem
+        key={color}
+        end="3"
+        divider
+        alignItems="flex-start"
+        ref={createRef<HTMLLIElement>()}
+      >
+        <ListItemButton
+          color={color}
+          size={{ xs: 'sm', md: size }}
+          selected
+          divider
+          disableGutters
+          autoFocus
+          ref={createRef<HTMLButtonElement>()}
+        >
+          <ListItemIcon size="lg" ref={createRef<HTMLSpanElement>()}>
+            <Icon name="star" />
+          </ListItemIcon>
+          <ListItemText
+            primary="Primary"
+            secondary="Secondary"
+            inset
+            noWrap
+            primaryVariant="body-md"
+            secondaryVariant={{ xs: 'label-sm', md: 'body-sm' }}
+            ref={createRef<HTMLDivElement>()}
+          />
+        </ListItemButton>
+      </ListItem>
+    ))}
+  </List>
+));
+export const listParts = (
+  <List component="ol" nested disablePadding color="secondary">
+    <ListSubheader color="primary" inset sticky disableGutters component="div">
+      Teams
+    </ListSubheader>
+    <ListItem disablePadding disableGutters component="div">
+      <ListItemAvatar ref={createRef<HTMLDivElement>()}>
+        <Avatar size="sm">AK</Avatar>
+      </ListItemAvatar>
+      <ListItemText>Children as the primary line</ListItemText>
+    </ListItem>
+    <ListItem>
+      <ListItemButton href="#docs" ref={createRef<HTMLAnchorElement>()}>
+        Docs
+      </ListItemButton>
+    </ListItem>
+  </List>
+);
+// @ts-expect-error list sizes are t-shirt steps, not small
+export const listSmall = <List size="small" />;
+// @ts-expect-error a list size is a step, not a raw length
+export const listRawSize = <List size="32px" />;
+// @ts-expect-error the colour without an accent is neutral, not default
+export const listDefault = <List color="default" />;
+// @ts-expect-error a list colours its current item with neutral, primary or secondary, not a status intent
+export const listStatus = <List color="error" />;
+// @ts-expect-error the list colour is not responsive
+export const listToneByWidth = <List color={{ md: 'primary' }} />;
+// @ts-expect-error raw styles are not part of the list API
+export const listStyle = <List style={{ padding: 4 }} />;
+// @ts-expect-error the list is a ul unless component says otherwise
+export const listDivRef = <List ref={createRef<HTMLDivElement>()} />;
+// @ts-expect-error a subheader colour is an intent, not a raw colour
+export const subheaderRaw = <ListSubheader color="#355a8c">Label</ListSubheader>;
+// @ts-expect-error a row aligns with the layout keywords, not a raw value
+export const itemAlignRaw = <ListItem alignItems="top" />;
+// @ts-expect-error a button colour is neutral, primary or secondary
+export const buttonStatus = <ListItemButton color="warning" />;
+// @ts-expect-error the button colour is not responsive
+export const buttonToneByWidth = <ListItemButton color={{ md: 'primary' }} />;
+// @ts-expect-error a button size is a t-shirt step
+export const buttonLarge = <ListItemButton size="large" />;
+// @ts-expect-error a native button takes a button ref
+export const buttonDivRef = <ListItemButton ref={createRef<HTMLDivElement>()} />;
+// @ts-expect-error an icon size is a step of the icon scale
+export const iconRaw = <ListItemIcon size="18px" />;
+// @ts-expect-error a text style is one of the kit's, never raw typography
+export const textRaw = <ListItemText primaryVariant="14px/20px Inter" />;
+// @ts-expect-error raw styles are not part of the text API
+export const textStyle = <ListItemText style={{ fontSize: 13 }} />;
+const linkColors: readonly LinkColor[] = ['neutral', 'primary', 'error'];
+const linkUnderlines: readonly LinkUnderline[] = ['always', 'hover', 'none'];
+export const links = (
+  <Typography variant="body-md">
+    {linkColors.map((color) =>
+      linkUnderlines.map((underline) => (
+        <Link key={`${color}-${underline}`} href="/terms" color={color} underline={underline}>
+          Terms
+        </Link>
+      )),
+    )}
+    <Link
+      href="/plans"
+      variant={{ xs: 'body-sm', md: 'title-md' }}
+      target="_blank"
+      rel="noreferrer"
+    />
+    <Link href="/plans" ref={createRef<HTMLAnchorElement>()} disabled />
+    <Link component="button" type="button" onClick={(event) => event.currentTarget} ref={buttonRef}>
+      Resend
+    </Link>
+  </Typography>
+);
+// @ts-expect-error underline is always, hover or none
+export const booleanUnderline = <Link href="/" underline />;
+// @ts-expect-error link colours come from the link token namespace
+export const inheritLink = <Link href="/" color="inherit" />;
+// @ts-expect-error the link colour is not responsive
+export const responsiveLink = <Link href="/" color={{ xs: 'primary' }} />;
+// @ts-expect-error variants are the kit's text styles
+export const headingLink = <Link href="/" variant="h1" />;
+// @ts-expect-error a link refers to an anchor
+export const linkDivRef = <Link href="/" ref={divRef} />;
+// @ts-expect-error raw styles are not part of the public API
+export const styledLink = <Link href="/" style={{ color: 'red' }} />;
+
+export const linearProgress = (
+  <Stack>
+    <LinearProgress />
+    <LinearProgress
+      variant="determinate"
+      value={40}
+      color="success"
+      size={{ xs: 'sm', md: 'xl' }}
+      aria-label="Upload"
+      ref={createRef<HTMLSpanElement>()}
+    />
+  </Stack>
+);
+// @ts-expect-error a track needs a colour of its own, so there is no inherit
+export const inheritBar = <LinearProgress color="inherit" />;
+// @ts-expect-error bar thickness is a t-shirt step
+export const pixelBar = <LinearProgress size={4} />;
+// @ts-expect-error the progress variants are determinate and indeterminate
+export const bufferBar = <LinearProgress variant="buffer" />;
+// @ts-expect-error the value is a number from 0 to 100
+export const textValue = <LinearProgress value="40%" />;
+// @ts-expect-error the bar draws itself, so it takes no children
+export const childBar = <LinearProgress>40%</LinearProgress>;
+
+export const selectedSurfaces = (
+  <Stack>
+    <Paper variant="outlined" selected />
+    <Card selected component="article" aria-label="Team plan" />
+    <Card selected={false} variant="outlined" ref={divRef} />
+  </Stack>
+);
+// @ts-expect-error selected is a boolean
+export const namedSelection = <Card selected="team" />;
+// @ts-expect-error the selection colour is a token, not a prop
+export const selectedColour = <Paper selected selectedColor="primary" />;
+
+const tabsVariant: TabsVariant = 'standard';
+const cardAppearance: CardAppearance = 'standard';
+export const styleAxes = (
+  <Stack>
+    <Tabs variant={tabsVariant} />
+    <Checkbox variant="standard" label="Remember me" />
+    <Table variant="standard" />
+    <List variant="standard" />
+    <ListSubheader variant="standard">Group</ListSubheader>
+    <Card variant="outlined" appearance={cardAppearance} />
+    <Sidebar label="Main" variant="docked" appearance="standard" />
+    <Drawer variant="permanent" appearance="standard" />
+    <Dropzone variant="standard" label="Files" />
+  </Stack>
+);
+// @ts-expect-error a style is a token of the namespace, not an arbitrary name
+export const unknownTabsStyle = <Tabs variant="pills" />;
+// @ts-expect-error Card's variant is the paper style; its own namespace's style is appearance
+export const cardStyleAsVariant = <Card variant="standard" />;
+// @ts-expect-error Drawer's variant is its behaviour; its namespace's style is appearance
+export const drawerStyleAsVariant = <Drawer variant="standard" />;
+// @ts-expect-error the style axis is not responsive
+export const responsiveStyle = <Checkbox variant={{ xs: 'standard' }} />;
+
+export const markers = (
+  <List component="ol">
+    <ListItem marker="number">First</ListItem>
+    <ListItem marker="bullet" alignItems="baseline">
+      Second
+    </ListItem>
+  </List>
+);
+// @ts-expect-error a marker is a bullet or a number
+export const discMarker = <ListItem marker="disc" />;
+// @ts-expect-error the marker is a kind, not content
+export const nodeMarker = <ListItem marker={<span>*</span>} />;
